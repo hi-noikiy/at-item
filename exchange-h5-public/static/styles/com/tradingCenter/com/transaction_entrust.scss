@@ -1,0 +1,129 @@
+#com-transaction_entrust {
+  width: 100%;
+  border-top: 0.05rem solid #1c2b49;
+  border-top: 0.05rem solid $common-interval;
+  margin-top: 0.2rem;
+.title {
+  height: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.04rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  line-height: 0.6rem;
+  font-weight: 700;
+  font-size: 0.18rem;
+  /* align-items: center; */
+}
+.title i {
+  color: #2b89e1;color: $common-iconColor;
+}
+ul li {
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  padding: 0 0.1rem;
+}
+ul li:last-child {
+  border: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  /* border-bottom: 0.01rem solid $common-interval; */
+}
+.esc {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.12rem;
+}
+.escNo {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.time {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+  margin-left: 0.05rem;
+}
+.box {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0.1rem 0; */
+  margin-bottom: 0.15rem;
+}
+.box div {
+  /* flex: 1; */
+  /* text-align: center; */
+  height: 0.4rem;
+  /* border-left: 0.01rem solid $common-interval; */
+}
+.box div:first-child {
+  border: none;
+}
+ul li:last-child {
+  margin-bottom: 0.5rem;
+}
+.box p {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.box span {
+  font-size: 0.12rem;
+  line-height: 0.3rem;
+}
+.foot {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.01rem solid #1c2b49;
+  border-top: 0.01rem solid $common-interval;
+  font-size: 0.12rem;
+  height: 0.5rem;
+  line-height: 0.4rem;
+}
+.buy {
+  color: #0BA83F;color: $common-rise;
+}
+.sell {
+  color: #DF1A28;color: $common-fall;
+}
+.pageBox {
+  position: fixed;
+  height: 0.4rem;
+  width: 100%;
+  left: 0;
+  bottom: 0
+}
+.page_mark-enter-active {
+  animation: page_mark-in .5s;
+}
+.page_mark-leave-active {
+  animation: page_mark-in .5s reverse;
+}
+@keyframes page_mark-in {
+  0% {
+    bottom: -100%;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    bottom: 0;
+  }
+}
+.sumPage0 {
+  text-align: center;
+  line-height: 0.5rem;
+  padding-bottom: 0.2rem;
+  color: #7b8191;color: $common-Vice;
+}
+.num1 {
+  /* text-align: center */
+}
+.sum2 span {
+  width: 100%;
+  display: inline-block;
+  text-align: end!important
+}
+}

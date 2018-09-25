@@ -1,0 +1,51 @@
+#quotation_deal {
+.title {
+  height: 0.48rem;
+  line-height: 0.48rem;
+  padding: 0 0.1rem;
+  border-bottom: 0.02rem solid #1c2b49;
+  border-bottom: 0.02rem solid $common-interval;
+}
+.list {
+  font-size: 0.12rem;
+}
+.list li {
+  padding: 0 0.1rem;
+  line-height: 0.25rem;
+}
+.list li:nth-child(1) {
+  line-height: 0.25rem;
+  color: #7b8191;color: $common-Vice;
+  font-size: 0.1rem;
+  margin-top: 0.1rem;
+}
+.list li span {
+  display: inline-block;
+}
+.list li span:nth-child(1) {
+  width: 18%;
+}
+.list li span:nth-child(2) {
+  text-align: center;
+  width: 18%;
+}
+.list li span:nth-child(3) {
+  text-align: center;
+  width: 30%;
+}
+.list li span:nth-child(4) {
+  text-align: end;
+  width: 30%;
+}
+.green {
+  color: #0BA83F;color: $common-rise;
+}
+.red {
+  color: #DF1A28!important;
+  color: $common-fall!important;
+}
+.nodata {
+  text-align: center;
+  line-height: 0.4rem;
+}
+}

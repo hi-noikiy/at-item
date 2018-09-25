@@ -1,0 +1,217 @@
+#com-home-rankList {
+  position: relative;
+  background: #18243c;background: $common-background;
+.loadingMark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 2;
+  opacity: 0.7;
+}
+.home_bounce-enter-active {
+  animation: home_bounce-in .3s;
+}
+.home_bounce-leave-active {
+  animation: home_bounce-in .3s reverse;
+}
+@keyframes home_bounce-in {
+  0% {
+    width: 0;
+    opacity: 0
+  }
+  100% {
+    width: 60%;
+    opacity: 1;
+  }
+}
+.li-enter-active {
+  animation: li-in 1s;
+}
+.li-leave-active {
+  animation: li-in 1s reverse;
+}
+@keyframes li-in {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.marketActive {
+  color: #2b89e1;color: $common-iconColor
+}
+.title {
+  height: 0.45rem;
+  padding-top: 0.05rem;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  line-height: 0.45rem;
+  border-bottom: 0.01rem solid #1c2b49;border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  position: relative;
+}
+.title .market {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  position: relative
+}
+.title .symbolList {
+  flex: 1;
+  overflow-x: scroll;
+}
+.title .symbolList ul {
+  display: flex
+}
+.title .symbolList ul li {
+  padding-right: 0.15rem;
+  padding-left: 0.15rem;
+  position: relative;
+}
+.title span {
+  position: absolute;
+  display: inline-block;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 0.02rem;
+  background: #2b89e1;background: $common-iconColor
+}
+.list {
+  padding: 0 0.1rem;
+  /* background: #050d1d; */
+  box-sizing: border-box;
+  min-height: 2rem;
+}
+.list li {
+  height: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.01rem solid #1c2b49;border-bottom: 0.01rem solid $common-interval;
+}
+.list li:first-child{
+  height: 0.3rem;
+  align-items: flex-start;
+  line-height: 0.45rem;
+  border: none;
+  color: #7b8191;color: $common-Vice;
+  text-align: center;
+  font-size: 0.12rem;
+}
+.list li:first-child>span:nth-child(4){
+  text-align: end;
+}
+.list li>span {
+  display: inline-block;
+}
+.list li>span:nth-child(1){
+  width: 3%;
+  text-align: center;
+}
+.list li>span:nth-child(2){
+  margin-left: -0.2rem;
+  width: 25%;
+  color: #7b8191;color: $common-Vice;
+  /* font-size: 0.12rem; */
+}
+.list li>span:nth-child(3){
+  margin-left: -0.1rem;
+  width: 33%;
+}
+.list li>span:nth-child(4){
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+.list li>span:nth-child(2) div {
+  width: 76%;
+  margin-left: 13%;
+}
+.list li>span:nth-child(3) div {
+  width: 65%;
+  margin-left: 34%;
+}
+.rank {
+  height: 0.16rem;
+  width: 0.16rem;
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.1rem;
+  line-height: 0.01rem;
+  margin-left: 0.01rem;
+  margin-top: -0.1rem;
+}
+.rank i {
+  font-size: 0.2rem;
+  color: #ff9624;
+}
+.symbol {
+  color: #7b8191;color: $common-Vice;
+  font-size: 0.12rem;
+}
+.symbol b {
+  color: #c7cce6;color: $common-fontColor;
+  font-size: 0.16rem;
+}
+.house, .price {
+  color: #7b8191;color: $common-Vice;
+  font-size: 0.12rem;
+  margin-top: 0.05rem;
+}
+.num {
+  color: #c7cce6;color: $common-fontColor;
+  font-size: 0.16rem;
+}
+.num_green {
+  color: #0BA83F!important;color: $common-rise!important;
+}
+.num_red {
+  color: #DF1A28!important;color: $common-fall!important;
+}
+.roseFlag_green {
+  background: #0BA83F;background: $common-rise;
+}
+.roseFlag_red {
+  background: #DF1A28!important;background: $common-fall!important;
+}
+.li-btn {
+  background: #0BA83F;background: $common-rise;
+  width: 0.82rem;
+  height: 0.35rem;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 0.35rem;
+}
+.icon-shoucang2 {
+  font-size: 0.34rem;
+  margin-left: -0.08rem;
+}
+.icon-pingfen {
+  font-size: 0.18rem
+}
+.nodata {
+  display: block;
+  text-align: center!important;
+}
+.nodata b {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 0.7rem;
+  letter-spacing: 0.02rem;
+}
+.loading {
+  border: none!important;
+  position: relative;
+}
+.loading>div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%)
+}
+}

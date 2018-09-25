@@ -1,0 +1,155 @@
+.otc-personal{
+    .personal-content{
+        .header{
+            padding: 0 .1rem;
+            height: 0.55rem;
+            line-height: 0.55rem;
+            border-bottom: 0.01rem solid $common-interval;
+        }
+        .personal{
+            padding: 0 .1rem;
+            border-bottom:0.08rem solid $common-interval;
+            .message{
+                padding: 0.2rem 0;
+                border-bottom: 0.01rem solid $common-interval;
+                .meage-acount{
+                    display: flex;
+                    .account{
+                        position: relative;
+                        flex: 1;
+                        img{
+                            width: 0.25rem;
+                            height: 0.25rem;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            margin-top: -0.06rem;
+                            margin-right: 0.08rem;
+                            opacity: 0.6;
+                        }
+                        .portraits{
+                            opacity: 1;
+                        }
+                        .selects{
+                            display:inline-block;
+                            width:0.08rem;
+                            height:0.08rem;
+                            border-radius:50%;
+                            background:$common-iconColor;
+                            position:absolute;
+                            bottom:0;
+                            left: 0.2rem;
+                        }
+                    
+                        
+                    }
+                }
+                .frequency{
+                    display: flex;
+                    margin-top: 0.2rem;
+                    li{
+                        width: 35%;
+                        // text-align:center;
+                    }
+                    .appeal{
+                        text-align: center;
+                    }
+                    .recover{
+                        text-align: right;
+                    }
+                }
+               .blacklist{
+                   color: $common-error;
+               }
+               .blackstate{
+                    color: $common-emphasize;
+               }
+            }
+            .attestation{
+                padding: 0.2rem 0;
+                
+                .title{
+                    margin-right:.12rem;
+                }
+                .approve{
+                    display: flex;
+                    .identity,.phone{
+                        width: 50%;
+                    }
+                    .status{
+                        display:inline-block;
+                        width: 0.08rem;
+                             height: 0.04rem;
+                             border-bottom: 0.02rem solid $common-success;
+                             border-left: 0.02rem solid $common-success;
+                             transform: rotate(-45deg);    
+                             margin-left:0.1rem;
+                    }
+                }
+                .enroll,.last{
+                    margin-top: 0.15rem;
+                }
+            }
+        }
+        .release{
+            padding:0 .1rem;
+            margin-bottom: .4rem;
+            .re-header{
+              margin-top:0.2rem;
+              font-size: 0.16rem;
+            }
+            .list{
+                .publish{
+                    padding: 0.2rem 0;
+                    border-bottom: 0.01rem solid $common-interval;
+                    .price,.make,.gross{
+                        display: flex;
+                        p,.content{
+                        flex: 1;
+                        }
+                    }
+                    .make,.gross{
+                        margin-top: 0.15rem;
+                        .time{
+                            margin-top:0.1rem;
+                        }
+                        .shut{
+                            width:0.78rem;
+                            height:0.3rem;
+                            line-height: 0.3rem;
+                            text-align: center;
+                            background: $common-emphasize;
+                            margin-top: 0.1rem;
+                            border-radius: 0.04rem;
+                        }
+                    }
+                    .make{
+                        .coin{
+                            color: $common-rise
+                        }
+                        .sell{
+                            color: $common-fall 
+                        }
+                    }
+                    .money,.clinch,.content{
+                        color: $common-Vice;
+                        b{
+                        color: $common-fontColor
+                        }
+                        .turnover{
+                            font-size: 0.16rem;
+                            color: $common-emphasize;
+                        }
+                    }
+                }
+                
+            }
+            .pageBox{
+                position: fixed;
+                height: 0.4rem;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+}

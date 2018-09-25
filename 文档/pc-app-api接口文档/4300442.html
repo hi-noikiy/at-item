@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : 提现记录 record/withdraw_list</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295583.html">资金相关</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4300406.html">资金流水页面</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : 提现记录 record/withdraw_list
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> guochang</span>, last modified by <span class='editor'> zhongjingyun</span> on Jun 06, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h4 id="id-提现记录record/withdraw_list-请求URI：POST"><strong>请求URI：POST</strong><strong> </strong><strong> </strong></h4><h4 id="id-提现记录record/withdraw_list-record/withdraw_list"><strong>record</strong><strong>/withdraw_list</strong></h4><h4 id="id-提现记录record/withdraw_list-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">参数说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">coinSymbol</td><td class="confluenceTd">否</td><td class="confluenceTd">为空时，返回所有</td></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">默认是10</td></tr></tbody></table></div><h4 id="id-提现记录record/withdraw_list-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">financeList</td><td class="confluenceTd">是</td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Midnight; brush: js; gutter: false" style="font-size:12px;">[
+    {
+       &quot;createdAt&quot;: &quot;2018-04-16 20:35:01&quot;,创建时间
+       &quot;amount&quot;: &quot;10&quot;,//到账数量
+       &quot;status_text&quot;:&quot;已完成&quot;, 
+       &quot;status&quot;: ,//提现状态: 0 未审核，1 已审核，2 审核拒绝，3 支付中，4 支付失败，5 已完成，6 已撤销
+       &quot;symbol&quot;: &quot;BTC&quot;,//币种
+       &quot;txid&quot;： &quot;3r45ygrcx6789cf&quot;,//交易id
+       &quot;fee&quot;: 0.1//手续费用，
+       &quot;addressTo&quot;：&quot;1Px8bibV3QtcPiYpJWUpkMb36u5xAxMpzs&quot; //提币地址
+       &quot;label&quot;： &quot;我的钱包&quot;//钱包标签
+    }
+]</pre>
+</div></div><p> </p><p> </p></td></tr><tr><td colspan="1" class="confluenceTd">count</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">总数</td></tr><tr><td colspan="1" class="confluenceTd">pagesize</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">每页个数</td></tr></tbody></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

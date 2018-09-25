@@ -1,0 +1,3306 @@
+<template>
+  <div name="order" class="order_wrap" v-if="userinfo">
+    <div class="loading_wrap" v-show="showLoading">
+      <div class="loading">
+        <loading-model></loading-model>
+      </div>
+    </div>
+    <div v-show="hasSquence">
+      <div class="sideleft" v-show="!showLoading">
+        <buyOrder v-if="this.side === 'buy'"></buyOrder>
+        <sellOrder v-if="this.side === 'sell'"></sellOrder>
+      </div>
+      <div class="sideright" v-show="!showLoading">
+        <ul class="side_head">
+          <li class="header_img" :class="{online: fromToOnline === 1}">
+            <router-link :to="{path: '/otc_personal', query: { uId: fromTo }}">
+              <img :src="fromToUrl" width="40" height="40" alt="" v-show="fromToUrl">
+              <img src="@/assets/img/otc/portrait.png" width="40" height="40" alt="" v-show="!fromToUrl">
+            </router-link>
+          </li>
+          <li>
+            <h3>
+              <router-link :to="{path: '/otc_personal', query:{uId: fromTo}}">
+                {{ fromToName }}
+              </router-link>
+            </h3>
+            <p>{{this.$t('otc.order.nearOrder')}} :{{ dealHis }}</p>
+            <!-- 30 日成单 -->
+          </li>
+        </ul>
+        <div class="chatbox">
+          <div class="chat_item" :class="userinfo.id.toString() === item.fromId.toString() ? 'chat_right' : 'chat_left'" v-for="(item, index) in chatMsg" :key="index">
+            <div class="head_img">
+              <router-link :to="{path: '/otc_personal', query: { uId: item.fromId.toString() === userinfo.id.toString() ? userinfo.id : fromTo }}">
+                <img :src="item.fromId.toString() === userinfo.id.toString() ? thisUrl : fromToUrl" width="40" height="40" alt="" v-show="item.fromId.toString() === userinfo.id.toString() ? thisUrl : fromToUrl">
+                <img src="@/assets/img/otc/portrait.png" width="40" height="40" alt="" v-show="!(item.fromId.toString() === userinfo.id.toString() ? thisUrl : fromToUrl)">
+              </router-link>
+            </div>
+            <div class="textbox">
+              <div class="chat_text">{{ item.content }}</div>
+              <div class="chat_time">{{ parseDate(item.ctime) }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="input_box">
+          <input type="text" @keyup.enter="onSend" :placeholder="this.$t('otc.order.inputMessage')" v-model="chatMessage">
+          <!-- 输入信息 -->
+          <button @click="onSend">{{this.$t('otc.order.onsend')}}</button>
+          <!-- 发送 -->
+        </div>
+      </div>
+    </div>
+    <div v-show="!hasSquence">
+      <el-dialog :title='tiptlText' :flag='cannalDialog' name='cannalDialog' :width='450' :dialogClose='closeDialog'>
+        <div class="mobileverify-text" slot="content">
+          <p>{{this.$t('otc.order.systemErr')}}</p>
+          <!-- 系统错误，请后退重试 -->
+        </div>
+        <div slot="options">
+          <button @click="closeDialog">{{this.$t('otc.order.backStep')}}</button>
+          <!-- 后退一步 -->
+        </div>
+      </el-dialog>
+    </div>
+  </div>
+</template>
+
+<script>
+import buyOrder from './buyOrder'
+import sellOrder from './sellOrder'
+import loadingModel from '@/components/common/loadingModel'
+import elDialog from '@/components/common/dialog'
+import { Base64 } from 'js-base64'
+import { mapState } from 'vuex'
+import imgUrl from '@/assets/img/otc/portrait.png'
+
+export default {
+  name: 'order',
+  data () {
+    return {
+      side: '',
+      flag: true,
+      // sequence: '2018062811060',
+      hasSquence: null,
+      orderData: {},
+      showLoading: false,
+      tiptlText: this.$t('otc.order.systemTip'), // 系统提示
+      fromToName: '', // 交易接收人名字第一个字
+      fromToOnline: '',
+      dealHis: '', // 本人交易历史成单数
+      thisUrl: '',
+      fromToUrl: '',
+      cannalDialog: true, // 弹窗状态
+      chatId: '', // 被回复消息id， 第一次发送一个空值（最好不要是null）之后第二次返回取得这个id
+      // ws
+      WS: null, // websocket实例
+      wsServer: null, // WS地址
+      fromTo: null, // 消息接收人ID
+      lockReconnect: false, // 避免重复连接
+      sends: false, // 是否短时内发送消息
+      chatMessage: '', // 发送的聊天消息
+      chatMsg: [], // 历史聊天数据
+      // 心跳检测
+      timeout: 60000, // 60秒
+      timeoutObj: null,
+      serverTimeoutObj: null
+    }
+  },
+  mounted () {
+  },
+  destroyed () {
+    this.WS.close()
+  },
+  computed: {
+    ...mapState({
+      userinfo ({ baseData: { _user, isReady } }) {
+        if (this.flag && isReady) {
+          this.flag = false
+          // 订单号是否为空
+          this.judgeSquence()
+          // 默认加载数据
+          this.getbaseData()
+        }
+        console.log(isReady)
+        return _user || false
+      }
+    }),
+    sequence () {
+      return this._P.fixUrl('orderId') || 0
+    },
+    // 自己昵称第一个字
+    // cutName () {
+    //   if (this.userinfo.nickName) {
+    //     return this.userinfo.nickName.split('')[0]
+    //   } else {
+    //     return ''
+    //   }
+    // },
+    // 对方昵称第一个字
+    // cutOtherName () {
+    //   if (this.fromToName) {
+    //     return this.fromToName.split('')[0]
+    //   } else {
+    //     return ''
+    //   }
+    // },
+    // 从 store 中获取聊天地址
+    otcChatWS () {
+      return this.$store.state.otcData.otcChatWS
+      // return 'ws://192.168.1.166:8081/chatServer'
+    }
+  },
+  methods: {
+    // 订单号是否存在
+    judgeSquence () {
+      if (this.sequence) {
+        this.hasSquence = true
+      } else {
+        this.hasSquence = false
+      }
+    },
+    // 判断买卖双方
+    judgeSide () {
+      if (this.orderData.buyer.uid === this.userinfo.id) {
+        this.side = 'buy'
+        this.fromToName = this.orderData.seller.otcNickName
+        this.fromToOnline = this.orderData.seller.isOnline
+        this.thisUrl = this.orderData.buyer.imageUrl
+        this.fromToUrl = this.orderData.seller.imageUrl
+      } else if (this.orderData.seller.uid === this.userinfo.id) {
+        this.side = 'sell'
+        this.fromToName = this.orderData.buyer.otcNickName
+        this.fromToOnline = this.orderData.seller.isOnline
+        this.thisUrl = this.orderData.seller.imageUrl
+        this.fromToUrl = this.orderData.buyer.imageUrl
+      } else {
+        return false
+      }
+    },
+    // 打开弹窗
+    showDialog (e) {
+      this.cannalDialog = true
+    },
+    // 关闭弹框
+    closeDialog (e) {
+      this.cannalDialog = false
+      this.$router.go(-1)
+    },
+    // 获取订单基本数据
+    getbaseData () {
+      this.showLoading = true
+      if (!this.sequence) {
+        return false
+      }
+      let _req = {
+        sequence: this.sequence
+      }
+      this.axios({
+        url: this.$store.state.otcUrl.order.order_detail,
+        method: 'post',
+        headers: {},
+        params: _req,
+        hostType: 'otc'
+      }).then((res) => {
+        if (res.code.toString() === '0') {
+          this.orderData = res.data
+          this.$store.commit('ORDERDATA', res.data)
+          // 判断买卖方向
+          this.judgeSide()
+          this.showLoading = false
+          // WS 聊天服务开始
+          this.startOtcChat()
+        } else {
+          this.$store.dispatch('setTipState', { text: res.msg, type: 'error' })
+        }
+      })
+    },
+    // 聊天相关
+    startOtcChat () {
+      if (this.orderData.buyer.uid === this.userinfo.id) {
+        this.fromTo = this.orderData.seller.uid
+        this.dealHis = this.orderData.seller.completeOrders
+      } else if (this.orderData.seller.uid === this.userinfo.id) {
+        this.fromTo = this.orderData.buyer.uid
+        this.dealHis = this.orderData.buyer.completeOrders
+      } else {
+        return false
+      }
+      // 加载历史聊天数据
+      this.loadMessage()
+      let _socketURI = this.userinfo.id.toString() + this.fromTo.toString()
+      this.wsServer = this.otcChatWS + '/' + Base64.encode(_socketURI)
+      this.createWebSocket(this.wsServer)
+    },
+    // 创建WS对象
+    createWebSocket (url) {
+      try {
+        this.WS = new WebSocket(this.wsServer)
+        if (!this.WS) {
+          console.log('WebSocket URL ERROR!!!')
+          return false
+        }
+        this.initEventHandle()
+      } catch (e) {
+        this.reconnect(url)
+      }
+    },
+    // WS 重连
+    reconnect (url) {
+      if (this.lockReconnect) {
+        return
+      }
+      this.lockReconnect = true
+      // 没连接上会一直重连，设置延迟避免请求过多
+      let that = this
+      setTimeout(function () {
+        that.createWebSocket(url)
+        that.lockReconnect = false
+      }, 3000)
+    },
+    // 心跳重连
+    handleReset () {
+      clearTimeout(this.timeoutObj)
+      clearTimeout(this.serverTimeoutObj)
+      return this
+    },
+    // 心跳检测开始
+    handleStart () {
+      let that = this
+      this.timeoutObj = setTimeout(function () {
+        // 这里发送一个心跳，后端收到后，返回一个心跳消息，
+        // onmessage 拿到返回的心跳就说明连接正常
+        that.WS.send('{message:HeartBeat}')
+        that.serverTimeoutObj = setTimeout(function () { // 如果超过一定时间还没重置，说明后端主动断开了
+          that.WS.close() // 如果onclose会执行reconnect，我们执行ws.close()就行了.如果直接执行reconnect 会触发onclose导致重连两次
+        }, that.timeout)
+      }, that.timeout)
+    },
+    // 心跳检测
+    initEventHandle () {
+      let that = this
+      this.WS.onclose = function () {
+        console.log('WebSocket CLOSED!!!')
+        that.reconnect(this.wsServer)
+      }
+      this.WS.onerror = function () {
+        console.log('WebSocket ERROR!!!')
+        that.reconnect(this.wsServer)
+      }
+      this.WS.onopen = function () {
+        // debugger
+        // 心跳检测重置
+        that.handleReset().handleStart()
+        // console.log(1)
+      }
+      this.WS.onmessage = function (event) {
+        that.analysisMessage(event.data)
+        // 如果获取到消息，心跳检测重置
+        // 拿到任何消息都说明当前连接是正常的
+        that.handleReset().handleStart()
+      }
+    },
+    /**
+     * 解析后台传来的消息，具体格式如下：
+     * "massage" : {
+     *              "from" : "xxx",
+     *              "to" : "xxx",
+     *              "content" : "xxx",
+     *              "time" : "xxxx.xx.xx",
+     *				"ip":"192.168.1.122"
+     *          },
+     * "type" : {notice|message},
+     * "list" : {[xx],[xx],[xx]}
+	 */
+    analysisMessage (message) {
+      // 解析消息
+      message = JSON.parse(message)
+      // 被回复的消息的Id
+      this.chatId = message.chatId
+      // 会话消息
+      if (message.type === 'message') {
+        this.showChat(message.message)
+      }
+    },
+    // 发送信息
+    onSend () {
+      // if (this.sends) {
+      //   return
+      // }
+      if (this.chatMessage.split('').filter((item, index, arr) => arr.indexOf(item) === index).toString() === ' ') {
+        this.$store.dispatch('setTipState', { text: this.$t('otc.order.notSpace'), type: 'error' })
+        this.chatMessage = ''
+        return
+      }
+      if (this.chatMessage) {
+        this.sendMessage() // 发送消息
+        // this.sends = true
+        // setTimeout(function () {
+        //   this.sends = false
+        // }, 3000)
+      }
+    },
+    // 传递发送的消息给服务器
+    sendMessage () {
+      // 消息类型
+      let msgType = 'message'
+      // 客户端向服务端发送消息
+      let _toUser = this.fromTo
+      let _fromId = this.userinfo.id
+      let _sequence = this.sequence
+      this.WS.send(JSON.stringify({
+        chatId: this.chatId,
+        message: {
+          content: this.chatMessage,
+          from: _fromId,
+          to: _toUser, // 接收人,如果没有则置空,如果有多个接收人则用,分隔
+          orderId: _sequence,
+          time: this.getDateFull()
+        },
+        type: msgType
+      }))
+      // this.chatMessage = ''
+    },
+    // 第一次加载拉取数据库近100条历史聊天数据
+    loadMessage () {
+      let _req = {
+        orderId: this.sequence,
+        fromId: this.userinfo.id,
+        toId: this.fromTo
+      }
+      this.axios({
+        url: this.$store.state.otcUrl.order.message,
+        method: 'post',
+        headers: {},
+        params: _req,
+        hostType: 'otc'
+      }).then((res) => {
+        if (res.code.toString() === '0') {
+          this.chatMsg = res.data
+        } else {
+          this.$store.dispatch('setTipState', { text: res.msg, type: 'error' })
+        }
+      })
+    },
+    // 展示实时聊天信息
+    showChat (message) {
+      // 当前登陆的（我的）用户ID
+      let _judgeSide = message.from.toString() === this.userinfo.id.toString()
+      let _imgside
+      let _fromID
+      let _imgShowDom
+      let _imgDom1 =
+        `
+        <img src="${_judgeSide ? this.thisUrl : this.fromToUrl}" width="40" height="40" alt="">
+        `
+      let _imgDom2 =
+        `
+        <img src="${imgUrl}" width="40" height="40" alt="">
+        `
+      if (_judgeSide) {
+        _imgside = 'chat_right'
+        _fromID = this.userinfo.id
+        if (this.thisUrl) {
+          _imgShowDom = _imgDom1
+        } else {
+          _imgShowDom = _imgDom2
+        }
+      } else {
+        _imgside = 'chat_left'
+        _fromID = message.from
+        if (this.fromToUrl) {
+          _imgShowDom = _imgDom1
+        } else {
+          _imgShowDom = _imgDom2
+        }
+      }
+      let _html =
+        `
+      <div class="chat_item ${_imgside}">
+        <div class="head_img">
+          <a href="/otc_personal?uId=${_fromID}">
+            ${_imgShowDom}
+          </a>
+        </div>
+        <div class="textbox">
+          <div class="chat_text">${message.content}</div>
+          <div class="chat_time">${message.time}</div>
+        </div>
+      </div>
+      `
+      document.querySelector('.chatbox').innerHTML += _html
+      this.scrollbottom() // 滚动条置底
+      this.chatMessage = '' // 清空输入区
+      this.$forceUpdate()
+    },
+    scrollbottom () {
+      let chatBox = document.querySelector('.chatbox')
+      chatBox.scrollTop = chatBox.scrollHeight
+      this.$forceUpdate()
+    },
+    // 日期格式化函数
+    getDateFull () {
+      let date = new Date()
+      let currentdate = date.getFullYear() + '-' +
+        this.appendZero(date.getMonth() + 1) + '-' +
+        this.appendZero(date.getDate()) + ' ' +
+        this.appendZero(date.getHours()) + ':' +
+        this.appendZero(date.getMinutes()) + ':' +
+        this.appendZero(date.getSeconds())
+      return currentdate
+    },
+    // 日期时间格式化补0函数
+    appendZero (s) {
+      return ('00' + s).substr((s + '').length)
+    },
+    // 格式化时间戳
+    parseDate (time) {
+      var tsA = new Date(time)
+      var getFullYearA = tsA.getFullYear()
+      var getMounthA = tsA.getMonth() < 10 ? '0' + (tsA.getMonth() + 1) : tsA.getMonth() + 1
+      var getDateA = tsA.getDate() < 10 ? '0' + tsA.getDate() : tsA.getDate()
+      var getHoursA = tsA.getHours() < 10 ? '0' + tsA.getHours() : tsA.getHours()
+      var getMinutesA = tsA.getMinutes() < 10 ? '0' + tsA.getMinutes() : tsA.getMinutes()
+      var getSecondsA = tsA.getSeconds() < 10 ? '0' + tsA.getSeconds() : tsA.getSeconds()
+      var tsTimeA = getFullYearA + '-' + getMounthA + '-' + getDateA + ' ' + getHoursA + ':' + getMinutesA + ':' + getSecondsA
+      return tsTimeA
+    }
+  },
+  components: {
+    buyOrder,
+    sellOrder,
+    Base64,
+    loadingModel,
+    elDialog
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+          
+
+                                       
+
+                                                   
+
+                           
+
+                                       
+
+            
+
+          
+
+                             
+
+                                                  
+
+                                                        
+
+                                                           
+
+            
+
+                                                   
+
+                              
+
+                                                                       
+
+                                                                               
+
+                                                                                     
+
+                                                                                                         
+
+                          
+
+               
+
+              
+
+                
+
+                                                                              
+
+                                
+
+                            
+
+                 
+
+                                                                    
+
+                           
+
+               
+
+             
+
+                             
+
+                                                                                                                                                                       
+
+                                  
+
+                                                                                                                                                   
+
+                                                                                                                                                                                                                   
+
+                                                                                                                                                                           
+
+                            
+
+                  
+
+                                 
+
+                                                             
+
+                                                                      
+
+                  
+
+                
+
+              
+
+                               
+
+                                                                                                                          
+
+                       
+
+                                                                          
+
+                     
+
+              
+
+            
+
+          
+
+                              
+
+                                                                                                                     
+
+                                                      
+
+                                                   
+
+                             
+
+              
+
+                            
+
+                                                                                 
+
+                       
+
+              
+
+                  
+
+          
+
+        
+
+           
+
+
+
+        
+
+                                              
+
+                                                
+
+                                                           
+
+                                                 
+
+                                  
+
+                               
+
+                                                  
+
+
+
+                
+
+                
+
+           
+
+            
+
+               
+
+                                   
+
+                       
+
+                    
+
+                         
+
+                                                        
+
+                                    
+
+                       
+
+                               
+
+                  
+
+                    
+
+                                 
+
+                                                               
+
+           
+
+                              
+
+                             
+
+                              
+
+                                     
+
+                                
+
+                                 
+
+                           
+
+     
+
+    
+
+              
+
+              
+
+                       
+
+             
+
+                      
+
+    
+
+                
+
+                   
+
+    
+
+             
+
+                 
+
+                                          
+
+                             
+
+       
+
+       
+
+                 
+
+                                           
+
+      
+
+               
+
+                   
+
+                                      
+
+                                                     
+
+                 
+
+                    
+
+          
+
+         
+
+               
+
+                        
+
+                               
+
+                                              
+
+                 
+
+                    
+
+          
+
+         
+
+                      
+
+                  
+
+                                                
+
+                                                    
+
+     
+
+    
+
+            
+
+              
+
+                     
+
+                          
+
+                              
+
+              
+
+                               
+
+       
+
+      
+
+             
+
+                  
+
+                                                          
+
+                         
+
+                                                           
+
+                                                          
+
+                                                    
+
+                                                       
+
+                                                                  
+
+                          
+
+                                                          
+
+                                                          
+
+                                                     
+
+                                                      
+
+              
+
+                    
+
+       
+
+      
+
+           
+
+                    
+
+                              
+
+      
+
+           
+
+                     
+
+                               
+
+                         
+
+      
+
+               
+
+                    
+
+                             
+
+                           
+
+                    
+
+       
+
+                  
+
+                               
+
+       
+
+                  
+
+                                                         
+
+                       
+
+                    
+
+                     
+
+                       
+
+                        
+
+                                          
+
+                                   
+
+                                                   
+
+                   
+
+                          
+
+                                  
+
+                      
+
+                             
+
+                
+
+                                                                               
+
+         
+
+        
+
+      
+
+           
+
+                     
+
+                                                          
+
+                                               
+
+                                                           
+
+                                                                  
+
+                                              
+
+                                                          
+
+              
+
+                    
+
+       
+
+                 
+
+                        
+
+                                                                           
+
+                                                                      
+
+                                         
+
+      
+
+             
+
+                           
+
+           
+
+                                              
+
+                       
+
+                                               
+
+                      
+
+         
+
+                              
+
+                   
+
+                           
+
+       
+
+      
+
+            
+
+                     
+
+                               
+
+              
+
+       
+
+                               
+
+                             
+
+                     
+
+                              
+
+                                 
+
+                                  
+
+              
+
+      
+
+                    
+
+                     
+
+                                                    
+
+                                       
+
+                                       
+
+                                                          
+
+                                                                                      
+
+                                                                                                                    
+
+                            
+
+                          
+
+      
+
+           
+
+                        
+
+                     
+
+             
+
+                        
+
+                   
+
+                              
+
+                         
+
+                               
+
+                            
+
+                                       
+
+                                             
+
+                     
+
+          
+
+                            
+
+                         
+
+                                                    
+
+                                       
+
+                                       
+
+                                                          
+
+                                                                                      
+
+                                                                                                                    
+
+                            
+
+                          
+
+         
+
+       
+
+                                     
+
+                                          
+
+                                     
+
+       
+
+                                     
+
+                                         
+
+                                     
+
+       
+
+                                    
+
+                   
+
+                 
+
+                                  
+
+                         
+
+       
+
+                                            
+
+                                        
+
+                         
+
+                            
+
+                                  
+
+       
+
+      
+
+       
+
+                        
+
+                    
+
+                                   
+
+                                 
+
+                                      
+
+                                          
+
+                              
+
+                  
+
+                                 
+
+                                
+
+    
+
+                               
+
+             
+
+                                   
+
+                  
+
+                                  
+
+             
+
+                                       
+
+                                      
+
+       
+
+      
+
+           
+
+               
+
+                          
+
+                 
+
+          
+
+                             
+
+                                  
+
+                            
+
+                                   
+
+                               
+
+                   
+
+       
+
+      
+
+                  
+
+                    
+
+             
+
+                             
+
+                    
+
+                               
+
+                                    
+
+                                   
+
+                                   
+
+                            
+
+                  
+
+                                    
+
+                        
+
+                                                   
+
+                             
+
+                                  
+
+          
+
+                     
+
+         
+
+      
+
+                            
+
+                    
+
+                  
+
+                               
+
+                                 
+
+                         
+
+       
+
+                  
+
+                                                    
+
+                       
+
+                    
+
+                     
+
+                       
+
+                        
+
+                                          
+
+                                 
+
+                
+
+                                                                               
+
+         
+
+        
+
+      
+
+               
+
+                        
+
+                      
+
+                                                                              
+
+                  
+
+                 
+
+                     
+
+                    
+
+         
+
+                                                                                               
+
+         
+
+                    
+
+         
+
+                                                           
+
+         
+
+                       
+
+                               
+
+                                  
+
+                           
+
+                                
+
+                
+
+                                
+
+         
+
+              
+
+                              
+
+                              
+
+                             
+
+                                
+
+                
+
+                                
+
+         
+
+       
+
+                 
+
+         
+
+                                         
+
+                              
+
+                                                 
+
+                          
+
+              
+
+              
+
+                             
+
+                                                         
+
+                                                      
+
+              
+
+            
+
+       
+
+                                                           
+
+                                  
+
+                                    
+
+      
+
+                     
+
+                                                      
+
+                                              
+
+                         
+
+      
+
+              
+
+                    
+
+                           
+
+                                                  
+
+                                                    
+
+                                               
+
+                                                
+
+                                                  
+
+                                          
+
+                        
+
+      
+
+                  
+
+                    
+
+                                               
+
+      
+
+             
+
+                      
+
+                              
+
+                                          
+
+                                                                                            
+
+                                                                             
+
+                                                                                 
+
+                                                                                         
+
+                                                                                         
+
+                                                                                                                              
+
+                    
+
+     
+
+    
+
+               
+
+             
+
+              
+
+           
+
+                 
+
+            
+
+   
+
+ 
+
+         
+
+
+
+                            
+
+          
+
+
+
+                                       
+
+
+
+                                                   
+
+
+
+                           
+
+
+
+                                       
+
+
+
+            
+
+
+
+          
+
+
+
+                             
+
+
+
+                                                  
+
+
+
+                                                        
+
+
+
+                                                           
+
+
+
+            
+
+
+
+                                                   
+
+
+
+                              
+
+
+
+                                                                       
+
+
+
+                                                                               
+
+
+
+                                                                                     
+
+
+
+                                                                                                         
+
+
+
+                          
+
+
+
+               
+
+
+
+              
+
+
+
+                
+
+
+
+                                                                              
+
+
+
+                                
+
+
+
+                            
+
+
+
+                 
+
+
+
+                                                                    
+
+
+
+                           
+
+
+
+               
+
+
+
+             
+
+
+
+                             
+
+
+
+                                                                                                                                                                       
+
+
+
+                                  
+
+
+
+                                                                                                                                                   
+
+
+
+                                                                                                                                                                                                                   
+
+
+
+                                                                                                                                                                           
+
+
+
+                            
+
+
+
+                  
+
+
+
+                                 
+
+
+
+                                                             
+
+
+
+                                                                      
+
+
+
+                  
+
+
+
+                
+
+
+
+              
+
+
+
+                               
+
+
+
+                                                                                                                          
+
+
+
+                       
+
+
+
+                                                                          
+
+
+
+                     
+
+
+
+              
+
+
+
+            
+
+
+
+          
+
+
+
+                              
+
+
+
+                                                                                                                     
+
+
+
+                                                      
+
+
+
+                                                   
+
+
+
+                             
+
+
+
+              
+
+
+
+                            
+
+
+
+                                                                                 
+
+
+
+                       
+
+
+
+              
+
+
+
+                  
+
+
+
+          
+
+
+
+        
+
+
+
+           
+
+
+
+
+
+
+
+        
+
+
+
+                                              
+
+
+
+                                                
+
+
+
+                                                           
+
+
+
+                                                 
+
+
+
+                                  
+
+
+
+                               
+
+
+
+                                                  
+
+
+
+
+
+
+
+                
+
+
+
+                
+
+
+
+           
+
+
+
+            
+
+
+
+               
+
+
+
+                                   
+
+
+
+                       
+
+
+
+                    
+
+
+
+                         
+
+
+
+                                                        
+
+
+
+                                    
+
+
+
+                       
+
+
+
+                               
+
+
+
+                  
+
+
+
+                    
+
+
+
+                                 
+
+
+
+                                                               
+
+
+
+           
+
+
+
+                              
+
+
+
+                             
+
+
+
+                              
+
+
+
+                                     
+
+
+
+                                
+
+
+
+                                 
+
+
+
+                           
+
+
+
+     
+
+
+
+    
+
+
+
+              
+
+
+
+              
+
+
+
+                       
+
+
+
+             
+
+
+
+                      
+
+
+
+    
+
+
+
+                
+
+
+
+                   
+
+
+
+    
+
+
+
+             
+
+
+
+                 
+
+
+
+                                          
+
+
+
+                             
+
+
+
+       
+
+
+
+       
+
+
+
+                 
+
+
+
+                                           
+
+
+
+      
+
+
+
+               
+
+
+
+                   
+
+
+
+                                      
+
+
+
+                                                     
+
+
+
+                 
+
+
+
+                    
+
+
+
+          
+
+
+
+         
+
+
+
+               
+
+
+
+                        
+
+
+
+                               
+
+
+
+                                              
+
+
+
+                 
+
+
+
+                    
+
+
+
+          
+
+
+
+         
+
+
+
+                      
+
+
+
+                  
+
+
+
+                                                
+
+
+
+                                                    
+
+
+
+     
+
+
+
+    
+
+
+
+            
+
+
+
+              
+
+
+
+                     
+
+
+
+                          
+
+
+
+                              
+
+
+
+              
+
+
+
+                               
+
+
+
+       
+
+
+
+      
+
+
+
+             
+
+
+
+                  
+
+
+
+                                                          
+
+
+
+                         
+
+
+
+                                                           
+
+
+
+                                                          
+
+
+
+                                                    
+
+
+
+                                                       
+
+
+
+                                                                  
+
+
+
+                          
+
+
+
+                                                          
+
+
+
+                                                          
+
+
+
+                                                     
+
+
+
+                                                      
+
+
+
+              
+
+
+
+                    
+
+
+
+       
+
+
+
+      
+
+
+
+           
+
+
+
+                    
+
+
+
+                              
+
+
+
+      
+
+
+
+           
+
+
+
+                     
+
+
+
+                               
+
+
+
+                         
+
+
+
+      
+
+
+
+               
+
+
+
+                    
+
+
+
+                             
+
+
+
+                           
+
+
+
+                    
+
+
+
+       
+
+
+
+                  
+
+
+
+                               
+
+
+
+       
+
+
+
+                  
+
+
+
+                                                         
+
+
+
+                       
+
+
+
+                    
+
+
+
+                     
+
+
+
+                       
+
+
+
+                        
+
+
+
+                                          
+
+
+
+                                   
+
+
+
+                                                   
+
+
+
+                   
+
+
+
+                          
+
+
+
+                                  
+
+
+
+                      
+
+
+
+                             
+
+
+
+                     
+
+
+
+                            
+
+
+
+                
+
+
+
+                                                                               
+
+
+
+         
+
+
+
+        
+
+
+
+      
+
+
+
+           
+
+
+
+                     
+
+
+
+                                                          
+
+
+
+                                               
+
+
+
+                                                           
+
+
+
+                                                                  
+
+
+
+                                              
+
+
+
+                                                          
+
+
+
+              
+
+
+
+                    
+
+
+
+       
+
+
+
+                                                                           
+
+
+
+                                                                      
+
+
+
+                                         
+
+
+
+      
+
+
+
+             
+
+
+
+                           
+
+
+
+           
+
+
+
+                                              
+
+
+
+                       
+
+
+
+                                               
+
+
+
+                      
+
+
+
+         
+
+
+
+                              
+
+
+
+                   
+
+
+
+                           
+
+
+
+       
+
+
+
+      
+
+
+
+            
+
+
+
+                     
+
+
+
+                                    
+
+
+
+                               
+
+
+
+                             
+
+
+
+                     
+
+
+
+                              
+
+
+
+                                 
+
+
+
+                                  
+
+
+
+              
+
+
+
+      
+
+
+
+           
+
+
+
+                        
+
+
+
+                     
+
+
+
+             
+
+
+
+                        
+
+
+
+                   
+
+
+
+                              
+
+
+
+                         
+
+
+
+                               
+
+
+
+                            
+
+
+
+                                       
+
+
+
+                                             
+
+
+
+                     
+
+
+
+          
+
+
+
+                            
+
+
+
+                         
+
+
+
+                                                    
+
+
+
+                                       
+
+
+
+                                       
+
+
+
+                                                          
+
+
+
+                                                                                      
+
+
+
+                                                                                                                    
+
+
+
+                            
+
+
+
+                          
+
+
+
+         
+
+
+
+       
+
+
+
+                                     
+
+
+
+                                          
+
+
+
+                                     
+
+
+
+       
+
+
+
+                                     
+
+
+
+                                         
+
+
+
+                                     
+
+
+
+       
+
+
+
+                                    
+
+
+
+                   
+
+
+
+                 
+
+
+
+                                  
+
+
+
+                         
+
+
+
+       
+
+
+
+                                            
+
+
+
+                                        
+
+
+
+                         
+
+
+
+                            
+
+
+
+                                  
+
+
+
+       
+
+
+
+      
+
+
+
+       
+
+
+
+                        
+
+
+
+                    
+
+
+
+                                   
+
+
+
+                                 
+
+
+
+                                      
+
+
+
+                                          
+
+
+
+                              
+
+
+
+                  
+
+
+
+                                 
+
+
+
+                                
+
+
+
+    
+
+
+
+                               
+
+
+
+             
+
+
+
+                                   
+
+
+
+                  
+
+
+
+                                  
+
+
+
+             
+
+
+
+                                       
+
+
+
+                                      
+
+
+
+       
+
+
+
+      
+
+
+
+           
+
+
+
+               
+
+
+
+                          
+
+
+
+                 
+
+
+
+          
+
+
+
+                             
+
+
+
+                                  
+
+
+
+                            
+
+
+
+                                   
+
+
+
+                               
+
+
+
+                   
+
+
+
+       
+
+
+
+      
+
+
+
+                  
+
+
+
+                    
+
+
+
+             
+
+
+
+                             
+
+
+
+                    
+
+
+
+                               
+
+
+
+                                    
+
+
+
+                                   
+
+
+
+                                   
+
+
+
+                            
+
+
+
+                  
+
+
+
+                                    
+
+
+
+                        
+
+
+
+                                                   
+
+
+
+                             
+
+
+
+                                  
+
+
+
+          
+
+
+
+                     
+
+
+
+         
+
+
+
+      
+
+
+
+                            
+
+
+
+                    
+
+
+
+                  
+
+
+
+                               
+
+
+
+                                 
+
+
+
+                         
+
+
+
+       
+
+
+
+                  
+
+
+
+                                                    
+
+
+
+                       
+
+
+
+                    
+
+
+
+                     
+
+
+
+                       
+
+
+
+                        
+
+
+
+                                          
+
+
+
+                                 
+
+
+
+                
+
+
+
+                                                                               
+
+
+
+         
+
+
+
+        
+
+
+
+      
+
+
+
+               
+
+
+
+                        
+
+
+
+                      
+
+
+
+                                                                              
+
+
+
+                  
+
+
+
+                 
+
+
+
+                     
+
+
+
+                    
+
+
+
+         
+
+
+
+                                                                                               
+
+
+
+         
+
+
+
+                    
+
+
+
+         
+
+
+
+                                                           
+
+
+
+         
+
+
+
+                       
+
+
+
+                               
+
+
+
+                                  
+
+
+
+                           
+
+
+
+                                
+
+
+
+                
+
+
+
+                                
+
+
+
+         
+
+
+
+              
+
+
+
+                              
+
+
+
+                              
+
+
+
+                             
+
+
+
+                                
+
+
+
+                
+
+
+
+                                
+
+
+
+         
+
+
+
+       
+
+
+
+                 
+
+
+
+         
+
+
+
+                                         
+
+
+
+                              
+
+
+
+                                                 
+
+
+
+                          
+
+
+
+              
+
+
+
+              
+
+
+
+                             
+
+
+
+                                                         
+
+
+
+                                                      
+
+
+
+              
+
+
+
+            
+
+
+
+       
+
+
+
+                                                           
+
+
+
+                                  
+
+
+
+                                    
+
+
+
+      
+
+
+
+                     
+
+
+
+                                                      
+
+
+
+                                              
+
+
+
+                         
+
+
+
+      
+
+
+
+              
+
+
+
+                    
+
+
+
+                           
+
+
+
+                                                  
+
+
+
+                                                    
+
+
+
+                                               
+
+
+
+                                                
+
+
+
+                                                  
+
+
+
+                                          
+
+
+
+                        
+
+
+
+      
+
+
+
+                  
+
+
+
+                    
+
+
+
+                                               
+
+
+
+      
+
+
+
+             
+
+
+
+                      
+
+
+
+                              
+
+
+
+                                          
+
+
+
+                                                                                            
+
+
+
+                                                                             
+
+
+
+                                                                                 
+
+
+
+                                                                                         
+
+
+
+                                                                                         
+
+
+
+                                                                                                                              
+
+
+
+                    
+
+
+
+     
+
+
+
+    
+
+
+
+               
+
+
+
+             
+
+
+
+              
+
+
+
+           
+
+
+
+                 
+
+
+
+            
+
+
+
+   
+
+
+
+ 
+
+
+
+         
+
+
+
+
+
+
+
+                            
+
+
+
+// @import '~sysStatic/css/variable.styl'
+
+
+
+</style>

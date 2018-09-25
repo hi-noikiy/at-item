@@ -1,0 +1,60 @@
+#com-modifyMobileNumber{
+  padding: 0 8%;
+  position: relative;
+
+.title{
+  text-align: center;
+  font-size: 0.16rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+p{
+  height: 0.3rem;
+  line-height: 0.3rem;
+  margin-top: 0.2rem;
+  margin-bottom: -0.15rem;
+}
+button {
+  width: 100%;
+  height: 0.45rem;
+  background: #2b89e1;background: $common-iconColor;
+  border-radius: 0.04rem;
+  margin-top: 0.3rem;
+  color: #c7cce6;
+  color: $common-fontColor;
+  font-size: 0.16rem;
+  letter-spacing: 0.03rem;
+}
+.areaSelect{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #18243c;background: $common-background;
+  z-index: 10;
+}
+.ln{
+  padding: 0;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+.area{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.alyError {
+  font-size: 0.12rem;
+  color: #ef5a61;
+  color: $common-error;
+  width: 100%;
+  display: block;
+  padding-left: 0.1rem;
+  position: relative
+}
+.alyError span {
+  position: absolute;
+}
+}

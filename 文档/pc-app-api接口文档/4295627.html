@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /order/list/my-获取我的委托</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295616.html">交易相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /order/list/my-获取我的委托
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> wangxing</span>, last modified by <span class='editor'> houdongdong</span> on Apr 25, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><span>/order/list/my</span> (GET)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">获取条数</td></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">获取页数</td></tr><tr><td colspan="1" class="confluenceTd">data</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">求情的订单 ID数组(如果data数组有数据 按照data数组里的订单ID 返回数据。如果data没有数据按照分页返回数据)</td></tr><tr><td colspan="1" class="confluenceTd">symbol</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">货币对名称 小写不带/</td></tr><tr><td class="confluenceTd">time</td><td class="confluenceTd">必填</td><td class="confluenceTd">时间戳</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>{&quot;min_id&quot;:32,&quot;max_id&quot;:32432,&quot;count&quot;:23,&quot;list&quot;:[]}</p></td><td class="confluenceTd"> </td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{   &quot;min_id&quot;:32,//当前返回的订单里最小的订单ID
+    &quot;max_id&quot;:322,//当前返回的订单里最大的订单ID
+    &quot;count&quot;:323,//一共有多少条
+    &quot;orderList&quot;:[
+        {
+            &quot;id&quot;:343,
+            &quot;side&quot;:&quot;buy&quot;,
+            &quot;side_msg&quot;:&quot;买入&quot;,
+            &quot;created_at&quot;:&quot;09-22 12:22&quot;,
+            &quot;price&quot;:{&quot;title&quot;:&quot;委托价&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;volume&quot;:{&quot;title&quot;:&quot;委托量&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;remain_volume&quot;:{&quot;title&quot;:&quot;剩余量&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;label&quot;:{&quot;title&quot;:&quot;撤销&quot;,&quot;click&quot;:1}//按钮控制，click=1可点，字段冗余，方便SRV控制
+        },
+        {
+            &quot;id&quot;:344,
+            &quot;side&quot;:&quot;buy&quot;,
+            &quot;side_msg&quot;:&quot;买入&quot;,
+            &quot;created_at&quot;:&quot;09-22 12:22&quot;,
+            &quot;price&quot;:{&quot;title&quot;:&quot;委托价&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;volume&quot;:{&quot;title&quot;:&quot;委托量&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;remain_volume&quot;:{&quot;title&quot;:&quot;剩余量&quot;,&quot;amount&quot;:222.33,&quot;icon&quot;:&quot;https://xxxx.jpg&quot;},
+            &quot;label&quot;:{&quot;title&quot;:&quot;撤销&quot;,&quot;click&quot;:1}//按钮控制，click=1可点，字段冗余，方便SRV控制
+        },
+    ]
+}</pre>
+</div></div><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">虚拟币编号</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">xxx-cny（xxx101）</div></th><th colspan="1" class="confluenceTh"><div class="tablesorter-header-inner">xxx-btc（xxx201）</div></th><th colspan="1" class="confluenceTh"><div class="tablesorter-header-inner">xxx-usdt(xxx206)</div></th></tr></thead><tbody><tr><td class="confluenceTd">btc（201）</td><td class="confluenceTd">201101</td><td colspan="1" class="confluenceTd">-</td><td colspan="1" class="confluenceTd">201206</td></tr><tr><td class="confluenceTd">eth（202）</td><td class="confluenceTd">202101</td><td colspan="1" class="confluenceTd">202201</td><td colspan="1" class="confluenceTd">202206</td></tr><tr><td class="confluenceTd">ltc（203）</td><td class="confluenceTd">203101</td><td colspan="1" class="confluenceTd">203201</td><td colspan="1" class="confluenceTd">203206</td></tr><tr><td class="confluenceTd">bcc（204）</td><td class="confluenceTd">204101</td><td colspan="1" class="confluenceTd">204201</td><td colspan="1" class="confluenceTd">204206</td></tr><tr><td colspan="1" class="confluenceTd">etc（205）</td><td colspan="1" class="confluenceTd">205101</td><td colspan="1" class="confluenceTd">205201</td><td colspan="1" class="confluenceTd">205205</td></tr><tr><td colspan="1" class="confluenceTd">usdt(206)</td><td colspan="1" class="confluenceTd">206101</td><td colspan="1" class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-</td></tr></tbody></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

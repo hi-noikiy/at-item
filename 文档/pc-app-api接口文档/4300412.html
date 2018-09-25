@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : finance/account_balance 交易账户</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295583.html">资金相关</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4300360.html">资金管理页面</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : finance/account_balance 交易账户
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> guochang</span>, last modified by <span class='editor'> xingmingfeng</span> on Jun 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">finance/account_balance (POST)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><p> </p><p> </p><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0：成功；</td><td class="confluenceTd">非0获取失败</td></tr><tr><td colspan="1" class="confluenceTd">msg</td><td colspan="1" class="confluenceTd">&quot;suc&quot;</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd"><p> </p></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">data</td><td colspan="1" class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">	{
+        	&#39;allCoinMap&#39; :
+        	  {
+               &#39;BTC&#39;: {
+                      &#39;total_balance&#39;:&#39;8.89800000&#39;,//总额
+                      &#39;normal_balance&#39;:&#39;8.89800000&#39;, //可用
+                      &#39;present_coin_balance&#39;:&#39;0.00000000&#39;, //赠币
+                      &#39;btcValuatin&#39;:&#39;8.89800000&#39;, //资金折合
+                      &#39;coinName&#39;:&#39;BTC&#39;, //币种
+                      &#39;lock_balance&#39;:&#39;0.00000000&#39;,//冻结金额
+					  &#39;depositOpen&#39;: 1,
+		    		  &#39;withdrawOpen&#39;: 1,
+                      &quot;withdraw_min&quot;: 1,
+				      &quot;defaultFee&quot;: 0.01, //默认提现手续费
+					  &quot;feeMin&quot;: 0.01, //最小提现手续费
+					  &quot;feeMax&quot;: 0.02, //最大提现手续费
+					  &quot;checked&quot;: &#39;true&#39;, // 隐藏零资产
+			          &quot;withdrawAddressMap&quot; : [ //地址列表
+							{
+							 &quot;address&quot;: &quot;16VEpBhredSdA64Fs1xp9RTBpdKEzL6g1q&quot;, //地址
+							 &quot;label&quot; : &quot;哈哈&quot;, //地址标签
+							 &quot;id&quot;: 342 //地址id
+							 &quot;uid&quot;: 10499,
+                        	 &quot;symbol&quot;: &quot;BTC&quot;,
+                        	 &quot;status&quot;: 1,
+                        	 &quot;ctime&quot;: 1525691067000
+							}
+					 ]
+                },
+               &#39;ETH&#39;: {
+                     &#39;total_balance&#39;:&#39;0.00000000&#39;,
+                     &#39;normal_balance&#39;:&#39;0.00000000&#39;,
+                     &#39;present_coin_balance&#39;:&#39;0.00000000&#39;, 
+                     &#39;btcValuatin&#39;:&#39;0.00000000&#39;, 
+                     &#39;coinName&#39;:&#39;ETH&#39;, 
+                     &#39;lock_balance&#39;:&#39;0.00000000&#39;,
+					 &#39;depositOpen&#39;: 1,
+		    		 &#39;withdrawOpen&#39;: 1,
+                     &quot;withdraw_min&quot;: 1,
+                     &quot;defaultFee&quot;: 0.02, //默认提现手续费
+					 &quot;feeMin&quot;: 0.02, //最小提现手续费
+					 &quot;feeMax&quot;: 0.03, //最大提现手续费
+					 &quot;checked&quot;: &#39;true&#39; ,// 隐藏零资产
+					 &quot;withdrawAddressMap&quot; : [ //地址列表
+							{
+							 &quot;address&quot;: &quot;16VEpBhredSdA64Fs1xp9RTBpdKEzL6g1q&quot;, //地址
+							 &quot;label&quot; : &quot;哈哈&quot;, //地址标签
+							 &quot;id&quot;: 342 //地址id
+							 &quot;uid&quot;: 10499,
+                        	 &quot;symbol&quot;: &quot;BTC&quot;,
+                        	 &quot;status&quot;: 1,
+                        	 &quot;ctime&quot;: 1525691067000
+							}
+				    ]
+              }
+       		},
+			&quot;totalBalance&quot;: &#39;8.9&#39;,//总资产折合
+		    &quot;totalBalanceSymbol&quot;: &#39;BTC&#39;//总资产折合单位
+        }</pre>
+</div></div></td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

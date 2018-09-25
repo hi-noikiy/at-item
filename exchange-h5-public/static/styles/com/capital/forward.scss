@@ -1,0 +1,116 @@
+.com-forward{
+   width: 100%;
+   height: 100%;
+.symbol {
+  padding: 0  .1rem;
+  display: flex;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval
+}
+.symbol h3{
+  flex:1;
+  font-size: 0.16rem;
+}
+.symbol h3 img{
+  width:.2rem;
+  height: 0.2rem;
+  margin:-.05rem .05rem 0 0;
+  vertical-align: middle;
+}
+.symbol span{
+  font-size: 0.14rem;
+  color: #2b89e1;
+  color: $common-iconColor
+}
+.symbol b {
+  width: 0.07rem;
+  height: 0.07rem;
+  border-right: 0.02rem solid #2b89e1;
+  border-right: 0.02rem solid $common-iconColor;
+  border-bottom: 0.02rem solid #2b89e1;
+  border-bottom: 0.02rem solid $common-iconColor;
+  transform: rotate(-45deg);
+  margin-top: 0.22rem;
+  margin-left: 0.06rem;
+}
+.balance{
+  padding: 0 0.2rem;
+  margin: 0.25rem 0;
+  font-size: 0.16rem;
+}
+.balance p {
+  margin-top: 0.1rem;
+}
+.put{
+  padding: 0 0.2rem;
+  font-size: 0.12rem;
+  margin-top: 0.175rem;
+}
+.money {
+  position: relative;
+}
+.put .money .select{
+  position: absolute;
+  color:#ef5a61;
+  color: $common-error;
+  padding-left:0.1rem;
+  bottom: -0.18rem;
+}
+.put .money span{
+   height: 0.5rem;
+  line-height: 0.5rem;
+  width: 0.575rem;
+  border-left: 0.01rem solid  #404e6f;
+  text-align: center;
+  margin-right: 0;
+  color: #2b89e1;
+  color: $common-iconColor
+}
+
+
+.account{
+  height: 0.45rem;
+  line-height: 0.45rem;
+  padding: 0 0.2rem;
+  font-size: 0.16rem;
+  display: flex;
+  margin-top: 0.3rem
+}
+.account span{
+  flex: 1;
+}
+.account i{
+  margin-left: 0.05rem;
+}
+.submit {
+  padding: 0 0.2rem;
+  margin-bottom: 0.4rem;
+}
+.submit span{
+  display: block;
+  width: 100%;
+  background: #2b89e1;
+  background: $common-iconColor;
+  border-radius: 0.03rem;
+  text-align: center;
+  line-height: 0.45rem;
+  font-size:0.16rem;
+}
+.active {
+ border: 0.01rem solid #2b89e1;
+ border: 0.01rem solid $common-iconColor!important
+}
+.markText {
+  height: 0.15rem;
+  margin-top: 0.2rem;
+  font-size: 0.14rem;
+}
+.content{
+  margin:0.25rem;
+}
+.markBox {
+  padding-bottom: 0.2rem;
+}
+}

@@ -1,0 +1,165 @@
+#app {
+    position: relative;
+    background: $common-background;
+    .mask_layer{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-color: rgba(0,0,0,0.7);
+      .brower{
+      span{
+        display: inline-block;
+        text-align: left;
+      }
+       margin-top: 1.5rem;
+       font-size: 0.2rem;
+       text-align: left;
+       margin-left: 25%;
+       position: relative;
+       img{
+         position: absolute;
+         top: -.55rem;
+         left: 1.2rem;
+       }
+      }
+    }
+}
+.alert {
+position: fixed;
+left: 0%;
+opacity: 0.9;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+padding: 0.1rem 0.2rem;
+border-radius: 0.02rem;
+font-size: 0.16rem;
+top: 0.5rem;
+background: #18243c;
+background: $common-background;
+box-shadow: 0px 0px  5px #2b89e1;
+box-shadow: 0px 0px  5px $common-iconColor;
+z-index: 10;
+}
+.router-enter-active {
+animation: router-in 0.3s;
+transition-timing-function: linear;
+}
+.router-leave-active {
+animation: router-in 0.3s reverse;
+transition-timing-function: linear
+}
+@keyframes router-in {
+0% {
+  opacity: 0
+}
+100% {
+  opacity: 1;
+}
+}
+@keyframes alert-in {
+0% {
+  /* margin-top: -30px; */
+  transform: translate3d(-50%, -100%, 0);
+  opacity: 0
+}
+100% {
+  transform: translate3d(-50%, 0, 0);
+  /* margin-top: 10px; */
+  opacity: 1;
+}
+}
+.alert-enter-active {
+animation: alert-in 0.3s;
+}
+.alert-leave-active {
+animation: alert-in 0.3s reverse;
+}
+.com-loading {
+position: fixed;
+width: 100%;
+height: 100%;
+opacity: 0.7;
+background: #000;
+left: 0;
+top: 0;
+z-index: 11;
+}
+.com-loadingIcon{
+position: fixed;
+left: 50%;
+top: 48%;
+transform: translate3d(-50%, -50%, 0);
+z-index: 12;
+}
+.com-loadingIcon i {
+font-size: 0.3rem;
+color: #fff;
+}
+.recomed{
+position: fixed;
+bottom: 0;
+height: 0.57rem;
+line-height: 0.57rem;
+width: 100%;
+background: #010305;
+.recomed-cont{
+  padding: 0 .1rem;
+ 
+  display: flex;
+  .left{
+    flex: 1;
+    img{
+      width: 0.3rem;
+      height: .3rem;
+      vertical-align: middle;
+      margin-right: 0.07rem;
+      margin-top: -0.05rem;
+      
+    }
+  }
+  .right{
+    display: flex;
+    .button{
+      flex: 1;
+      width: 0.83rem;
+      height:0.35rem;
+      line-height: 0.35rem;
+      background: $common-emphasize;
+      text-align: center;
+      margin-top: 0.12rem;
+      border-radius: 0.04rem;
+      color: #fff;
+      margin-right: 0.25rem;     
+      a{
+        width: 0.83rem;
+        height:0.35rem;
+        line-height: 0.35rem;
+        background: $common-emphasize;
+        text-align: center;
+        margin-top: 0.12rem;
+        border-radius: 0.04rem;
+        color: #fff;    
+        a{
+          width: 0.83rem;
+          height:0.35rem;
+          display: inline-block;
+        }
+      }
+      .sloe{
+        position: absolute;
+        right:0.1rem;
+        top: -0.1rem;
+      }
+    }
+    .sloe{
+      position: absolute;
+      right:0.1rem;
+      top: -0.1rem;
+    }
+  }
+}
+}

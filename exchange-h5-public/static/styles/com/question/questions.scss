@@ -1,0 +1,114 @@
+.questions{
+    .questions-head{
+        height: 0.45rem;
+        line-height:0.45rem;
+        box-shadow:0px 2px 5px rgba(0, 0, 0, 0.1);
+        padding:0 0.1rem;
+        display:flex;
+        .launch{
+            flex: 1;
+            font-size:0.18rem;
+        }
+        .list{
+            color:$common-iconColor;
+        }
+    }
+    .questions-content{
+        text-align: center;
+        margin-top: .3rem;
+        .inp{
+            display: block;
+            width: 75%;
+            height: 0.45rem;
+            position: relative;
+            margin: 0 auto;
+            input{
+                width: 100%;
+                height: 0.45rem;
+                border:1px solid $input-border;
+                vertical-align:middle;
+                background:none;
+                -webkit-appearance:none;
+                text-indent:0.1rem;
+                font-size:0.14rem;
+            }
+            .lower{
+                display: inline-block;
+                font-size:0.16rem;
+                position: absolute;
+                top:0.15rem;
+                right:.15rem;
+                
+            }
+        }
+        
+        .actives{
+            border:0.01rem solid $input-AC_border !important;
+        }
+        .dataList{
+            margin:0 auto;
+            width: 74.8%;
+            border:1px solid $input-border;
+            ul li{
+                line-height:0.35rem;
+                text-align: left;
+                margin-left: 0.15rem;
+            }
+        }
+        .content{
+            margin: 0.2rem auto;
+            width:75%;
+            // height: 2rem;
+            border: 0.01rem solid $input-border;
+            textarea{
+                width:96%;
+                // height: 2.1rem;
+                color:$input-Text-default;
+                padding:0.05rem;
+                resize: none;
+                overflow: hidden;
+            }
+        }
+        .uplad-file{
+            margin-top:0.2rem;
+            // text-align: left;
+            // display: flex;
+            // width:75%;
+            span{
+                text-align: left;
+                display: inline-block;
+                padding: .05rem .2rem;
+                font-size:0.12rem;
+                position: relative;
+                border-radius: 0.02rem;
+                border: 1px solid $input-border ;
+                flex: 1;
+            }
+            input {
+                display: inline-block;
+                opacity: 0;
+                width: 100%;
+                height: 0.2rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              i{
+                  display: inline-block;
+                  margin-top:0.1rem;
+                  font-size: 0.12rem;
+              }
+        }
+        .mission{
+            margin-top: 0.2rem;
+            display: inline-block;
+            width:75%;
+            background:$common-iconColor;
+            height: 0.45rem;
+            font-size:0.16rem;
+            border-radius: 0.04rem;
+            color: $common-fontColor;
+            margin-bottom:0.2rem;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /order/entrust_current-当前委托</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297533.html">订单管理相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /order/entrust_current-当前委托
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> xingmingfeng</span>, last modified by <span class='editor'> wuyunbin</span> on May 04, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h4 id="id-/order/entrust_current-当前委托-请求URI：/order/entrust_current（POST）"><strong>请求URI：/order</strong><strong>/entrust_current （POST）</strong></h4><h4 id="id-/order/entrust_current-当前委托-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">参数说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">page</td><td class="confluenceTd">否</td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">默认是10</td></tr><tr><td colspan="1" class="confluenceTd">symbol</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd">交易对，例如ethbtc</td></tr><tr><td colspan="1" class="confluenceTd">side</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd"><p>订单买卖方向，0表示买，1表示卖，2表示全部；默认为2</p></td></tr></tbody></table></div><h4 id="id-/order/entrust_current-当前委托-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数名</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">orderList</td><td class="confluenceTd">是</td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Midnight; brush: java; gutter: false" style="font-size:12px;">[
+	{
+		&quot;side&quot;: &quot;BUY&quot;,//成交方向
+		&quot;total_price&quot;: &quot;0.05751600&quot;,//总金额=price*volume
+		&quot;created_at&quot;: &quot;2018-02-26 10:58:12&quot;,//创建时间
+		&quot;avg_price&quot;: &quot;0.00000000&quot;,//平均成交价
+		&quot;countCoin&quot;: &quot;btc&quot;,//计价货币
+		&quot;source&quot;: 1,//订单来源
+		&quot;type&quot;: 0,//订单类型
+		&quot;side_msg&quot;: &quot;买入&quot;,
+		&quot;volume&quot;: &quot;1.000&quot;,//数量
+		&quot;price&quot;: &quot;0.05751600&quot;,//价格
+		&quot;source_msg&quot;: &quot;WEB&quot;,
+		&quot;status_msg&quot;: &quot;未成交&quot;,
+		&quot;deal_volume&quot;: &quot;0.00000000&quot;,//已成交数量
+		&quot;id&quot;: 1160327,
+		&quot;remain_volume&quot;: &quot;1.00000000&quot;,//未成交数量
+		&quot;baseCoin&quot;: &quot;eth&quot;,//基准货币
+		&quot;tradeList&quot;: [
+			{
+				&quot;volume&quot;: &quot;10.770&quot;,//交易量
+				&quot;feeCoin&quot;: &quot;eth&quot;,//手续费所使用的货币
+				&quot;price&quot;: &quot;0.05751600&quot;,//成交价
+				&quot;fee&quot;: &quot;1.07700000&quot;,//手续费
+				&quot;ctime&quot;: &quot;2018-02-26 11:22:51&quot;,
+				&quot;deal_price&quot;: &quot;0.61944732&quot;,//成交金额
+				&quot;id&quot;: 678258,
+				&quot;type&quot;: &quot;买入&quot;
+			}		
+		],
+		&quot;status&quot;: 0//订单状态
+	}
+]</pre>
+</div></div><p> </p><p> </p></td></tr><tr><td colspan="1" class="confluenceTd">count</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd">数据总量，<span>用于翻页</span></td></tr></tbody></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

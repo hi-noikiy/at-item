@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /message/user_message-消息中心</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295633.html">消息中心</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /message/user_message-消息中心
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified by <span class='editor'> xingmingfeng</span> on Jun 09, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><br /><span style="color: rgb(59,115,175);">/message</span>/user_message(POST)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">默认10</td></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">默认1</td></tr><tr><td colspan="1" class="confluenceTd">messageType</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">0：全部，1-系统消息 2-充值提现 3-安全消息 4-认证消息 7-场外消息</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>{</p><p>“type_list”:[</p><pre>         {&quot;title&quot;:&quot;我的消息&quot;,&quot;tid&quot;:0},</pre><pre>         {&quot;title&quot;:&quot;系统消息&quot;,&quot;tid&quot;:1},</pre><pre> 	 {&quot;title&quot;:&quot;充值提现&quot;,&quot;tid&quot;:2},
+         {&quot;title&quot;:&quot;安全消息&quot;,&quot;tid&quot;:3},
+         {&quot;title&quot;:&quot;认证消息&quot;,&quot;tid&quot;:4},
+         {&quot;title&quot;:&quot;场外消息&quot;,&quot;tid&quot;:7}</pre><pre>],</pre><p>“message”:{</p><p>&quot;list&quot;:[</p><p>{</p><p>&quot;id&quot;:122, // 消息id</p><p>&quot;type_id&quot;:1, // 类型id</p><p>&quot;type_title&quot;:&quot;系统&quot;, // 消息类型</p><p>&quot;ctime&quot;:&quot;2012年12月1日 15点4分&quot;, // 时间</p><p>&quot;content&quot;:&quot;xxxxxxxxxxxxxxxxxxxx&quot;}， //消息内容</p><p>&quot;status&quot;: 0-未读，1-已读</p><p>]</p><p>}</p><p>}</p></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: Confluence; brush: java; gutter: false" style="font-size:12px;">{
+&quot;code&quot;:&quot;0&quot;,
+&quot;msg&quot;: null,
+&quot;data&quot;:{
+	&quot;type_list&quot;:[
+        {&quot;title&quot;:&quot;我的消息&quot;,&quot;tid&quot;:0},
+		{&quot;title&quot;:&quot;系统消息&quot;,&quot;tid&quot;:1},
+ 		{&quot;title&quot;:&quot;充值提现&quot;,&quot;tid&quot;:2},
+ 		{&quot;title&quot;:&quot;安全消息&quot;,&quot;tid&quot;:3},
+		{&quot;title&quot;:&quot;认证消息&quot;,&quot;tid&quot;:4},
+		{&quot;title&quot;:&quot;场外消息&quot;,&quot;tid&quot;:7},
+ 	],
+	&quot;message&quot;:{
+		&quot;count&quot;:12,//共多少条
+		&quot;list&quot;:[
+			{
+				&quot;id&quot;:122,
+				&quot;type_id&quot;:1,
+				&quot;type_title&quot;:&quot;系统&quot;,
+				&quot;ctime&quot;:&quot;2018-02-28 18:30:47&quot;,
+				&quot;content&quot;:&quot;会计法撒旦就看看会计师会计&quot;,
+ 				&quot;status&quot;:1,
+			},
+			{
+				&quot;id&quot;:121,
+				&quot;type_id&quot;:1,		
+				&quot;type_title&quot;:&quot;系统&quot;,
+				&quot;ctime&quot;:&quot;2018-02-28 18:30:47&quot;,
+				&quot;content&quot;:&quot;发生科技哭了四大皆空卡拉斯科拉风&quot;,
+				&quot;status&quot;:1,
+			},
+			
+		]
+     }
+  }
+}</pre>
+</div></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

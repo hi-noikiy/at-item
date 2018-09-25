@@ -1,0 +1,315 @@
+#com-home-otcList {
+    position: relative;
+    background: #18243c;background: $common-background;
+  .loadingMark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 2;
+    opacity: 0.7;
+  }
+  .home_bounce-enter-active {
+    animation: home_bounce-in .3s;
+  }
+  .home_bounce-leave-active {
+    animation: home_bounce-in .3s reverse;
+  }
+  @keyframes home_bounce-in {
+    0% {
+      width: 0;
+      opacity: 0
+    }
+    100% {
+      width: 80%;
+      opacity: 1;
+    }
+  }
+  .li-enter-active {
+    animation: li-in 1s;
+  }
+  .li-leave-active {
+    animation: li-in 1s reverse;
+  }
+  @keyframes li-in {
+    0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .marketActive {
+    color: #2b89e1;color: $common-iconColor
+  }
+  .title {
+    height: 0.45rem;
+    padding-top: 0.05rem;
+    padding-left: 0.0rem;
+    padding-right: 0.1rem;
+    line-height: 0.45rem;
+    border-bottom: 0.01rem solid #1c2b49;border-bottom: 0.01rem solid $common-interval;
+    display: flex;
+    position: relative;
+  }
+  .title .market {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    position: relative
+  }
+  .title .symbolList {
+    flex: 1;
+    overflow-x: scroll;
+  }
+  .title .symbolList ul {
+    display: flex
+  }
+  .title .symbolList ul li {
+    padding-right: 0.15rem;
+    padding-left: 0.15rem;
+    position: relative;
+    p {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+    img {
+      width: 0.2rem;
+      height: 0.2rem;
+      margin-right: 0.05rem;
+      margin-top: 0.1rem;
+    }
+  }
+  .title span {
+    position: absolute;
+    display: inline-block;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 0.02rem;
+    background: #2b89e1;background: $common-iconColor
+  }
+  .list {
+    padding: 0 0.1rem;
+    /* background: #050d1d; */
+    box-sizing: border-box;
+    min-height: 2rem;
+  }
+  .list li {
+    height: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.01rem solid #1c2b49;border-bottom: 0.01rem solid $common-interval;
+  }
+  .list li:first-child{
+    height: 0.3rem;
+    align-items: flex-start;
+    line-height: 0.45rem;
+    border: none;
+    color: #7b8191;color: $common-Vice;
+    // text-align: center;
+    font-size: 0.12rem;
+  }
+  .list li:first-child>span:nth-child(4){
+    text-align: end;
+  }
+  .list li>span {
+    display: inline-block;
+  }
+  .list li>span:nth-child(1){
+    width: 30%;
+    font-size: 0.1rem;
+  }
+  .list li>span:nth-child(2){
+    margin-left: -0.1rem;
+    width: 33%;
+  }
+  .list li>span:nth-child(3){
+    width: 25%;
+    font-size: 0.1rem;
+    text-align: end;
+    img {
+        width: 0.15rem;
+        height: 0.15rem;
+        margin-left: 0.05rem;
+    }
+  }
+  .rank {
+    height: 0.16rem;
+    width: 0.16rem;
+    color: #2b89e1;color: $common-iconColor;
+    font-size: 0.1rem;
+    line-height: 0.01rem;
+    margin-left: 0.01rem;
+    margin-top: -0.1rem;
+  }
+  .rank i {
+    font-size: 0.2rem;
+    color: #ff9624;
+  }
+  .symbol {
+    // color: #7b8191;color: $common-Vice;
+    font-size: 0.12rem;
+  }
+  .symbol b {
+    color: #c7cce6;color: $common-fontColor;
+    font-size: 0.16rem;
+  }
+  .house, .price {
+    color: #7b8191;color: $common-Vice;
+    font-size: 0.12rem;
+    margin-top: 0.05rem;
+  }
+  .num {
+    color: #c7cce6;color: $common-fontColor;
+    font-size: 0.16rem;
+  }
+  .num_green {
+    color: #0BA83F!important;color: $common-rise!important;
+  }
+  .num_red {
+    color: #DF1A28!important;color: $common-fall!important;
+  }
+  .roseFlag_green {
+    background: #0BA83F;background: $common-rise;
+  }
+  .roseFlag_red {
+    background: #DF1A28!important;background: $common-fall!important;
+  }
+  .li-btn {
+    background: #0BA83F;background: $common-rise;
+    width: 0.82rem;
+    height: 0.35rem;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 0.35rem;
+  }
+  .icon-shoucang2 {
+    font-size: 0.34rem;
+    margin-left: -0.08rem;
+  }
+  .icon-pingfen {
+    font-size: 0.18rem
+  }
+  .nodata {
+    display: block;
+    text-align: center!important;
+  }
+  .nodata b {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 0.7rem;
+    letter-spacing: 0.02rem;
+  }
+  .loading {
+    border: none!important;
+    position: relative;
+  }
+  .loading>div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%)
+  }
+  .listCon{
+    padding: 0 0.1rem 0.5rem;
+    font-size: 0.12rem;
+    ul li{
+      padding: 0.1rem 0;
+      overflow: hidden;
+      border-bottom: 0.02rem solid #1c2b49;
+      position: relative;
+      height: 1.2rem;
+      .conLeft{
+        float: left;
+        .name{
+          font-size: 0.16rem;
+          overflow: hidden;
+          span{
+            line-height: 0.3rem
+          }
+          span .img{
+            height: 0.3rem;
+            width: 0.3rem;
+            border-radius:50%;
+            float: left;
+            margin-right: 0.05rem;
+          }
+        }
+        .price{
+          line-height: 0.3rem;
+          span{
+            font-size: 0.14rem;
+            color: #2b89e1
+          }
+        }
+        .other{
+          line-height: 0.2rem;
+          font-size: 0.12rem;
+        }
+        
+      }
+      .conRight{
+        // float: right;
+        position: absolute;
+        top:.1rem;
+        right:0 ;
+        height: 1.2rem;
+        .dealNum{
+          line-height: 0.2rem;
+          margin-top: 0.05rem;
+          margin-bottom: 0.05rem;
+          display: flex;
+          .dealNum_vol {
+            text-align: end;
+          }
+          .sell {
+            color: $common-fall;
+          }
+          .buy {
+            color: $common-rise;
+          }
+        }
+        .nows,.now{
+          height: 0.4rem;
+          position: absolute;
+          right: 0;
+          bottom: .2rem;
+          button{
+            height: 0.25rem;
+            width: 0.6rem;
+            background: $common-fall;
+            border-radius: 0.02rem;
+            float: right;
+            color: #fff;
+            clear: both;
+            margin-top: .37rem;
+            font-size: 0.12rem;
+          }
+        }
+        .nows{
+          button{
+            background: $common-rise;
+          }
+        }
+        .imgBox{
+          float: right;
+          img{
+            width: 0.2rem;
+            height: 0.2rem;
+            margin-left: 0.1rem;
+          }
+        }
+      }
+    } 
+    b{
+      color:$common-Vice;
+    }
+  }
+}
+  

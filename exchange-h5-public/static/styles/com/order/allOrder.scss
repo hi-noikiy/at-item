@@ -1,0 +1,159 @@
+#com-allOrder {
+  width: 100%;
+  padding-top: 0.45rem;
+  /* height: 100%; */
+  padding-bottom: 0.2rem;
+.first {
+  display: flex
+}
+.order-enter-active {
+  animation: order-in .3s;
+}
+.order-leave-active {
+  animation: order-in .3s reverse;
+}
+@keyframes order-in {
+  0% {
+    top: 50%; 
+    opacity: 0
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+.mark {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  background: #18243c;background: $common-background
+}
+ul li {
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  padding: 0 0.1rem;
+}
+ul li:last-child {
+  border: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  /* border-bottom: 0.01rem solid $common-interval; */
+}
+.esc {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.12rem;
+}
+.time {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+  margin-left: 0.05rem;
+}
+.box {
+  display: flex;
+  /* margin: 0.1rem 0; */
+  margin-bottom: 0.15rem;
+  justify-content: space-between;
+}
+.box div {
+  /* flex: 1; */
+  /* text-align: center; */
+  height: 0.4rem;
+  /* border-left: 0.01rem solid $common-interval; */
+}
+.box div:first-child {
+  border: none;
+}
+ul li:last-child {
+  margin-bottom: 0.5rem;
+}
+.box p {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.box span {
+  font-size: 0.12rem;
+  line-height: 0.3rem;
+}
+.foot {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.01rem solid #1c2b49;
+  border-top: 0.01rem solid $common-interval;
+  height: 0.25rem;
+}
+.order-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.1rem;
+  height: 0.45rem;
+  position: fixed;
+  top: 0.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  background: #18243c;background: $common-background;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.now {
+  font-size: 0.18rem
+}
+.symbol {
+  font-size: 0.14rem;
+  margin-left: 0.1rem;
+  margin-top: 0.06rem;
+}
+.symbol i {
+  font-size: 0.12rem;
+  color: #2b89e1;color: $common-iconColor;
+  margin-left: 0.05rem;
+}
+.go {
+  line-height: 0.45rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.buy {
+  color: #0BA83F;color: $common-rise;
+}
+.sell {
+  color: #DF1A28;color: $common-fall;
+}
+.esc {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.12rem;
+}
+.escNo {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.noData {
+  text-align: center;
+  line-height: 0.6rem;
+  color: #7b8191;color: $common-Vice;
+}
+.options {
+  display: flex;
+}
+.detail {
+  font-size: 0.12rem;
+  margin-left: 0.1rem;
+  color: #2b89e1;color: $common-iconColor
+}
+.sum span {
+  width: 100%;
+  display: inline-block;
+  text-align: end;
+}
+.pageBox {
+  position: fixed;
+  height: 0.4rem;
+  width: 100%;
+  left: 0;
+  bottom: 0
+}
+}

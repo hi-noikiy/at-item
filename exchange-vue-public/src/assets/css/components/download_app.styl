@@ -1,0 +1,132 @@
+.down_application {
+  .app_banner {
+    width: 100%;
+    position: relative;
+    background: #586295;
+    overflow: hidden;
+    min-height: 300px;
+    .wrap {
+      width: 1000px;
+      position: relative;
+      margin: 0 auto;
+      .banner {
+        width: 1920px;
+        margin-left: -460px;
+      }
+      .swiper {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        cursor: default;
+        img {
+          left: 0;
+          top: 0;
+          width: 100%;
+          display: block;
+        }
+      }
+      .qrcode_download {
+        position: absolute;
+        right: -75px;
+        top: 256px;
+        .qrcode_box {
+          margin: 0 30px;
+        }
+        .qrcode {
+          display: block;
+          margin: 0 auto 14px;
+          padding: 14px;
+          background: #fff;
+          border-radius: 15px;
+          overflow: hidden;
+          text-align: center;
+          color: #fff;
+          font-size: 16px;
+          width: 136px;
+          height: 136px;
+        }
+        .qrcode_wrap {
+          text-align: center;
+          position relative;
+          .downimg{
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            border-radius: 15px;
+          }
+          span {
+            color: #fff;
+            font-size: 16px;
+          }
+        } 
+        .qrcode_wrap:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0);
+        }
+      }
+    }
+  }
+  .app_text_wrap {
+    padding: 193px 0;
+    color: #fafafa;
+    overflow: hidden;
+    .app_tit {
+      padding: 0 48px;
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 32px;
+      line-height: 32px;
+      position: relative;
+      span {
+        background: #182540;
+        display: inline-block;
+        padding: 0 30px;
+        position: relative;
+      }
+    }
+    h2:before {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      content: "";
+      height: 1px;
+      background: #bfc0c8;
+      top: 50%;
+    }
+    .app_txt {
+      width: 1200px;
+      padding-top: 100px;
+      margin: 0 auto;
+      ul {
+        width: 1600px;
+        margin-left: -200px;
+        li {
+          float: left;
+          width: 33%;
+          margin-bottom: 30px;
+          span {
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          img {
+            margin: 0 auto;
+            width: 67%;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+

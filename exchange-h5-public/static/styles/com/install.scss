@@ -1,0 +1,214 @@
+.install{
+    width: 100%;
+    .install-con{
+        width: 100%;
+        // padding: 0 .1rem;
+        text-align: center;
+        .head{
+            margin-top:.35rem;
+            img{
+                width: 0.52rem;
+                height: 0.52rem;
+                // display: inline-block;
+                vertical-align: middle;
+                margin-right: .15rem;
+            }
+            span{
+                font-size: .18rem;
+            }
+        }
+        .title{
+            margin-top: .13rem;
+        }
+        .content{
+            text-align: center;
+            img{
+                width:55%;
+            }
+            .submit{
+                span{
+                    width:1.5rem;
+                    height: 0.4rem;
+                    background: $common-emphasize;
+                    border-radius:.5rem;
+                    line-height: 0.4rem;
+                    display: inline-block;
+                    color:#fff;
+                    border: 0.02rem solid #113152;
+                    a{
+                        display: inline-block;
+                        width:1.5rem;
+                        height: 0.525rem;
+                    }
+                }
+                
+            }
+            .notes{
+                margin-top:0.2rem; 
+                font-size: 0.12rem;
+            }
+            .down{
+                font-size: 0.12rem;
+                margin-top:0.1rem; 
+                padding: 0 .1rem;
+            }
+        }
+    }
+    .mask_layer{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-color: rgba(0,0,0,0.7);
+        .brower{
+        span{
+          display: inline-block;
+          text-align: left;
+        }
+         margin-top: 1.5rem;
+         font-size: 0.2rem;
+         text-align: left;
+         margin-left: 25%;
+         position: relative;
+         img{
+           position: absolute;
+           top: -.55rem;
+           left: 1.2rem;
+         }
+        }
+      }
+}
+
+.install_android_or_ios .top_banner img {
+  width: 100%;
+  display: block;
+}
+
+.install_android_or_ios .app_btn {
+  margin: 37px 0;
+  padding: 0 13%;
+  position: relative;
+}
+.install_android_or_ios .isDownload::before {
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0);
+  content:"",
+}
+.install_android_or_ios .app_btn a {
+  width: 100%;
+  height: .48rem;
+  line-height: .48rem;
+  color: #fff;
+  font-size: .18rem;
+  text-align: center;
+  display: block;
+}
+
+.install_android_or_ios .app_btn a img {
+  width: 100%;
+  display: block;
+}
+
+.install_android_or_ios .app_btn span {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: .12rem;
+  margin-top: .15rem;
+}
+
+.install_android_or_ios .app_tit {
+  padding: 0 20px;
+}
+
+.install_android_or_ios .app_tit h2 {
+  width: 100%;
+  text-align: center;
+  font-size: .16rem;
+  line-height: .16rem;
+  position: relative;
+}
+
+.install_android_or_ios .app_tit h2:before {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  ;
+  content: "";
+  height: 1px;
+  background: #bfc0c8;
+  top: 50%;
+}
+
+.install_android_or_ios .app_tit h2 span {
+  background: #182540;
+  display: inline-block;
+  padding: 0 .15rem;
+  position: relative;
+}
+
+.install_android_or_ios .app_txt {
+  width: 100%;
+  text-align: center;
+  margin-top: .24rem;
+  font-size: .18rem;
+}
+
+.install_android_or_ios .app_txt li {
+  margin-bottom: .25rem;
+}
+
+.install_android_or_ios .app_txt li span {
+  padding: 0 20px;
+  color: #fafafa
+}
+
+.install_android_or_ios .app_txt li img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.install_android_or_ios .main_footer {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.install_android_or_ios .android_main_footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.weixinTips {
+  position: fixed;
+  width: 100%;
+  height: 110%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.weixinTips img {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,75 @@
+#transaction_depth {
+.transaction_depth_title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+  height: 0.26rem;
+  align-items: flex-end;
+  padding-right: 0.1rem;
+}
+.nowPrice {
+  font-size: 0.18rem;
+  margin-top: 0.06rem;
+}
+.rmb {
+  margin-top: 0.0rem;
+  color: #7b8191;color: $common-Vice;
+}
+.list {
+  margin-top: 0.1rem;
+}
+.list li {
+  line-height: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0.1rem;
+  font-size: 0.12rem;
+  position: relative;
+  /* border-bottom: 0.02rem solid $common-interval */
+}
+.bar {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  opacity: 0.1;
+  right: 0;
+  transition: all 0.5s;
+}
+.buy {
+  background: #0BA83F;background: $common-rise;
+}
+.close {
+  background: #DF1A28;background: $common-fall;
+}
+.buyF {
+  color: #0BA83F;color: $common-rise;
+}
+.closeF {
+  color: #DF1A28;color: $common-fall;
+}
+footer {
+  margin-top: 0.08rem;
+  display: flex;
+  padding-right: 0.1rem;
+}
+footer p {
+  margin-right: 0.05rem;
+}
+footer ul {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+footer ul li {
+  padding: 0.01rem 0.12rem;
+  font-size: 0.12rem;
+  line-height: 0.14rem;
+  height: 0.14rem;
+  border-radius: 0.04rem;
+}
+.active {
+  background: #2b89e1;background: $common-iconColor
+}
+}

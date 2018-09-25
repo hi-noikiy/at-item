@@ -1,0 +1,81 @@
+@import './allOrder.scss'; // 当前委托
+@import './detailsOrder.scss'; // 委托详情
+@import './historyOrder.scss'; // 历史委托
+@import './com/sumbolList.scss'; // 选择币对
+
+#com-order {
+  width: 100%;
+  /* height: 100%; */
+  /* padding-top: 0.45rem; */
+.router-enter-active {
+  animation: router-in 0.3s;
+  transition-timing-function: linear;
+}
+.router-leave-active {
+  animation: router-in 0.3s reverse;
+  transition-timing-function: linear
+}
+@keyframes router-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.title {
+  height: 0.45rem;
+  width: 100%;
+  background: #18243c;background: $common-background;
+  top: 0.43rem;
+  line-height: 0.45rem;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+.title a {
+  display: inline-block;
+  flex: 1;
+  font-size: 0.16rem;
+  text-align: center;
+  box-shadow: 0px 0.03rem 0px 0px #1c2b49;
+  box-shadow: 0px 0.03rem 0px 0px $common-interval;
+}
+.router-link-active {
+  color: #2b89e1;color: $common-iconColor;
+  font-weight: 700;
+  position: relative
+}
+.router-link-active span {
+  position: absolute;
+  height: 0.02rem;
+  width: 100%;
+  background: #2b89e1;background: $common-iconColor;
+  display: inline-block;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%)
+  /* display: block */
+}
+.bounce-enter-active {
+  animation: bounce-in .3s;
+}
+.bounce-leave-active {
+  animation: bounce-in .3s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    width: 0;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.section {
+  width: 100%;
+  height: 100%;;
+}
+}
+

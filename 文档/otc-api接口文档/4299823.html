@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /otc/person_relationship - 获取黑名单-OK</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4299676.html">OTC场外交易接口(vue)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /otc/person_relationship - 获取黑名单-OK
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> yulei</span>, last modified by <span class='editor'> xingmingfeng</span> on Jun 28, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="5" class="confluenceTh">/otc/person_relationship （POST）</th></tr><tr><th colspan="1" class="confluenceTh">参数</th><th colspan="1" class="confluenceTh">类型</th><th colspan="1" class="confluenceTh">必填项</th><th colspan="1" class="confluenceTh">说明</th><th colspan="1" class="confluenceTh">用例</th></tr><tr><td class="confluenceTd"><span style="color: red;"><span style="color: rgb(59,65,81);">relationType</span><span style="color: red;"> </span> </span></td><td class="confluenceTd"><span style="color: rgb(59,65,81);">string</span></td><td class="confluenceTd">必填</td><td class="confluenceTd">好友关系</td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(59,65,81);">查看黑名单： BLACKLIST</span></p></td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">pageSize</span><span style="color: red;"> </span></td><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">number</span></td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">页大小</span></td><td colspan="1" class="confluenceTd">10</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: red;"><span style="color: rgb(59,65,81);">page</span></span></td><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">number</span></td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">页号</span></td><td colspan="1" class="confluenceTd">1</td></tr></tbody></table></div><p> </p><p><strong>新接口返回：</strong></p><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+    &quot;code&quot;: 0,
+    &quot;msg&quot;: &quot;成功&quot;,
+    &quot;data&quot;: {
+        &quot;relationshipList&quot;: [
+            {
+				&quot;userId&quot;: &quot;10001&quot;, // 用户ID
+                &quot;otcNickName&quot;: &quot;153****6666&quot;, // 用户昵称
+                &quot;creditGrade&quot;: 1, // 信用度
+                &quot;completeOrders&quot;: 4 // 交易次数
+            },
+            {
+				&quot;userId&quot;: &quot;10002&quot;, // 用户ID
+                &quot;otcNickName&quot;: &quot;185****7133&quot;,
+                &quot;creditGrade&quot;: 0.9478,
+                &quot;completeOrders&quot;: 43
+            }
+        ],
+        &quot;count&quot;: 2 // 总数
+    }
+}</pre>
+</div></div><p> </p><p> </p><p> </p><p><strong>旧接口返回：</strong></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">code</span></td><td colspan="1" class="confluenceTd">0</td><td colspan="1" class="confluenceTd">成功</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">data</span></td><td colspan="1" class="confluenceTd"><p> {</p><p><span style="color: rgb(59,65,81);">count：<span style="color: rgb(59,65,81);">数据总条数</span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">rsts：<span style="color: rgb(59,65,81);">评论搜索结果</span></span></span></p><p>{ [</p><p><span style="color: rgb(59,65,81);">adownerId</span></p><p><span style="color: rgb(59,65,81);">adownerName</span></p><p><span style="color: rgb(59,65,81);">buyerComment：<span style="color: rgb(59,65,81);">给购买者的评论</span></span></p><p><span style="color: rgb(59,65,81);">buyerGrade：<span style="color: rgb(59,65,81);">给购买者的评论等级</span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">buyerId：<span style="color: rgb(59,65,81);">购买者id</span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">buyerName：<span style="color: rgb(59,65,81);">购买者昵称</span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">coin：<span style="color: rgb(59,65,81);">交易的货币</span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">ctime：<span style="color: rgb(59,65,81);">成交时间</span></span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">sellerComment：<span style="color: rgb(59,65,81);">给出售者的评论</span></span></span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">sellerGrade：<span style="color: rgb(59,65,81);">给出售者的评论等级</span></span></span></span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">sellerId：<span style="color: rgb(59,65,81);">出售者昵称</span></span></span></span></span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">sellerName：<span style="color: rgb(59,65,81);">出售者昵称</span></span></span></span></span></span></span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">side：<span style="color: rgb(59,65,81);">广告的类型</span></span></span></span></span></span></span></span></span></span></span></p><p>] }</p><p><span style="color: rgb(59,65,81);">userList： </span></p><p><span style="color: rgb(59,65,81);">{ [</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">authLevel： 认证等级：0、未进行认证，1、实名认证，2、身份证（或护照）照片认证，3、视频认证；认证等级为通过状态，例如C2则是身份证照片认证通过</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">email： 邮箱认证</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">hideMobileNumber： 前端显示电话号</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">id：</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">identity： 访客visitor 本人owner</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">mobileNumber： 手机认证</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">nickname：</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">otcNickName： 用户昵称</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">showNickName：</span></p><p><span style="color: rgb(59,65,81);"> </span></p><p><span style="color: rgb(59,65,81);">userExtView： {...}</span></p><p><span style="color: rgb(59,65,81);">] }</span></p><p>}</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">message</span></td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">返回消息</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;count&quot;: 0,
+    &quot;rsts&quot;: [
+      {
+        &quot;adownerId&quot;: 0,
+        &quot;adownerName&quot;: &quot;string&quot;,
+        &quot;buyerComment&quot;: &quot;string&quot;,
+        &quot;buyerGrade&quot;: 0,
+        &quot;buyerId&quot;: 0,
+        &quot;buyerName&quot;: &quot;string&quot;,
+        &quot;coin&quot;: &quot;string&quot;,
+        &quot;ctime&quot;: &quot;2018-04-11T12:34:36.525Z&quot;,
+        &quot;sellerComment&quot;: &quot;string&quot;,
+        &quot;sellerGrade&quot;: 0,
+        &quot;sellerId&quot;: 0,
+        &quot;sellerName&quot;: &quot;string&quot;,
+        &quot;side&quot;: &quot;string&quot;
+      }
+    ],
+    &quot;userList&quot;: [
+      {
+        &quot;authLevel&quot;: 0,
+        &quot;email&quot;: false,
+        &quot;hideMobileNumber&quot;: &quot;string&quot;,
+        &quot;id&quot;: 0,
+        &quot;identity&quot;: &quot;string&quot;,
+        &quot;mobileNumber&quot;: false,
+        &quot;nickname&quot;: &quot;string&quot;,
+        &quot;otcNickName&quot;: &quot;string&quot;,
+        &quot;showNickName&quot;: &quot;string&quot;,
+        &quot;userExtView&quot;: {
+          &quot;commentNum&quot;: 0,
+          &quot;complainNum&quot;: 0,
+          &quot;completeOrders&quot;: 0,
+          &quot;creditGrade&quot;: 0,
+          &quot;creditScore&quot;: 0,
+          &quot;id&quot;: 0,
+          &quot;imageUrl&quot;: &quot;string&quot;,
+          &quot;lastLoginTime&quot;: &quot;2018-04-11T12:34:36.525Z&quot;,
+          &quot;lastLoginTimeStr&quot;: &quot;string&quot;,
+          &quot;lastTradeTime&quot;: &quot;2018-04-11T12:34:36.525Z&quot;,
+          &quot;loginStatus&quot;: &quot;string&quot;,
+          &quot;negativeRate&quot;: 0,
+          &quot;registerTime&quot;: &quot;2018-04-11T12:34:36.525Z&quot;,
+          &quot;responseScore&quot;: 0,
+          &quot;sucComplainNum&quot;: 0,
+          &quot;trustScore&quot;: 0,
+          &quot;turnover&quot;: 0,
+          &quot;uid&quot;: 0
+        }
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;string&quot;
+}</pre>
+</div></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 21, 2018 18:31</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

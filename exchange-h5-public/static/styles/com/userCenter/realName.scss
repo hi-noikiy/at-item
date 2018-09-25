@@ -1,0 +1,128 @@
+#com-realName{
+  position: relative;
+  padding-bottom: 0.2rem;
+.top{
+  overflow: hidden;
+  padding: 0 0.1rem;
+  margin-top: 0.1rem;
+}
+.even {
+  display: flex;
+  margin-bottom: 0.2rem;
+}
+span{
+  display: inline-block;
+  float: left;
+  width: 25%;
+  line-height: 0.4rem;
+  font-size: 0.16rem;
+}
+.right{
+  width: 70%;
+  float: left;
+}
+.title{
+  text-align: left;
+  font-size: 0.16rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+.box{margin-top:0.1rem;}
+.Example {
+    padding-left:0.30rem;
+    position: relative;
+}
+.Samples{
+    font-size:0.12rem;
+    position: absolute;
+    left:0;
+    top:0.1rem;
+}
+
+.remarks{
+    font-size:0.12rem;
+    line-height: 0.16rem;
+    color:#ff9624
+}
+.right-L{
+  width: 45%;
+  float: left;
+  margin-right: 10%;
+}
+.right-R{
+  width: 45%;
+  float: left;
+}
+button {
+  width: 92%;
+  margin-left: 4%;
+  height: 0.45rem;
+  background: #2b89e1;background: $common-iconColor;
+  border-radius: 0.04rem;
+  margin-top: 0.3rem;
+  color: #c7cce6;
+  color: $common-fontColor;
+  font-size: 0.16rem;
+  letter-spacing: 0.03rem;
+}
+
+.select-fileBtn{
+    width: 465px;
+    height: 270px;
+    border: 1px dashed #6482c7;
+    line-height: 270px;
+    cursor: pointer;
+    text-align: center;
+    float: left;
+    border-radius: 4px;
+    position: relative;
+}
+.mark {
+  position: fixed;
+  width: 100%;
+  height: 60%;
+  left: 0;
+  bottom: 0;
+  z-index: 3
+}
+.rNmark-enter-active {
+  animation: rNmark-in .3s;
+}
+.rNmark-leave-active {
+  animation: rNmark-in .3s reverse;
+}
+
+@keyframes rNmark-in {
+  0% {
+    bottom: -100%;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    bottom: 0;
+  }
+}
+.areaSelect{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #18243c;background: $common-background;
+  z-index: 10;
+}
+.markAll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.note{
+  padding: 0.1rem;
+  color:$yellow-color;
+}
+}

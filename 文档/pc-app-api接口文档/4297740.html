@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /finance/account_balance-交易账户-资金管理</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4298087.html">垃圾站</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297793.html">资金管理-资金管理</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /finance/account_balance-交易账户-资金管理
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified on Mar 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/finance/<a class="external-link" href="http://account_balance.do/" rel="nofollow">account_balance</a> (POST)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0：成功；</td><td class="confluenceTd">非0获取失败</td></tr><tr><td colspan="1" class="confluenceTd">msg</td><td colspan="1" class="confluenceTd">&quot;suc&quot;</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><pre>{    </pre><pre>   &quot;code&quot;:&quot;0&quot;,  </pre><pre>   &quot;msg&quot;:&quot;suc&quot;,  
+   &quot;data&quot;:{
+       &quot;allCoinMap&quot;: </pre><pre>         {</pre><pre>               BTC: {</pre><pre>                      total_balance=8.89800000,//总额</pre><pre>                      normal_balance=8.89800000, //可用</pre><pre>                      present_coin_balance=0.00000000, //赠币</pre><pre>                      btcValuatin=8.89800000, //资金折合</pre><pre>                      coinName=BTC, //币种</pre><pre>                      lock_balance=0.00000000//冻结金额</pre><pre>               },</pre><pre>               ETH: {</pre><pre>                     total_balance=0.00000000,</pre><pre>                     normal_balance=0.00000000,</pre><pre>                     present_coin_balance=0.00000000, </pre><pre>                     btcValuatin=0.00000000, </pre><pre>                     coinName=ETH, </pre><pre>                     lock_balance=0.00000000</pre><pre>              }</pre><pre>       }</pre><p style="margin-left: 30.0px;">&quot;feeMap&quot;: {</p><p style="margin-left: 60.0px;">&quot;BTC&quot;: {</p><p style="margin-left: 60.0px;">&quot;defaultFee&quot;: 0.01, //默认提现手续费</p><p style="margin-left: 60.0px;">&quot;feeMin&quot;: 0.01, //最小提现手续费</p><p style="margin-left: 60.0px;">&quot;feeMax&quot;: 0.01 //最大提现手续费</p><p style="margin-left: 60.0px;">}</p><p style="margin-left: 30.0px;">}</p><p style="margin-left: 30.0px;">&quot;withdrawAddressMap&quot;: {</p><p style="margin-left: 60.0px;">&quot;BTC&quot; : [</p><p style="margin-left: 60.0px;">{</p><p style="margin-left: 60.0px;">&quot;address&quot; : &quot;797DNFKHYCYENMCFHR&quot;,</p><p style="margin-left: 60.0px;">&quot;label&quot; : &quot;哈哈&quot;,</p><p style="margin-left: 60.0px;">&quot;id&quot;: 12</p><p style="margin-left: 60.0px;">}</p><p style="margin-left: 90.0px;"> </p><p style="margin-left: 60.0px;">]</p><p style="margin-left: 30.0px;">}</p><pre>      &quot;totalBalance&quot;: 8.9//总资产折合</pre><pre>      &quot;totalBalanceSymbol&quot;: BTC//总资产折合单位</pre><pre>   }
+}</pre></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">data:{    
+   &quot;code&quot;:&quot;0&quot;,  
+   &quot;msg&quot;:&quot;suc&quot;,  
+   &quot;data&quot;:{
+       &quot;allCoinMap&quot;: 
+         {
+               BTC: {
+                      total_balance=8.89800000,//总额
+                      normal_balance=8.89800000, //可用
+                      present_coin_balance=0.00000000, //赠币
+                      btcValuatin=8.89800000, //资金折合
+                      coinName=BTC, //币种
+                      lock_balance=0.00000000//冻结金额
+               },
+               ETH: {
+                     total_balance=0.00000000,
+                     normal_balance=0.00000000,
+                     present_coin_balance=0.00000000, 
+                     btcValuatin=0.00000000, 
+                     coinName=ETH, 
+                     lock_balance=0.00000000
+              }
+       }
+	&quot;feeMap&quot;: {
+		&quot;BTC&quot;: {
+			&quot;defaultFee&quot;: 0.01, //默认提现手续费
+			&quot;feeMin&quot;: 0.01, //最小提现手续费
+			&quot;feeMax&quot;: 0.01 //最大提现手续费
+				}
+			}
+	&quot;withdrawAddressMap&quot;: {
+		&quot;BTC&quot; : [
+				{
+					&quot;address&quot; : &quot;797DNFKHYCYENMCFHR&quot;,
+					&quot;label&quot; : &quot;哈哈&quot;,
+					&quot;id&quot;: 12
+				}
+			]
+	}
+      &quot;totalBalance&quot;: 8.9//总资产折合
+      &quot;totalBalanceSymbol&quot;: BTC//总资产折合单位
+   }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

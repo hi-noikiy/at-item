@@ -1,0 +1,46 @@
+#com-openGoogleVerify {
+.GoogleVerifyWarp {
+  padding: 0 8%;
+}
+.step1, .step2, .step3 {
+  margin-bottom: 0.12rem;
+}
+.subTitle {
+  margin-bottom: 0.1rem;
+}
+.title{
+  text-align: center;
+  font-size: 0.16rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+img{
+  height: 1.3rem;
+  width: 1.3rem;
+  margin: 0.2rem auto 0.2rem;
+  display: block;
+}
+button {
+  width: 100%;
+  height: 0.45rem;
+  background: #2b89e1;background: $common-iconColor;
+  border-radius: 0.04rem;
+  margin-top: 0.3rem;
+  color: #c7cce6;
+  color: $common-fontColor;
+  font-size: 0.16rem;
+  letter-spacing: 0.03rem;
+}
+.note{
+  text-align: center;
+  font-size: 0.16rem;
+  margin-bottom: 0.2rem;
+}
+.address{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 0.14rem;
+  text-align: center;
+}  
+}

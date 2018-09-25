@@ -1,0 +1,52 @@
+.popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom:0;
+  .pop_shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+  }
+  .at_explain {
+    position: relative;
+    width: 805px;
+    color: #fff;
+    background: #7688D4;
+    font-size: 16px;
+    line-height: 28px;
+    box-shadow: 0 2px 34px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto;
+    .explain {
+      padding: 26px;
+      h2 {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+    .explain_close {
+      position: absolute;
+      background: #7688D4;
+      width: 50px;
+      height: 50px;
+      border-radius 50%;
+      left: 50%;
+      bottom: -95px;
+      text-align: center;
+      line-height: 52px;
+      color: #fff;
+      transform: translate3d(-50%, 0, 0)
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /order/otc/unfinished -场外订单-未完成</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297533.html">订单管理相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /order/otc/unfinished -场外订单-未完成
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> xingmingfeng</span>, last modified by <span class='editor'> zhongjingyun</span> on Jun 30, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="wiki-content"><h4 id="id-/order/otc/unfinished-场外订单-未完成-请求URI：/order/otc/unfinished（POST）"><strong>请求URI：<span>/order/otc/unfinished </span></strong><strong>（POST）</strong></h4><h4 id="id-/order/otc/unfinished-场外订单-未完成-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd">page</td><td class="confluenceTd">否</td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">默认是10</td></tr><tr><td colspan="1" class="confluenceTd">coinSymbol</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">币种</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数说明</div></div></th></tr></thead></table></div><h4 id="id-/order/otc/unfinished-场外订单-未完成-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></th></tr></thead></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd">orderList</td><td class="confluenceTd">是</td><td class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">[
+    {
+        &quot;adsId&quot;: 12324,//广告id
+        &quot;sequence&quot;: &quot;11908627&quot;,
+        &quot;coinSymbol&quot;: &quot;btc&quot;,//
+        &quot;type&quot;: &quot;买入&quot;,//类型
+       	&quot;side&quot;: &quot;BUY&quot;,//类型
+        &quot;payMode&quot;: &quot;btc&quot;,//支付方式
+        &quot;price&quot;: 1,//价格
+        &quot;totalPrice&quot;: 1,//交易金额
+        &quot;volume&quot;: 0.02,//数量
+        &quot;nickName&quot;: &quot;1.000&quot;,//交易对方   
+        &quot;status&quot;: ,//
+        &quot;status_text&quot;: &quot;待支付&quot;,//订单状态
+        &quot;id&quot;: 12,
+    }
+]</pre>
+</div></div><p><br /><br /></p></td></tr><tr><td colspan="1" class="confluenceTd">count</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd">数据总量，用于翻页</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></th></tr></thead></table></div><p>关于操作方面的说明</p><p>去付款： <span style="color: rgb(25,31,37);">${baseUrlOtc}/buy_order.html?order=${<span>sequence</span>}</span></p><p>取消订单： <span style="color: rgb(25,31,37);">${</span><span style="color: rgb(25,31,37);">baseUrlOtc</span><span style="color: rgb(25,31,37);">}/buy_order.html?order=${</span><span style="color: rgb(25,31,37);">sequence</span><span style="color: rgb(25,31,37);">}</span></p><p>去放币： <span style="color: rgb(25,31,37);">'${<span>baseUrlOtc</span>}/sell_order.html?order=<span>${</span><span>sequence</span><span>}</span></span></p><p> </p><p> </p></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

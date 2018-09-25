@@ -1,0 +1,183 @@
+#com-detailsOrder {
+  width: 100%;
+  background: #1c2b49;background: $common-interval;
+  height: 100%;
+  padding-top: 0.45rem;
+.list {
+  font-size: 0.12rem;
+  color: #c7cce6;color: $common-fontColor;
+}
+.line {
+  display: flex;
+  padding: 0 0.1rem;
+  line-height: 0.26rem;
+  height: 0.26rem;
+  font-size: 0.12rem;
+}
+.orderInfo {
+  background: #18243c;background: $common-background
+}
+.line:first-child {
+  line-height: 0.25rem;
+  height: 0.25rem;
+  font-size: 0.1rem;
+  color: #7b8191;color: $common-Vice;
+}
+.line li:nth-child(1) {
+  width: 22%
+}
+.line li:nth-child(2) {
+  width: 19%;
+  text-align: center
+}
+.line li:nth-child(3) {
+  width: 19%;
+  text-align: center
+}
+.line li:nth-child(4) {
+  width: 20%;
+  text-align: center
+}
+.line li:nth-child(5) {
+  width: 20%;
+  text-align: end
+}
+.orderInfo{
+  border-bottom: 0.1rem solid #1c2b49;
+  border-bottom: 0.1rem solid $common-interval;
+  padding: 0 0.1rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+}
+.esc {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.12rem;
+}
+.time {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+  margin-left: 0.05rem;
+}
+.box {
+  display: flex;
+  margin: 0.1rem 0;
+}
+.box div {
+  flex: 1;
+  text-align: center;
+  height: 0.4rem;
+  border-left: 0.01rem solid #1c2b49;
+  border-left: 0.01rem solid $common-interval;
+}
+.box div:first-child {
+  border: none;
+}
+ul li:last-child {
+  margin-bottom: 0.5rem;
+}
+.box p {
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.box span {
+  font-size: 0.12rem;
+  line-height: 0.3rem;
+}
+.foot {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.01rem solid #1c2b49;
+  border-top: 0.01rem solid $common-interval;
+  height: 0.2rem;
+}
+.title {
+  display: flex;
+  background: #18243c;background: $common-background;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.1rem;
+  height: 0.45rem;
+  position: absolute;
+  top: 0.43rem;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background: #18243c;background: $common-background;
+}
+.now {
+  font-size: 0.18rem
+}
+.symbol {
+  font-size: 0.16rem;
+  margin-top: 0.06rem;
+}
+.symbol i {
+  font-size: 0.16rem;
+  color: #2b89e1;color: $common-iconColor;
+  margin-left: 0.05rem;
+}
+.go {
+  line-height: 0.45rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.buy {
+  color: #0BA83F;
+  color: $common-rise;
+}
+.sell {
+  color: #DF1A28;
+  color: $common-fall;
+}
+.esc {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.12rem;
+}
+.escNo {
+  font-size: 0.12rem;
+  color: #7b8191;
+  color: $common-Vice;
+}
+.noData {
+  text-align: center;
+  line-height: 0.5rem;
+  color: #7b8191;
+  color: $common-Vice;
+}
+.paging {
+  position: fixed;
+  height: 0.4rem;
+  background-color: #18243c;
+  background-color: $common-background;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.page {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 0.4rem
+}
+.paging div {
+  flex: 1;
+  text-align: center;
+  line-height: 0.4rem;
+  background-color: #2b89e1;background-color: $common-iconColor;
+  border-left: 0.01rem solid #1c2b49;
+  border-left: 0.01rem solid $common-interval;
+}
+.paging .ac {
+  opacity: 0.5
+}
+.paging div:first-child {
+  border: none
+}
+}
+

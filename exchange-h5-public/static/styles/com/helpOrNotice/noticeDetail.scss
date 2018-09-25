@@ -1,0 +1,23 @@
+#com-noticeDetail {
+  width: 100%;
+  height: 100%;
+.noticeDetail{
+	padding: 0 0.1rem;
+}
+.title{
+	text-align: center;
+	font-size: 0.16rem;
+	/* height: 0.4rem; */
+	line-height: 0.4rem;
+}
+.time{
+	text-align: center;
+	line-height: 0.4rem;
+	height: 0.4rem;
+	color: #7b8191;color: $common-Vice;
+}
+.content{
+	text-indent: 0.3rem;
+	line-height: 0.3rem;
+}
+}

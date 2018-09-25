@@ -1,0 +1,90 @@
+@import './email.scss'; // 邮箱找回
+@import './phone.scss'; // 手机找回
+@import './stop2.scss'; // 第二步
+@import './stop3.scss'; // 第三步
+
+#com-forgetPass {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+.Loclose {
+  position: fixed;
+  font-size: 0.2rem;
+  right: 0.2rem;
+  top: 0.1rem;
+}
+.box {
+  flex: 1;
+  overflow-y: scroll;
+}
+header {
+  width: 100%;
+  height: 0.43rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.18rem
+}
+img {
+  width: 100%;
+}
+.tab {
+  height: 0.4rem;
+  display: flex;
+}
+.tab li {
+  flex: 1;
+  text-align: center;
+  line-height: 0.4rem;
+  box-shadow: 0px 0.03rem 0px 0px #1c2b49;
+  box-shadow: 0px 0.03rem 0px 0px $common-interval;
+  font-size: 0.16rem;
+  color: #7b8191;color: $common-Vice;
+}
+.active {
+  color: #2b89e1;color: $common-iconColor!important;
+  font-weight: 700;
+  position: relative;
+}
+.active span {
+  position: absolute;
+  height: 0.02rem;
+  width: 100%;
+  background: #2b89e1;background: $common-iconColor;
+  display: inline-block;
+  left: 50%;
+  bottom: -0.02rem;
+  transform: translateX(-50%)
+  /* display: block */
+}
+.forgetP-enter-active {
+  animation: forgetP-in .3s;
+}
+.forgetP-leave-active {
+  animation: forgetP-in .3s reverse;
+}
+@keyframes forgetP-in {
+  0% {
+    width: 0;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+button {
+  width: 84%;
+  margin-left: 8%;
+  height: 0.5rem;
+  background: #2b89e1;background: $common-iconColor;
+  border-radius: 0.04rem;
+  margin-top: 0.5rem;
+  color: #c7cce6;color: $common-fontColor;
+  font-size: 0.16rem;
+  letter-spacing: 0.03rem;
+}
+}
+
+

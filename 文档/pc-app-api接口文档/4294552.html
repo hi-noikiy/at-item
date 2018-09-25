@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /security/setting_history-安全设置历史</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295483.html">安全策略相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /security/setting_history-安全设置历史
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> fuyu</span>, last modified by <span class='editor'> xingmingfeng</span> on Jun 12, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/<span>security</span>/setting_history (POST)</th></tr><tr><th class="confluenceTh">参数</th><th colspan="1" class="confluenceTh">必须</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">true</td><td colspan="1" class="confluenceTd">页码</td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">false</td><td colspan="1" class="confluenceTd">每页数据条数</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd">0：成功；非0：失败</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>{</p><p>”count“ : 10,</p><p>&quot;historySettingList&quot; : {}</p><p>}</p></td><td class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><p>data结构</p></th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">示例</th><th class="confluenceTh">解释</th></tr><tr><td colspan="1" class="confluenceTd">formatCtime</td><td colspan="1" class="confluenceTd"><span style="color: rgb(119,119,119);">2018-01-22 17:27:58</span></td><td colspan="1" class="confluenceTd">操作时间</td></tr><tr><td class="confluenceTd">optIp</td><td class="confluenceTd"><span style="color: rgb(119,119,119);">124.204.37.114</span></td><td class="confluenceTd">登录IP</td></tr><tr><td class="confluenceTd">optType</td><td class="confluenceTd"><span style="color: rgb(33,47,92);">1</span></td><td class="confluenceTd">optType</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+    &quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: &quot;成功&quot;,
+    &quot;data&quot;: {
+        &quot;historySettingList&quot;: [
+            {
+                &quot;optIp&quot;: &quot;115.151.3.91&quot;,
+                &quot;optType&quot;: 6,
+                &quot;formatCtime&quot;: &quot;2017-12-15 11:14:37&quot;
+                &quot;optTypeName&quot;: &quot;实名认证&quot;
+            },
+            {
+                &quot;optIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;optType&quot;: 1,
+                &quot;formatCtime&quot;: &quot;2017-11-03 15:29:42&quot;
+                &quot;optTypeName&quot;: &quot;意见与建议&quot;
+            },
+            ... ...
+            {
+                &quot;optIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;optType&quot;: 6,
+                &quot;formatCtime&quot;: &quot;2017-11-03 14:47:42&quot;
+                &quot;optTypeName&quot;: &quot;实名认证&quot;
+            }
+        ],
+        &quot;count&quot;: 20
+    }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

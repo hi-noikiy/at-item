@@ -1,0 +1,45 @@
+#com-registerPhone {
+  padding: 0 8%;
+.mark-enter-active {
+  animation: mark-in .3s;
+}
+.mark-leave-active {
+  animation: mark-in .3s reverse;
+}
+.areaSelect {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #18243c;background: $common-background;
+  z-index: 5;
+}
+@keyframes mark-in {
+  0% {
+    bottom: -100%;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    bottom: 0;
+  }
+}
+.ln {
+  padding: 0;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+.alyError {
+  font-size: 0.12rem;
+  color: #ef5a61;color: $common-error;
+  width: 100%;
+  display: block;
+  padding-left: 0.1rem;
+  position: relative
+}
+.alyError span {
+  position: absolute;
+}
+}
+

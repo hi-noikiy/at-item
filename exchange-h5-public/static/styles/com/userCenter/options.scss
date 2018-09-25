@@ -1,0 +1,125 @@
+#com-options {
+  width: 100%;
+  height: 100%;
+.userInfo{
+  /*height: 1.7rem;*/
+  background: #18243c;background: $common-background;
+  border-bottom: 0.04rem solid #1c2b49;
+  border-bottom: 0.04rem solid $common-interval;
+  /* border-top: 0.03rem solid $common-interval; */
+}
+.QRcode {
+  display: block;
+  margin: 0 auto;
+}
+.QRtext{
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.1rem;
+  text-align: center;
+}
+.userInfo ul li {
+  text-align: center;
+  height: 0.3rem;
+  line-height: 0.3rem;
+}
+.headimg{
+  height:0.35rem ;
+  width:0.35rem ;
+  display: block;
+  margin: 0.1rem auto 0;
+}
+.modifyNick{
+  height: 0.15rem;
+  width: 0.15rem;
+  /*display: block;*/
+}
+.history{
+	color: #7b8191;
+  color: $common-Vice;
+  font-size: 0.12rem;
+}
+.history:first-child {
+  line-height: 0.1rem!important
+}
+.history:last-child {
+  line-height: 0.1rem!important
+}
+.userStatus{
+	border-bottom: 0.04rem solid #1c2b49;
+  border-bottom: 0.04rem solid $common-interval;
+}
+.message li,.userStatus li{
+  padding: 0 0.1rem;
+  height: 0.63rem;
+  line-height: 0.63rem;
+  font-size: 0.15rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+}
+.userStatus li span,.message li span{
+  display: inline-block;
+}
+.userStatus li span  img,.message li span  img{
+  height: 0.17rem;
+  vertical-align: middle;  
+}
+.userStatus li span:first-child,.message li span:first-child{
+  float: left;
+  height: 0.17rem;
+  width: 0.17rem;
+  margin-right: 0.1rem;
+  font-size: 0.18rem;
+  margin-top: 0.01rem;
+}
+.userStatus li span:last-child,.message li span:last-child{
+  float: right;
+  font-size: 0.15rem
+}
+.realName{
+  float: right;
+  margin-left: 0.1rem;
+}
+a {
+  color: #2b89e1;color: $common-iconColor;
+}
+.inviteUrl{
+  width: 100%;
+  background: #1c2b49;
+  background: $common-interval;
+  color: #c7cce6;
+  color: $common-fontColor;
+  font-size: 14px;
+  padding: 0.08rem;
+  border-radius: 0.04rem;
+  box-sizing: border-box;
+  margin-top: 0.1rem;
+}
+.names {
+  font-size: 0.2rem;
+  vertical-align: middle
+}
+.names i{
+  font-size: 0.16rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.pages {
+  text-align: center;
+  margin-top: 0.3rem;
+}
+.pages i {
+  font-size: 0.4rem;
+  color: #2b89e1;color: $common-iconColor
+} 
+.mark {
+  height: 0.01rem;
+  width: 100%;
+  position: fixed;
+  top: 0.42rem;
+  /* background: #000; */
+  z-index: 9;
+}
+.markBox {
+  padding-bottom: 0.1rem;
+}
+}

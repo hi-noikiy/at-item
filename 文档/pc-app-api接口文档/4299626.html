@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /common/public_info- 获取公共配置</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /common/public_info- 获取公共配置
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> houdongdong</span>, last modified by <span class='editor'> zhongjingyun</span> on Jul 02, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>提交参数</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th><th class="confluenceTh"> </th></tr><tr><td class="confluenceTd">time</td><td class="confluenceTd">非必填</td><td class="confluenceTd">时间戳·</td><td class="confluenceTd"> </td></tr></tbody></table></div><p> </p><p>返回</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">参数</th><th class="confluenceTh"><span>类型</span></th><th class="confluenceTh">说明</th><th class="confluenceTh">备注</th></tr><tr><td class="confluenceTd"><pre>wsUrl</pre></td><td class="confluenceTd"><pre>String</pre></td><td class="confluenceTd">WS URL</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">rate</td><td class="confluenceTd">Object</td><td class="confluenceTd">货币汇率</td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">market</td><td colspan="1" class="confluenceTd">Object</td><td colspan="1" class="confluenceTd">市场列表</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">lan</td><td colspan="1" class="confluenceTd">Object</td><td colspan="1" class="confluenceTd">语言</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>defLan</pre></td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">默认语言</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>lanList</pre></td><td colspan="1" class="confluenceTd"><span>Object</span></td><td colspan="1" class="confluenceTd"><span>语言列表</span></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>lanList-</pre><pre>name</pre></td><td colspan="1" class="confluenceTd"><pre>String</pre></td><td colspan="1" class="confluenceTd">语言名称</td><td colspan="1" class="confluenceTd">名称根据自己语言显示，比如中文”简体中文“，英文：“EngLIsh”</td></tr><tr><td colspan="1" class="confluenceTd"> lanList &gt; id</td><td colspan="1" class="confluenceTd"> String</td><td colspan="1" class="confluenceTd"> 语言标识</td><td colspan="1" class="confluenceTd"> 格式：zh-CN, zh-TW, en-US....</td></tr><tr><td colspan="1" class="confluenceTd"><pre>maket_index</pre></td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">默认市场</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>maket&gt;myMarket</pre></td><td colspan="1" class="confluenceTd">Object</td><td colspan="1" class="confluenceTd">用户自选市场</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>maket&gt;BTC&gt;ETH/BTC</pre></td><td colspan="1" class="confluenceTd"><span>Object</span></td><td colspan="1" class="confluenceTd">货币对Key</td><td colspan="1" class="confluenceTd">所有货币对，统一按照对象格式，所有涉及到货不对的key的字段，统一大写</td></tr><tr><td colspan="1" class="confluenceTd">symbol</td><td colspan="1" class="confluenceTd"><span>String</span></td><td colspan="1" class="confluenceTd">货币对小写名称</td><td colspan="1" class="confluenceTd"> ethusdt</td></tr><tr><td colspan="1" class="confluenceTd"><pre>price</pre></td><td colspan="1" class="confluenceTd">Number</td><td colspan="1" class="confluenceTd">该货币对价格精度，</td><td colspan="1" class="confluenceTd">8：小数点后8位。</td></tr><tr><td colspan="1" class="confluenceTd"><pre>name</pre></td><td colspan="1" class="confluenceTd"><span>String</span></td><td colspan="1" class="confluenceTd">该货币对名称，和KEY一样</td><td colspan="1" class="confluenceTd">备用</td></tr><tr><td colspan="1" class="confluenceTd"><pre>depth</pre></td><td colspan="1" class="confluenceTd"><span>String</span></td><td colspan="1" class="confluenceTd">该货币对三种深度</td><td colspan="1" class="confluenceTd">“0.001，0.01，0.1”：按照字符串，中间以英文逗号隔开</td></tr><tr><td colspan="1" class="confluenceTd"><pre>volume</pre></td><td colspan="1" class="confluenceTd"><span>Number</span></td><td colspan="1" class="confluenceTd">该货币对量精度</td><td colspan="1" class="confluenceTd">8：小数点后8位</td></tr><tr><td colspan="1" class="confluenceTd">rank</td><td colspan="1" class="confluenceTd">Number</td><td colspan="1" class="confluenceTd">是否进入首页排行榜 0是 / 1否</td><td colspan="1" class="confluenceTd"><p>仅 h5 首页中用</p></td></tr><tr><td colspan="1" class="confluenceTd">nc_appkey</td><td colspan="1" class="confluenceTd"><span>String</span></td><td colspan="1" class="confluenceTd">滑动验证key</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">default_country_code</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">+86</td><td colspan="1" class="confluenceTd">默认国家编码</td></tr><tr><td colspan="1" class="confluenceTd">nc_lang</td><td colspan="1" class="confluenceTd">String</td><td colspan="1" class="confluenceTd">cn</td><td colspan="1" class="confluenceTd">滑动验证语言</td></tr><tr><td colspan="1" class="confluenceTd"><pre>emailOptCode</pre></td><td colspan="1" class="confluenceTd"><span>Object</span></td><td colspan="1" class="confluenceTd">邮箱编码列表</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><pre>smsOptCode</pre></td><td colspan="1" class="confluenceTd"><span>Object</span></td><td colspan="1" class="confluenceTd">短信编码列表</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">app_logo_list</td><td colspan="1" class="confluenceTd">json对象</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">app中需要用到的logo</td></tr></tbody></table></div><p>header里面用户语言key：exchange_language</p><p>汇率：删除null的币种，usd</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: js; gutter: false" style="font-size:12px;">{    
+	&quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: null,
+    &quot;data&quot;: {
+		&quot;app_logo_list&quot;:{	
+            &quot;startup_logo&quot;:&quot;http://chaindown-oss.oss-cn-hongkong.aliyuncs.com/upload/20180630110424597.png&quot;,//539*423 启动页
+             &quot;market_logo&quot;: &quot;http://chaindown-oss.oss-cn-hongkong.aliyuncs.com/upload/20180630110405343.png&quot;,//283*50行情页面logo
+             &quot;login_logo&quot;:&quot;http://chaindown-oss.oss-cn-hongkong.aliyuncs.com/upload/20180630110250711.png&quot;,//149*124登录页面
+             &quot;user_center_logo&quot;:&quot;http://chaindown-oss.oss-cn-hongkong.aliyuncs.com/upload/20180630110443869.png&quot;//180*180个人中心登录logo
+         },
+        &quot;wsUrl&quot;: &quot;ws://stagingqa.365os.com/kline-api/ws&quot;,
+        &quot;logoUrl&quot;: &quot;http://image.365os.com/upload/20180505164331505.png&quot;,  //logo路径
+        &quot;iconUrl&quot;: &quot;http://image.365os.com/upload/20180505173143058.ico&quot;,  //icon路径
+        &quot;h5LoginImg&quot;: &quot;http://image.365os.com/upload/20180505173143058.ico&quot;,  //h5登录logo
+        &quot;otcOpen&quot;: &quot;1&quot;,  //场外交易开关
+		&quot;contractOpen&quot;:&quot;0&quot;,//合约市场开个
+		&quot;otcUrl&quot;: &quot;http://staging.365os.com/exchange-otc-web&quot;,  //场外交易url   
+		&quot;klineColor&quot;: {&quot;up&quot;:&quot;#3333&quot;,&quot;down&quot;:&quot;#4444&quot;},  //场外交易url
+		&quot;nc_appkey&quot;: &quot;xxxxxxxxxx&quot;,  //滑动验证key
+		&quot;nc_lang&quot;: &quot;en&quot;,  //滑动验证语言
+		&quot;default_country_code&quot;: &quot;+86&quot;,  //默认国家编码
+		&quot;mobileOpen&quot;:1  //手机网（h5）站开关
+		&quot;footer_style&quot;:0 //footer样式
+		&quot;h5_url&quot;: &quot;http://dev3.365os.com/exchange-h5&quot;,  //h5域名
+		&quot;base_url&quot;: &quot;http://dev3.365os.com/exchange&quot;,  //pc域名
+		&quot;headerSymbol&quot;:[&quot;ETH/BTC&quot;,&quot;ETH/BTC&quot;,&quot;ETH/BTC&quot;,&quot;ETH/BTC&quot;,&quot;ETH/BTC&quot;,&quot;ETH/BTC&quot;]
+		&quot;contact_number&quot;: &quot;http://dev3.365os.com/exchange&quot;,  //联系电话
+		&quot;contact_email&quot;: &quot;http://dev3.365os.com/exchange&quot;,  //联系邮箱
+		&quot;company_name&quot;: &quot;http://dev3.365os.com/exchange&quot;,  //英文公司名
+		    &quot;indexHeaderTitle&quot;: [
+      {
+        &quot;langKey&quot;: &quot;en_US&quot;,
+        &quot;content&quot;: &quot;BitCoin Exchange&quot;
+      },
+      {
+        &quot;langKey&quot;: &quot;zh_CN&quot;,
+        &quot;content&quot;: &quot;比特币交易平台&quot;
+      }
+    ],
+        &quot;rate&quot;: {
+            &quot;en_US&quot;: {
+                &quot;BTC&quot;: 10539.74380232,
+                &quot;ETC&quot;: null,
+                &quot;ETH&quot;: 865.2574298,
+                &quot;USDT&quot;: 1.001
+				&quot;lang_logo&quot;:&quot;￥&quot; //币种符号
+				&quot;coin_precision&quot;:4 //币种显示精度
+            },
+            &quot;zh_CN&quot;: {
+                &quot;BTC&quot;: 10539.74380232,
+                &quot;ETC&quot;: null,
+                &quot;ETH&quot;: 865.2574298,
+                &quot;USDT&quot;: 1.001
+				&quot;lang_logo&quot;:&quot;￥&quot; //币种符号
+				&quot;coin_precision&quot;:4 //币种显示精度
+            }
+        },
+        &quot;maket_index&quot;: &quot;BTC&quot;,  #用户默认市场
+        &quot;lan&quot;: {
+            &quot;defLan&quot;: &quot;zh_CN&quot;,  #默认语言
+            &quot;lanList&quot;: [
+                {
+                    &quot;name&quot;: &quot;简体中文&quot;,
+                    &quot;id&quot;: &quot;zh_CN&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;English&quot;,
+                    &quot;id&quot;: &quot;en_US&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;조선말&quot;,
+                    &quot;id&quot;: &quot;ko_KR&quot;
+                }
+            ]
+        },
+        &quot;maket&quot;: {  #注意大小写标准
+            &quot;BTC&quot;: {
+				&quot;ETH/BTC&quot;: {
+					&quot;symbol&quot;: &quot;ethusdt&quot;,
+                    &quot;price&quot;: 2,
+                    &quot;name&quot;: &quot;ETH/BTC&quot;,
+                    &quot;depth&quot;: &quot;0.00000001,0.000001,0.0001&quot;,
+                    &quot;volume&quot;: 8,
+                    &quot;limitPriceMin&quot;: 0.001,
+                    &quot;limitVolumeMin&quot;: 0.001,
+                    &quot;marketBuyMin&quot;: 0.001,
+                    &quot;marketSellMin&quot;: 0.001,
+                    &quot;sort&quot;: 1,
+				},
+				&quot;LTC/BTC&quot;: {
+					&quot;symbol&quot;: &quot;ltcbtc&quot;,
+                    &quot;price&quot;: 2,
+                    &quot;name&quot;: &quot;LTC/BTC&quot;,
+                    &quot;depth&quot;: &quot;0.000001,0.0001,0.01&quot;,
+                    &quot;volume&quot;: 8
+                    &quot;limitPriceMin&quot;: 0.001,
+                    &quot;limitVolumeMin&quot;: 0.001,
+                    &quot;marketBuyMin&quot;: 0.001,
+                    &quot;marketSellMin&quot;: 0.001,
+                    &quot;sort&quot;: 1,
+				}
+			},
+			&quot;USDT&quot;: {
+				&quot;BTC/USDT&quot;: {
+					&quot;symbol&quot;: &quot;btcusdt&quot;,
+                    &quot;price&quot;: 2,
+                    &quot;name&quot;: &quot;BTC/USDT&quot;,
+                    &quot;depth&quot;: &quot;0.00000001,0.000001,0.0001&quot;,
+                    &quot;volume&quot;: 8
+                    &quot;limitPriceMin&quot;: 0.001,
+                    &quot;limitVolumeMin&quot;: 0.001,
+                    &quot;marketBuyMin&quot;: 0.001,
+                    &quot;marketSellMin&quot;: 0.001,
+					&quot;sort&quot;: 0, // 排序
+				},
+				&quot;ETC/USDT&quot;: {
+					&quot;symbol&quot;: &quot;etcusdt&quot;,
+                    &quot;price&quot;: 2,
+                    &quot;name&quot;: &quot;ETC/USDT&quot;,
+                    &quot;depth&quot;: &quot;0.000001,0.0001,0.01&quot;,
+                    &quot;volume&quot;: 8
+                    &quot;limitPriceMin&quot;: 0.001,
+                    &quot;limitVolumeMin&quot;: 0.001,
+                    &quot;marketBuyMin&quot;: 0.001,
+                    &quot;marketSellMin&quot;: 0.001,
+					&quot;sort&quot;: 1,// 排序
+				}
+			},
+            
+        },
+		&quot;coinList&quot;:{
+			&quot;BTC&quot;: {
+				&quot;name&quot;:&quot;BTC&quot;,
+				&quot;showPrecision&quot;:&quot;8&quot;, //前端资产展示精度
+				&quot;icon&quot;:&quot;http:www.xxxx.com/ssss.jpa&quot;, //icon路径
+				&quot;otcOpen&quot;:&quot;1&quot;, //1开，0关
+			},
+			&quot;ETH&quot;: {
+				&quot;name&quot;:&quot;ETH&quot;,
+
+				&quot;showPrecision&quot;:&quot;8&quot;, //前端资产展示精度
+				&quot;icon&quot;:&quot;http:www.xxxx.com/ssss.jpa&quot;, //icon路径
+				&quot;otcOpen&quot;:&quot;1&quot;, //1开，0关
+			}
+		}
+       &quot;emailOptCode&quot;: {
+            &quot;1&quot;: &quot;邮箱注册&quot;,
+            &quot;2&quot;: &quot;绑定邮箱&quot;,
+            &quot;3&quot;: &quot;找回密码&quot;,
+            &quot;4&quot;: &quot;邮箱登录&quot;,
+            &quot;9&quot;: &quot;二次登录&quot;,
+            &quot;15&quot;: &quot;修改邮箱&quot;
+        },
+        &quot;smsOptCode&quot;: {
+            &quot;1&quot;: &quot;手机号码注册&quot;,
+            &quot;2&quot;: &quot;绑定手机号码&quot;,
+            &quot;3&quot;: &quot;修改手机号码&quot;,
+            &quot;4&quot;: &quot;绑定邮箱&quot;,
+            &quot;5&quot;: &quot;修改登录密码&quot;,
+            &quot;6&quot;: &quot;设置资金密码&quot;,
+            &quot;7&quot;: &quot;修改资金密码&quot;,
+            &quot;8&quot;: &quot;设置交易验证&quot;,
+            &quot;9&quot;: &quot;修改密码&quot;,
+            &quot;10&quot;: &quot;提币&quot;,
+            &quot;11&quot;: &quot;添加数字货币地址&quot;,
+            &quot;12&quot;: &quot;修改数字货币地址&quot;,
+            &quot;13&quot;: &quot;数字货币提现&quot;,
+            &quot;14&quot;: &quot;关闭手机验证&quot;,
+            &quot;15&quot;: &quot;修改邮箱&quot;,
+            &quot;16&quot;: &quot;操作OpenApi&quot;,
+            &quot;21&quot;: &quot;删除地址&quot;,
+            &quot;22&quot;: &quot;场外账户划转&quot;,
+            &quot;23&quot;: &quot;二次登录&quot;,
+            &quot;24&quot;: &quot;找回密码&quot;,
+            &quot;25&quot;: &quot;手机登陆&quot;,
+            &quot;26&quot;: &quot;关闭Google认证&quot;
+        },
+    },
+    &quot;marketSort&quot;: [
+      &quot;USDT&quot;,
+      &quot;NOB&quot;,
+      &quot;BTC&quot;
+    ],
+      {
+        &quot;ETH&quot;: [
+          &quot;ABC/ETH&quot;
+        ]
+      }
+    ],
+    &quot;skin&quot;: {
+      &quot;ct&quot;: {
+        &quot;changSkin&quot;: &quot;0&quot;,
+        &quot;defSkin&quot;: &quot;1&quot;
+      },
+      &quot;ec&quot;: {
+        &quot;changSkin&quot;: &quot;0&quot;,
+        &quot;defSkin&quot;: &quot;1&quot;
+      },
+      &quot;otc&quot;: {
+        &quot;changSkin&quot;: &quot;0&quot;,
+        &quot;defSkin&quot;: &quot;1&quot;
+      }
+    }
+}</pre>
+</div></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

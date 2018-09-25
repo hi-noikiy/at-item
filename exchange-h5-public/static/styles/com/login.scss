@@ -1,0 +1,104 @@
+#login {
+  align-items: center;
+  height: 100%;
+  padding: 0 8%;
+  margin-top: 0.2rem;
+  position: relative;
+  .Loclose {
+    position: fixed;
+    font-size: 0.2rem;
+    right: 0.2rem;
+    top: 0.1rem;
+  }
+  .ln {
+    margin-top: 0.2rem;
+  }
+header {
+  width: 100%;
+  height: 0.43rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.18rem
+}
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.4rem; 
+  padding-bottom: 0.15rem;
+  /* margin-bottom: 0.15rem; */
+}
+.logo img {
+  width: 55%;
+}
+.options {
+  margin-left: 0.1rem;
+  display: flex;
+}
+.options span {
+  display: inline-block;
+  width: 0.2rem;
+  margin-right: 0.05rem;
+}
+/* img {
+  width: 100%;
+} */
+.options .close {
+  display: none
+}
+.active .close {
+  display: block
+}
+.login_button {
+  width: 100%;
+  height: 0.45rem;
+  background: #2b89e1;background: $common-iconColor;
+  border-radius: 0.04rem;
+  margin-top: 0.5rem;
+  color: #c7cce6;color: $common-fontColor;
+  font-size: 0.16rem;
+  letter-spacing: 0.03rem;
+}
+.noPw {
+  width: 100%;
+  display: block;
+  justify-content: space-between;
+  line-height: 0.4rem;
+  text-align: end
+}
+a {
+  color: #2b89e1;color: $common-iconColor;
+}
+.resolve {
+  margin-top: 0.2rem;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.35rem;
+  text-align: center;
+  color: #7b8191;color: $common-Vice;
+}
+.markText {
+  height: 0.05rem;
+}
+.alyError {
+  font-size: 0.12rem;
+  color: #ef5a61;color: $common-error;
+  width: 100%;
+  display: block;
+  padding-left: 0.1rem;
+  margin-top: 0.05rem;
+}
+.icon-none-1 {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.18rem;
+  line-height: 0.5rem
+}
+.see i {
+  color: #2b89e1;color: $common-iconColor;
+  font-size: 0.18rem;
+  line-height: 0.5rem;
+}
+.none {
+  margin-right: 0.1rem!important
+}
+}
+

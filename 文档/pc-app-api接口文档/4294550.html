@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /security/login_history-登录历史</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295483.html">安全策略相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /security/login_history-登录历史
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> fuyu</span>, last modified by <span class='editor'> xingmingfeng</span> on May 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/security/login_history (POST)</th></tr><tr><th class="confluenceTh">参数</th><th colspan="1" class="confluenceTh">必须</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">true</td><td colspan="1" class="confluenceTd">页码</td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">false</td><td colspan="1" class="confluenceTd">每页数据条数</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd">0：成功；非0：失败</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>{</p><p>”count“ : 10,</p><p>&quot;historyLoginList&quot; : {}</p><p>}</p></td><td class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><p>data结构</p></th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">示例</th><th class="confluenceTh">解释</th></tr><tr><td colspan="1" class="confluenceTd">formatLgInTime</td><td colspan="1" class="confluenceTd"><span style="color: rgb(119,119,119);">2018-01-22 17:27:58</span></td><td colspan="1" class="confluenceTd">登录<span>时间</span></td></tr><tr><td class="confluenceTd">lgIp</td><td class="confluenceTd"><span style="color: rgb(119,119,119);">124.204.37.114</span></td><td class="confluenceTd"> <span>登录IP</span></td></tr><tr><td class="confluenceTd">lgPlatform</td><td class="confluenceTd"><span style="color: rgb(33,47,92);">Web</span></td><td class="confluenceTd"><span style="color: rgb(33,47,92);">登陆平台</span></td></tr><tr><td class="confluenceTd">lgStatus</td><td class="confluenceTd"><p>1</p></td><td class="confluenceTd">状态</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+    &quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: &quot;成功&quot;,
+    &quot;data&quot;: {
+        &quot;count&quot;: 8,
+        &quot;historyLoginList&quot;: [
+            {
+                &quot;lgIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;lgPlatform&quot;: &quot;Web&quot;,
+                &quot;formatLgInTime&quot;: &quot;2017-10-16 14:16:04&quot;,
+                &quot;lgStatus&quot;: 2
+            },
+            {
+                &quot;lgIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;lgPlatform&quot;: &quot;Web&quot;,
+                &quot;formatLgInTime&quot;: &quot;2017-10-11 15:02:43&quot;,
+                &quot;lgStatus&quot;: 1
+            },
+            {
+                &quot;lgIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;lgPlatform&quot;: &quot;Web&quot;,
+                &quot;formatLgInTime&quot;: &quot;2017-10-11 15:02:40&quot;,
+                &quot;lgStatus&quot;: 2
+            },
+            {
+                &quot;lgIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,
+                &quot;lgPlatform&quot;: &quot;Web&quot;,
+                &quot;formatLgInTime&quot;: &quot;2017-10-11 10:46:21&quot;,
+                &quot;lgStatus&quot;: 1
+            }
+        ]
+    }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

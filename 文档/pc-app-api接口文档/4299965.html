@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /user/toopen_google_authenticator - google验证前校验</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295444.html">用户信息相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /user/toopen_google_authenticator - google验证前校验
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> houdongdong</span>, last modified on Apr 12, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="wiki-content"><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/user/toopen_google_authenticator(POST)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td class="confluenceTd">无</td><td class="confluenceTd"> </td><td class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">字段</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">实例</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">解释</div></th></tr></thead><tbody><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd"><p>0:成功</p><p>002_023:已开启谷歌认证</p></td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">详见：<a href="http://wiki.365os.com/pages/viewpage.action?pageId=4295851" rel="nofollow">合约后台接口返回状态码</a></td></tr><tr><td colspan="1" class="confluenceTd">data</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">如果code为0 返回以下字段，如果已开启google 返回其他状态码</td></tr></tbody></table></div><p> </p><div><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><p>data结构 </p></th></tr><tr><th class="confluenceTh"><p>字段</p></th><th class="confluenceTh"><p>实例</p></th><th class="confluenceTh"><p>解释</p></th></tr><tr><td class="confluenceTd"><p>googleUser</p></td><td class="confluenceTd"><p><a class="external-link" href="mailto:11111@qq.com" rel="nofollow">11111@qq.com</a>-BitFans</p></td><td class="confluenceTd"><p>用户名</p></td></tr><tr><td colspan="1" class="confluenceTd">googleKey</td><td colspan="1" class="confluenceTd">ZPOKZCTWZ35V3S6T</td><td colspan="1" class="confluenceTd">新生成的key</td></tr><tr><td colspan="1" class="confluenceTd">googleImg</td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">二维码</td></tr></tbody></table></div><p> </p></div><div><div class="syntaxhighlighter  java"><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+  &quot;code&quot;: &quot;0&quot;,
+  &quot;msg&quot;: null,
+  &quot;data&quot;: {
+    &quot;googleKey&quot;: &quot;SA6DIVGYKSFPH7AB&quot;,
+    &quot;googleImg&quot;: &quot;iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAACC0lEQVR42u3bQW7DMAxE0dz/0uk2\r\nQNBghkPFZPy1KoLUdp9LiaTsx5MhjwcEYIEFFlhggQUBWGCBBRZYYEEAFlhg/TjWQx7v33/95L9j\r\nvn/++RqSawNrHpb7nc9YtaMpt6F2/WBdjeVetB6etaBOrg2sbVgunDKp6+cF6x5YSlj1nhesnVgn\r\nFgGFVQntlXkWWHa5882f19eGN8XKFwQ9YLsWhzX9rFtj5UlmjuKG3rjVECxpms8/UcJWTzXcM4I1\r\nA8stdN0WYK2UcRvQYE3FqjVh3ASi9rtJOIP1vHiCP5d8uk0et1wHawNW17aou+WVN4jAmoelnLgr\r\nZVXOqCcZI1ZDsKJCWgnVEw0Zd/MCrHlYXf/2tY1+N3FpKX3AuigM3WTSLZvcRHdQ6gBWMRjPTc/6\r\nEdxUBqx5WLWyo5Y0JIlr+xYZWF8vpHu3CXQa9waMaNGA1daWSRLXJOTdrQ2wrsaqNWS6mj+1VHNE\r\npxSsIwVQ7cHJ/OWAcbs7YEVBl5Q1SXtaTyDAmod1rqXT2yZe/wDu7bC6XvvVH6V0S59aYxqsGVh5\r\nc0bfbsgfihu6YQGWtPAn4VCbyPNXYsDajFX7s93WTa1sAms/Vm0ir7WbD21egDU4dVAKb7flot+G\r\nZXnWTbFq5Y7bkHNL5TzYwZr30sDPD7DAAgsssMBigAUWWGCBBRYDLLDAAmvT+AOZfRHuf6Zm2AAA\r\nAABJRU5ErkJggg==&quot;,
+    &quot;googleUser&quot;: &quot;13026678082-BitFans&quot;,
+    &quot;user&quot;: {
+      &quot;id&quot;: 10418,
+      &quot;countryCode&quot;: &quot;+86&quot;,
+      &quot;mobileNumber&quot;: &quot;13026678082&quot;,
+      &quot;email&quot;: &quot;&quot;,
+      &quot;loginPword&quot;: &quot;346fefa4144344f1f5703efde60ae7e7&quot;,
+      &quot;capitalPword&quot;: &quot;&quot;,
+      &quot;authType&quot;: 3,
+      &quot;authLevel&quot;: 0,
+      &quot;nickname&quot;: &quot;123&quot;,
+      &quot;loginStatus&quot;: 1,
+      &quot;loginexpireTime&quot;: null,
+      &quot;excStatus&quot;: 1,
+      &quot;excexpireTime&quot;: null,
+      &quot;withdrawStatus&quot;: 1,
+      &quot;withdrawexpireTime&quot;: null,
+      &quot;lockexpireTime&quot;: null,
+      &quot;ctime&quot;: 1516615017000,
+      &quot;mtime&quot;: 1520321200000,
+      &quot;realnameTime&quot;: null,
+      &quot;certificateTime&quot;: null,
+      &quot;lastLoginTime&quot;: 1520253012000,
+      &quot;googleAuthenticatorStatus&quot;: 0,
+      &quot;mobileAuthenticatorStatus&quot;: 1,
+      &quot;googleAuthenticatorKey&quot;: &quot;&quot;,
+      &quot;hideMobileNumber&quot;: &quot;130****8082&quot;,
+      &quot;showNickName&quot;: &quot;123&quot;,
+      &quot;loginVerify&quot;: null,
+      &quot;settingVerify&quot;: null,
+      &quot;withdrawVerify&quot;: null,
+      &quot;exchangeVerify&quot;: null,
+      &quot;lasttimeExchangeVerify&quot;: null,
+      &quot;authStatus&quot;: null,
+      &quot;register&quot;: null,
+      &quot;bindTel&quot;: null,
+      &quot;bindEmail&quot;: null,
+      &quot;capital&quot;: null,
+      &quot;deposit&quot;: null,
+      &quot;realName&quot;: null,
+      &quot;familyName&quot;: null,
+      &quot;name&quot;: null,
+      &quot;authRealnamemtime&quot;: null,
+      &quot;feeIsSetting&quot;: null,
+      &quot;unequalAccount&quot;: null
+    }
+  }
+}</pre>
+</div></div><p> </p><p> </p></div></div></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

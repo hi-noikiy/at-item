@@ -1,0 +1,94 @@
+#com-transactionFixed {
+  width: 95%;
+  height: 100%;;
+.fixed .toRmb {
+  color: #2b89e1;color: $common-iconColor;
+  margin-top: 0.2rem;
+}
+.fixed .inputNum {
+  width: 90%;
+  height: 0.4rem;
+  border: 0.01rem solid #404e6f;
+  background: #1c2b49;
+  background: $common-interval;
+  border-radius: 0.04rem;
+  margin-top: 0.15rem;
+  display: flex;
+}
+.fixed .inputNum input {
+  padding-left: 0.05rem;
+  box-sizing: border-box;
+  flex: 1;
+  width: 40%;
+}
+.fixed .inputNum div {
+  color: #7b8191;color: $common-Vice;
+  padding-right: 0.1rem;
+  line-height: 0.4rem;
+  font-size: 0.14rem;
+}
+.algorithm {
+  height: 100%;
+  border-left: 0.01rem solid #404e6f;
+  width: 35%;
+  font-size: 0.12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.algorithm button {
+  border-left: 0.01rem solid #404e6f;
+  flex: 1;
+  font-size: 0.16rem;
+  text-align: center;
+  line-height: 0.16rem;
+  color: #2b89e1;color: $common-iconColor
+}
+.algorithm button:first-child {
+  border: none;
+}
+.scale {
+  width: 100%;
+  margin-top: 0.3rem;
+  display: flex;
+  background: #1c2b49;
+  background: $common-interval;
+  height: 0.35rem;
+  border: 0.01rem solid #404e6f;
+  border-radius: 0.04rem;
+}
+.scale li {
+  flex: 1;
+  line-height: 0.35rem;
+  font-size: 0.12rem;
+  text-align: center;
+  border-left: 0.01rem solid #404e6f;
+  color: #7b8191;color: $common-Vice;
+}
+.scale li:first-child {
+  border: none;
+}
+.balance {
+  margin-top: 0.2rem;
+  display: flex;
+  font-size: 0.12rem;
+}
+.balance p {
+  color: #7b8191;color: $common-Vice;
+}
+.balance div {
+}
+.rmb {
+  font-size: 0.12rem;
+  height: 0.3rem;
+  line-height: 0.25rem;
+  /* background: #404e6f; */
+  padding-left: 0.1rem;
+  color: #7b8191;color: $common-Vice;
+  box-sizing: border-box;
+  border-radius: 0.04rem 0.04rem 0 0;
+  position: relative;
+  /* top: 0.04rem; */
+}
+}
+

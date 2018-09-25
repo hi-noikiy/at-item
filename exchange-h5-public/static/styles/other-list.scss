@@ -1,0 +1,19 @@
+@import './colors/other.scss'; // 引入变量
+@import './common.scss'; // 引入公共
+@import './com/App.scss'; // app.js
+@import './com/common/index.scss'; // 公共组件
+@import './com/capital/index.scss'; // 资金管理
+@import './com/forgetPass/index.scss'; // 找回密码
+@import './com/login.scss'; // 登陆
+@import './com/lang.scss'; // 语言
+@import './com/register/index.scss'; // 注册
+@import './com/helpOrNotice/index.scss'; // 帮助/公共/公共详情
+@import './com/userCenter/index.scss'; // 用户中心
+@import './com/order/index.scss'; // 订单管理
+@import './com/tradingCenter/index.scss'; // 交易中心
+@import './com/home/index.scss'; // 首页
+@import './com/question/index.scss';
+@import './com/busines/buseines.scss';
+@import './com/otcOrder/index.scss'; // 场外
+@import './com/otcPersonal/index.scss'; // 个人中心
+@import './com/install'

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /order/list/all-获取历史委托</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295616.html">交易相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /order/list/all-获取历史委托
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified by <span class='editor'> zhongjingyun</span> on Jun 06, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/order/list/all (post)：包括未成交和正在成交的委托</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">symbol</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">市场标记，btcusdt，详情看下面</td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">选填</td><td colspan="1" class="confluenceTd">页面大小</td></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">选填</td><td colspan="1" class="confluenceTd">页码</td></tr><tr><td colspan="1" class="confluenceTd">idList</td><td colspan="1" class="confluenceTd">选填</td><td colspan="1" class="confluenceTd">自动刷新时，根据集合查询订单列表，格式：[1,2,3,4,5,6,7,8] 传id数组</td></tr><tr><td colspan="1" class="confluenceTd">time</td><td colspan="1" class="confluenceTd">必填</td><td colspan="1" class="confluenceTd">时间戳</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">如下图<p> </p></td><td class="confluenceTd"><p>订单状态(status)说明：</p><p>INIT(0,&quot;初始订单，未成交未进入盘口&quot;),<br /> NEW_(1,&quot;新订单，未成交进入盘口&quot;),<br /> FILLED(2,&quot;完全成交&quot;),<br /> PART_FILLED(3,&quot;部分成交&quot;),<br /> CANCELED(4,&quot;已撤单&quot;),<br /> PENDING_CANCEL(5,&quot;待撤单&quot;),<br /> EXPIRED(6,&quot;异常订单&quot;);</p><p><span>PART_FILLED_CANCELED(7,&quot;部分成交已撤销,vue版本前端展示使用,数据库没有此状态&quot;);</span></p></td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: sql; gutter: false" style="font-size:12px;">{
+    &quot;count&quot;:10,
+    &quot;orderList&quot;:[
+        {
+            &quot;side&quot;:&quot;BUY&quot;,
+            &quot;total_price&quot;:&quot;0.10000000&quot;,
+            &quot;time_long&quot;:1510993841000,
+            &quot;avg_price&quot;:&quot;0.10000000&quot;,
+            &quot;countCoin&quot;:&quot;btc&quot;,
+            &quot;source&quot;:&quot;H5&quot;,
+            &quot;type&quot;:1,
+            &quot;volume&quot;:&quot;1.000&quot;,
+            &quot;price&quot;:&quot;0.10000000&quot;,
+            &quot;source_msg&quot;:&quot;WEB&quot;,
+            &quot;deal_volume&quot;:&quot;1.00000000&quot;,
+            &quot;id&quot;:424,
+            &quot;remain_volume&quot;:&quot;0.00000000&quot;,
+            &quot;baseCoin&quot;:&quot;eth&quot;,
+            &quot;status&quot;:2,
+  			&quot;status_text&quot;:&quot;完全成交&quot;
+        },
+        {
+            &quot;side&quot;:&quot;SELL&quot;,
+            &quot;total_price&quot;:&quot;0.09900000&quot;,
+            &quot;time_long&quot;:1510993715000,
+            &quot;avg_price&quot;:&quot;0.10000000&quot;,
+            &quot;countCoin&quot;:&quot;btc&quot;,
+            &quot;source&quot;:&quot;H5&quot;,
+            &quot;type&quot;:1,
+            &quot;volume&quot;:&quot;1.000&quot;,
+            &quot;price&quot;:&quot;0.09900000&quot;,
+            &quot;source_msg&quot;:&quot;WEB&quot;,
+            &quot;deal_volume&quot;:&quot;1.00000000&quot;,
+            &quot;id&quot;:423,
+            &quot;remain_volume&quot;:&quot;0.00000000&quot;,
+            &quot;baseCoin&quot;:&quot;eth&quot;,
+            &quot;status&quot;:2
+        }
+    ]
+}</pre>
+</div></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">虚拟币编号</th><th class="confluenceTh">xxx-cny</th><th colspan="1" class="confluenceTh">xxx-btc</th><th colspan="1" class="confluenceTh">xxx-usdt</th></tr><tr><td class="confluenceTd">btc</td><td class="confluenceTd">btccny</td><td colspan="1" class="confluenceTd">-</td><td colspan="1" class="confluenceTd">btcusdt</td></tr><tr><td class="confluenceTd">eth</td><td class="confluenceTd">ethcny</td><td colspan="1" class="confluenceTd">ethbtc</td><td colspan="1" class="confluenceTd">ethusdt</td></tr><tr><td class="confluenceTd">ltc</td><td class="confluenceTd">ltccny</td><td colspan="1" class="confluenceTd">ltcbtc</td><td colspan="1" class="confluenceTd">ltcusdt</td></tr><tr><td class="confluenceTd">bcc</td><td class="confluenceTd">bcccny</td><td colspan="1" class="confluenceTd">bccbtc</td><td colspan="1" class="confluenceTd">bccusdt</td></tr><tr><td colspan="1" class="confluenceTd">etc</td><td colspan="1" class="confluenceTd">etccny</td><td colspan="1" class="confluenceTd">etcbtc</td><td colspan="1" class="confluenceTd">etcusdt</td></tr><tr><td colspan="1" class="confluenceTd">usdt</td><td colspan="1" class="confluenceTd">usdtcny</td><td colspan="1" class="confluenceTd">-</td><td colspan="1" class="confluenceTd">-/web/new_order-获取当前委托</td></tr></tbody></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

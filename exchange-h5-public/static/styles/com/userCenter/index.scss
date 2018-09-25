@@ -1,0 +1,36 @@
+@import './bindEmail.scss';
+@import './bindMobileVerify.scss';
+@import './closeVerify.scss';
+@import './message.scss';
+@import './modifyEmail.scss';
+@import './modifyMobileNumber.scss';
+@import './modifyPassword.scss';
+@import './openGoogleVerify.scss';
+@import './options.scss';
+@import './realName.scss';
+@import './security.scss';
+@import './com/realNameImg.scss';
+
+#com-index {
+  width: 100%;
+  height: 100%;
+
+.router-enter-active {
+  animation: router-in 0.3s;
+  transition-timing-function: linear;
+}
+.router-leave-active {
+  animation: router-in 0.3s reverse;
+  transition-timing-function: linear
+}
+@keyframes router-in {
+  0% {
+    opacity: 0
+    /* margin-left: -100%; */
+  }
+  100% {
+    opacity: 1;
+    /* margin-left: 0; */
+  }
+}
+}

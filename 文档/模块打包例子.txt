@@ -1,0 +1,9 @@
+以exchange-web-api模块为例：
+//config
+1、cd exchange-config 
+2、执行mvn clean install -Dmaven.test.skip=true -Pexchange-web-api-prod
+
+//web-api
+3、cd exchange-parent
+4、执行mvn clean install -Dmaven.test.skip=true -pl ../exchange-web-api -am
+5、包路径：exchange-web-api/target/exchange-web-api.war

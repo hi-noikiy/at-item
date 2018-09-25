@@ -1,0 +1,232 @@
+#com-capital {
+._list {
+  padding: 0.15rem 0.1rem;
+  font-size: 0.12rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval
+}
+._symbol {
+  margin-bottom: 0.05rem;
+  font-size: 0.16rem;
+  font-weight: 700;
+  /* color: #2b89e1;color: $common-iconColor; */
+}
+._symbol img{
+  width:0.2rem;
+  height: 0.2rem;
+   margin:-.05rem .05rem 0 0;
+  vertical-align: middle;
+}
+._names {
+  color:#7b8191;
+  color: $common-Vice;
+  font-size: 0.12rem;
+}
+._nums {
+  display: flex;
+  font-size: 0.14rem;
+  margin-bottom: 0.1rem;
+  justify-content: space-between;
+}
+._oper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.14rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.assets {
+  width: 100%;
+  background: #18243c;background: $common-background;
+  /* border-top: 0.02rem solid #262f44; */
+  border-bottom: 0.04rem solid $common-interval;
+  text-align: center;
+  /* margin-top: -0.04rem; */
+  /* box-shadow: 0 -0.44rem 0.44rem #262f44; */
+  overflow: hidden;
+}
+.flow{
+  text-align:right;
+  margin-top:0.12rem;
+  margin-right: 0.1rem;     
+  font-size: 0.14rem;
+  color: #2b89e1;color: $common-iconColor;
+  display: block;
+}
+h2 {
+  font-size: 0.24rem;
+  color: #2b89e1;color: $common-iconColor;
+  line-height: 0.4rem;
+  height:.4rem;
+}
+.icon-see, .icon-nosee {
+  font-size: 0.16rem;
+  display: inline-block;
+  margin-left: 0.05rem;
+  padding-top: -0.01rem;
+  /* margin-top: 0.01rem!important; */
+  color: #2b89e1;color: $common-iconColor;
+  /* line-height: 0.3rem!important */
+}
+.assets span{
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: center;
+  font-size: 0.14rem;
+  margin-top: 0.1rem;
+  align-items: center;
+  /* color: $common-Vice */
+}
+.assets p {
+  margin-bottom: 0.27rem;
+  font-size: 0.14rem;
+  color: #7b8191;
+  color: $common-Vice
+}
+.saaets-list {
+  width: 100%;
+}
+.list-head {
+  height: 0.455rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  line-height: 0.445rem;
+  padding: 0 0.1rem;
+  font-size: 0.12rem;
+}
+.list-head .serch {
+  display:flex;
+  flex: 1;
+}
+.list-head .serch .serchico {
+  font-size: 0.16rem
+}
+.list-head .serch  i{
+  font-weight: 700;
+  color: #7b8191;
+  color: $common-Vice;
+  font-size: 0.14rem!important;
+  margin: 0.16rem 0.05rem 0 0
+}
+.list-head .serch input{
+  width: 100%;
+  font-size: 0.16rem;
+  line-height:0.27rem
+}
+.list-head .hide{
+  display: flex;
+  border-left: 0.01rem solid $common-interval;
+    border-left: 0.01rem solid #1c2b49;
+}
+.list-head .hide i{
+  padding: 0.14rem 0.05rem;
+  font-size:0.16rem;
+  flex: 1;
+}
+.list{
+  padding: 0 0.1rem
+}
+.list li {
+   border-bottom:0.01rem solid #1c2b49;
+  border-bottom:0.01rem solid $common-interval
+}
+.list .thead {
+  font-size:0.12rem;
+  color: #7b8191;
+  color: $common-Vice; 
+  border-bottom: 0;
+}
+.list li span {
+  padding-top: 0.09rem;
+  display:inline-block;
+  width: 33%;
+  text-align: center;
+  
+}
+.list li span:first-child{
+  text-align: left;
+}
+.list li span:last-child{
+  text-align: right;
+}
+.list li .frozen{
+    width: 31%;
+  text-align: right;
+}
+.list li .use{
+  text-align: center;
+}
+.list li .oper{
+  line-height: 0.5rem;
+  text-align: right;
+}
+.list li .oper b{
+  margin-left: 0.29rem;
+  font-size: 0.14rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.loading{
+  margin: .3rem auto;
+  width:.5rem;
+  height: .5rem;;
+}
+.home_bounce-enter-active {
+  animation: home_bounce-in .3s;
+}
+.home_bounce-leave-active {
+  animation: home_bounce-in .3s reverse;
+}
+@keyframes home_bounce-in {
+  0% {
+    width: 0;
+    opacity: 0
+  }
+  100% {
+    width: 60%;
+    opacity: 1;
+  }
+}
+.title {
+  height: 0.45rem;
+  padding-top: 0.05rem;
+  padding-left: 0rem;
+  padding-right: 0.1rem;
+  line-height: 0.45rem;
+  border-bottom: 0.01rem solid #1c2b49;border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  position: relative;
+}
+.marketActive {
+  color: #2b89e1;color: $common-iconColor
+}
+.title .market {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  position: relative
+}
+.title .symbolList {
+  flex: 1;
+  overflow-x: scroll;
+}
+.title .symbolList ul {
+  display: flex
+}
+.title .symbolList ul li {
+  padding-right: 0.15rem;
+  padding-left: 0.15rem;
+  position: relative;
+}
+.title span {
+  position: absolute;
+  display: inline-block;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 0.02rem;
+  background: #2b89e1;background: $common-iconColor
+}
+}
+
+

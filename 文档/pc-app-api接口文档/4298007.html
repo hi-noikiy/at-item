@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /account/symbol/balance 根据币对获取余额</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297985.html">交易中心【新】</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /account/symbol/balance 根据币对获取余额
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span> on Mar 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/account/symbol/balance  (post)</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">填写类型</th><th class="confluenceTh">说明</th></tr><tr><td class="confluenceTd">symbol</td><td class="confluenceTd">必填</td><td class="confluenceTd">市场标记，ethbtc</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p><span style="color: rgb(74,85,96);">{</span><br /><span style="color: rgb(74,85,96);">        </span><span class="json_key" style="color: rgb(146,39,143);">&quot;price&quot;</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">&quot;0.00002535&quot;</span><span style="color: rgb(74,85,96);">,</span><br /><span style="color: rgb(74,85,96);">        </span><span class="json_key" style="color: rgb(146,39,143);">&quot;countCoinBalance&quot;</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">&quot;0.02534787&quot;</span><span style="color: rgb(74,85,96);">,</span><br /><span style="color: rgb(74,85,96);">        </span><span class="json_key" style="color: rgb(146,39,143);">&quot;minVolume&quot;</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">&quot;0.01&quot;</span><span style="color: rgb(74,85,96);">,</span><br /><span style="color: rgb(74,85,96);">        </span><span class="json_key" style="color: rgb(146,39,143);">&quot;minPrice&quot;</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">&quot;0.00000001&quot;</span><span style="color: rgb(74,85,96);">,</span><br /><span style="color: rgb(74,85,96);">        </span><span class="json_key" style="color: rgb(146,39,143);">&quot;baseCoinBalance&quot;</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">&quot;3529.28212267&quot;</span><br /><span style="color: rgb(74,85,96);">    }</span></p></td><td class="confluenceTd">price:最新成交价<br /><span style="color: rgb(146,39,143);">countCoinBalance:计价货币余额<br /></span><span style="color: rgb(146,39,143);">baseCoinBalance：base货币余额<br /></span><span class="json_key" style="color: rgb(146,39,143);">minVolume</span><span style="color: rgb(74,85,96);">:</span><span style="color: rgb(74,85,96);"><span style="color: rgb(58,181,74);">购买最小数量</span></span><span style="color: rgb(74,85,96);">,</span><br /><span class="json_key" style="color: rgb(146,39,143);">minPrice</span><span style="color: rgb(74,85,96);">:</span><span class="json_string" style="color: rgb(58,181,74);">购买最小价格</span><span style="color: rgb(74,85,96);">,</span></td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+        &quot;price&quot;:&quot;0.00002535&quot;,
+        &quot;countCoinBalance&quot;:&quot;0.02534787&quot;,
+        &quot;minVolume&quot;:&quot;0.01&quot;,
+        &quot;minPrice&quot;:&quot;0.00000001&quot;,
+        &quot;baseCoinBalance&quot;:&quot;3529.28212267&quot;
+    }</pre>
+</div></div><p> </p><div class="wiki-content"><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd">bcc</td><td class="confluenceTd">bcccny</td><td colspan="1" class="confluenceTd">bccbtc</td></tr><tr><td class="confluenceTd">btc</td><td class="confluenceTd">btccny</td><td colspan="1" class="confluenceTd">-</td></tr><tr><td colspan="1" class="confluenceTd">etc</td><td colspan="1" class="confluenceTd">etccny</td><td colspan="1" class="confluenceTd">etcbtc</td></tr><tr><td class="confluenceTd">eth</td><td class="confluenceTd">ethcny</td><td colspan="1" class="confluenceTd">ethbtc</td></tr><tr><td class="confluenceTd">ltc</td><td class="confluenceTd">ltccny</td><td colspan="1" class="confluenceTd">ltcbtc</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">虚拟币编号</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">xxx-cny（xxx101）</div></div></th><th colspan="1" class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">xxx-btc（xxx201）</div></div></th></tr></thead></table></div></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

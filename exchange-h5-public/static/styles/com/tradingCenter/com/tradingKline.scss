@@ -1,0 +1,131 @@
+.con-kline {
+.box {
+  position: relative;
+  padding: 0 0.05rem;
+  padding-bottom: 0.1rem;
+}
+.loading {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0)
+}
+.markT-enter-active {
+  animation: markT-in .3s;
+}
+.markT-leave-active {
+  animation: markT-in .3s reverse;
+}
+@keyframes markT-in {
+  0% {
+    height: 0%;
+    opacity: 0
+  }
+  100% {
+    height: 50%;
+    opacity: auto;
+  }
+}
+.markB-enter-active {
+  animation: markB-in .2s;
+}
+.markB-leave-active {
+  animation: markB-in .2s reverse;
+}
+@keyframes markB-in {
+  0% {
+    height: 0%;
+    opacity: 0
+  }
+  100% {
+    height: 50%;
+    opacity: auto;
+  }
+}
+.con-kline {
+  width: 100%;
+  position: relative
+}
+.tv_chart_container {
+  height: 2.4rem;
+  width: 98%;
+  margin-left: 1%;
+  /* margin-left: -0.01rem;
+  margin-top: -0.01rem; */
+}
+.mark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  /* background: $common-interval; */
+  background: #000;
+  opacity: 0.1;
+  top: 0;
+  box-shadow: 0px 0px 20px #1c2b49;
+  box-shadow: 0px 0px 20px $common-interval;
+}
+.selectTime {
+  font-size: 0.14rem;
+  font-weight: 700;
+  overflow-x: scroll;
+  display: flex;
+}
+.time {
+  padding-left: 0.15rem;
+  /* background: $common-interval; */
+  padding-right: 0.15rem;
+}
+.first {
+  display: flex;
+  /* opacity: 0.7; */
+  display: flex;
+  flex: 1;
+  /* border-bottom: 0.01rem solid #555; */
+  /* background: $common-interval; */
+}
+.first div {
+  text-align: center;
+  line-height: 0.4rem;
+  padding: 0 0.1rem;
+  font-size: 0.12rem;
+  white-space: nowrap;
+  color: #7b8191;color: $common-Vice;
+}
+.select {
+  display: flex;
+  background: #1c2b49;background: $common-interval;
+  opacity: 0.7;
+}
+.select div {
+  flex: 1;
+  text-align: center;
+  line-height: 0.4rem;
+}
+.active {
+  color: #c7cce6;color: $common-fontColor;
+}
+.actived {
+  color: #2b89e1;color: $common-iconColor!important
+}
+.markT {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  background: #000;
+}
+.markB {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  background: #000;
+}
+}
+

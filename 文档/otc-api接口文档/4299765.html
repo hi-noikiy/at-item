@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /otc/public_info  - 公告接口 - OK</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4299676.html">OTC场外交易接口(vue)</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /otc/public_info  - 公告接口 - OK
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> yulei</span>, last modified by <span class='editor'> zhongjingyun</span> on Jul 06, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="5" class="confluenceTh">/otc/public_info （POST）</th></tr><tr><th colspan="1" class="confluenceTh">参数</th><th colspan="1" class="confluenceTh">类型</th><th colspan="1" class="confluenceTh">必填项</th><th colspan="1" class="confluenceTh">说明</th><th colspan="1" class="confluenceTh">用例</th></tr><tr><td class="confluenceTd"><span style="color: red;"><span style="color: rgb(59,65,81);">无</span></span><span style="color: red;"> </span></td><td class="confluenceTd"> </td><td class="confluenceTd"> </td><td class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">code</span></td><td colspan="1" class="confluenceTd">0</td><td colspan="1" class="confluenceTd">成功</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(59,65,81);">data</span></td><td colspan="1" class="confluenceTd"><p> {</p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">exsymbol</span>s： <span style="color: rgb(59,65,81);">场外开放的币种</span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">paycoins</span>： <span style="color: rgb(59,65,81);">支付币种</span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">payments</span>：<span style="color: rgb(59,65,81);">支付方式</span></span></p><p><span style="color: rgb(59,65,81);"> {</span></p><p><span style="color: rgb(59,65,81);">icon： <span style="color: rgb(59,65,81);">图标</span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">key： <span style="color: rgb(59,65,81);">支付方式/币种 的key,传给后台的值</span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">title： <span style="color: rgb(59,65,81);">前台显示的值</span></span></span></span></p><p><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);"><span style="color: rgb(59,65,81);">used： <span style="color: rgb(59,65,81);">是否启用</span></span></span></span></span></p><p><span style="color: rgb(59,65,81);">}</span></p><p><span style="color: rgb(59,65,81);">&quot;otcChatWS&quot;: &quot;<a href="wss://ws2.365os.com/otc-chat/chatServer" rel="nofollow">wss://ws2.365os.com/otc-chat/chatServer</a>&quot;</span></p><p>}</p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><span>msg</span></td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd">返回消息</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+  &quot;code&quot;: 0,
+  &quot;msg&quot;: &quot;成功&quot;,
+  &quot;data&quot;: {
+    &quot;payments&quot;: [
+      {
+        &quot;key&quot;: &quot;otc.payment.alipay&quot;,
+        &quot;title&quot;: &quot;支付宝&quot;,
+        &quot;icon&quot;: &quot;alpay.png&quot;,
+        &quot;used&quot;: false
+      },
+      {
+        &quot;key&quot;: &quot;otc.payment.wxpay&quot;,
+        &quot;title&quot;: &quot;微信&quot;,
+        &quot;icon&quot;: &quot;wechartpay.png&quot;,
+        &quot;used&quot;: false
+      },
+      {
+        &quot;key&quot;: &quot;otc.payment.international.wire.transfer&quot;,
+        &quot;title&quot;: &quot;国际电汇&quot;,
+        &quot;icon&quot;: &quot;pafpay.png&quot;,
+        &quot;used&quot;: false
+      }
+    ],
+    &quot;paycoins&quot;: [
+      {
+        &quot;key&quot;: &quot;CNY&quot;,
+        &quot;title&quot;: &quot;人民币&quot;,
+        &quot;icon&quot;: &quot;/upload/aa.jpg&quot;,
+        &quot;used&quot;: true
+      },
+      {
+        &quot;key&quot;: &quot;USD&quot;,
+        &quot;title&quot;: &quot;美元&quot;,
+        &quot;icon&quot;: &quot;/upload/aa.jpg&quot;,
+        &quot;used&quot;: true
+      }
+    ],
+    &quot;defaultCoin&quot;: &quot;BTC&quot;,
+    &quot;defaultSeach&quot;: &quot;SELL&quot;
+	&quot;otcChatWS&quot;: &quot;wss://ws2.365os.com/otc-chat/chatServer&quot;
+	&quot;rateUrl&quot;:&quot;https://api.coinmarketcap.com/v1/ticker/?convert=CNY&quot;,
+  }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 21, 2018 18:31</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

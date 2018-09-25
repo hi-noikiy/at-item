@@ -1,0 +1,173 @@
+// 阿里云滑动
+.ln {
+  width: 100%;
+  height: 0.5rem;
+  color: $common-iconColor;
+  border-radius: 0.04rem;
+  border: 0.01rem solid #404e6f!important;
+  background: #1c2b49;
+  background: $common-interval;
+  position: relative
+}
+.ln-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+/* 滑动容器 */
+#ln .stage1 .slider {
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  top: 0rem;
+}
+/* 滑动条 */
+#ln .stage1 .label {
+  border-radius: 0.04rem;
+  overflow: hidden;
+  height: 100%;
+  background: #1c2b49;
+  background: $common-interval!important;
+  -webkit-text-fill-color: #7b8191;
+  -webkit-text-fill-color: $common-Vice;
+  box-sizing: border-box;
+}
+/* 滑动方块 */
+#ln .stage1 .button {
+  background-color: #1c2b49;
+  background-color: $common-interval;
+  border: 0.01rem solid #2b89e1;
+  border: 0.01rem solid $common-iconColor;
+  top: 0%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 0.04rem;
+}
+.ln .h {
+  display: inline-block;
+  width: 4rem;
+}
+.ln input {
+  border: solid 1px var(#18243c);
+  border: solid 1px $common-background;
+  background: #18243c;background: $common-background;
+  padding: 5px 8px;
+}
+#nc_1-stage-1 {
+  height: 0.5rem;
+}
+.icon-slide-arrow {
+  color: #2b89e1;color: $common-iconColor!important
+}
+#ln .stage1 .icon {
+  left: 0!important;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  /* line-height: 0.45rem!important; */
+}
+#ln .icon-ok {
+  color: #2b89e1;
+  color:$common-iconColor
+}
+#ln .stage1 .track {
+  top: 0.01rem;
+  height: 95%!important;
+  margin-left: 0.01rem;
+}
+#ln *{
+  color: $common-fontColor
+}
+#ln .stage1 .bg-red {
+  top: 0.01rem;
+  height: 95%!important;
+  /* background: -webkit-gradient(linear, 0% 50%, 100% 0%, from(#68aadf), to($common-iconColor)); */
+  background-color: #1c2b49;
+  background-color: $common-interval;
+  border-radius: 0.04rem 0rem 0rem 0.04rem;
+}
+#ln .bg-green {
+  /* background: -webkit-gradient(linear, 0% 50%, 100% 0%, from(#68aadf), to($common-iconColor)); */
+  background-color: #1c2b49;
+  background-color: $common-interval!important;
+  /* border-radius: 0.04rem 0rem 0rem 0.04rem; */
+  /* opacity: 0.6; */
+  height: 95%!important
+}
+#ln .icon-close {
+  color: #2b89e1;color: $common-iconColor
+}
+#ln .stage1 .slider {
+  box-shadow: none;
+  background-size: 0;
+  background-color: #404e6f!important;
+}
+#ln .stage {
+  padding: 0;
+}
+.geetest_btn {
+  height: 0.5rem!important;
+  line-height: 0.5rem!important
+}
+.geetest_radar_btn {
+  background: $common-interval!important;
+  border-color: $common-interval!important;
+}
+// 成功后
+.geetest_success_btn {
+  background: $common-interval!important;
+  border-color: $common-interval!important;
+}
+// 成功icon
+.geetest_success_box {
+  height: 0.24rem!important;
+  width: 0.24rem!important;
+  top: 0.11rem!important;
+}
+.geetest_success_show {
+  background: $common-interval!important;
+}
+// icon小点
+.geetest_radar {
+  height: 0.3rem!important;
+  width: 0.3rem!important;
+  margin: 0.1rem 0.05rem!important;
+}
+.geetest_radar_tip, .geetest_success_radar_tip {
+  height: 0.5rem!important;
+  line-height: 0.5rem!important
+}
+.geetest_radar_tip_content, .geetest_success_radar_tip_content, .geetest_reset_tip_content {
+  color: $common-Vice!important;
+  font-size: 0.14rem;
+}
+.geetest_logo, .geetest_success_logo {
+  display: none!important;
+}
+#nc_3-stage-1 {
+  height: 0.5rem;
+}
+.slider .label {
+  // height: 98%!important;
+}
+  // border: 1px solid $border-blue-color
+// }
+// .geetest_holder.geetest_wind .geetest_radar_btn ,
+// .geetest_holder.geetest_wind .geetest_radar_btn:hover{
+//   background: none;
+//   border: none;
+//   background: $common-interval;
+//   height: 0.5rem;
+// }
+// .geetest_holder.geetest_wind.geetest_radar_click_ready .geetest_radar_btn {
+//   background: $common-interval;
+//   // border: 1px solid $border-blue-color
+// }
+
+
+// .geetest_holder.geetest_wind .geetest_radar_tip {
+//   // color: $explain-font-color;
+//   font-size: 12px;
+// }

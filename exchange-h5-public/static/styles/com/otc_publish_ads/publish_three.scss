@@ -1,0 +1,47 @@
+.publishStepThree{
+  height: 100%;
+  width: 100%;
+  .title{
+    line-height: 0.4rem;
+    border-bottom: 0.02rem solid $input-background;
+    text-align: left;
+    font-size: 0.16rem;
+    padding: 0 0.1rem;
+  }
+  .note{
+    padding: 0.2rem 0.1rem;
+    textarea{
+      border: 0.01rem solid $input-border;
+      background: $input-background;
+      height: 2rem;
+      width: 100%;
+      color: $input-Text-default;
+      margin-top: 0.1rem;
+      padding-top: 0.05rem;
+      text-indent: 0.2rem;
+    }
+  }
+  .type{
+    span{
+      font-size: 0.12rem;
+    }
+  }
+  .label{
+    margin-top: 0.1rem;
+  }
+  .next,.pre{
+    height: 0.4rem;
+    text-align: center;
+    width: 45%;
+    color:$common-fontColor;
+    background: $common-emphasize;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .pre{
+   float: left;
+  }
+  .next{
+    float: right;
+  }
+}

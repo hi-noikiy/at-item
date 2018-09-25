@@ -1,0 +1,34 @@
+#com-pageBox {
+.paging {
+  height: 0.4rem;
+  background-color: #18243c;
+  background-color: $common-background;
+  width: 100%;
+  display: flex;
+  .page {
+    position: absolute;
+    left: 80%;
+    width: 20%;
+    height: 100%;
+    background: #1c2b49;
+    background: $common-interval;
+    text-align: center;
+    /* transform: translateX(-50%); */
+    line-height: 0.4rem
+  }
+}
+.paging div {
+  width: 40%;
+  text-align: center;
+  line-height: 0.4rem;
+  background-color: #2b89e1;background-color: $common-iconColor;
+  border-left: 0.01rem solid #1c2b49;
+  border-left: 0.01rem solid $common-interval;
+}
+.paging .ac {
+  /* opacity: 0.5 */
+}
+.paging div:first-child {
+  border: none
+}
+}

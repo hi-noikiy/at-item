@@ -1,0 +1,43 @@
+#com-lang {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+input {
+  text-align: center;
+  width: 100%;
+  font-size: 0.16rem;
+  height: 0.45rem;
+  background: #404e6f;
+  border-radius: 0;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */ 
+  line-height: normal;
+  color: $common-Vice; 
+  font-size: 0.16rem;
+  font-family: "iconfont";
+  text-align: center;
+}
+ul {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 0 0.2rem
+}
+li {
+  font-size: 0.16rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  justify-content: space-between;
+  position: relative
+}
+.active {
+  color: #2b89e1;color: $common-iconColor
+}
+i {
+  font-size: 0.2rem;
+  margin-right: 0.1rem;
+}
+}
+

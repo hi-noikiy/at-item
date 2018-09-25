@@ -1,0 +1,122 @@
+.publishStepTwo{
+  height: 100%;
+  width: 100%;
+  .title{
+    line-height: 0.4rem;
+    border-bottom: 0.02rem solid $common-interval;
+    text-align: left;
+    font-size: 0.16rem;
+    padding: 0 0.1rem;
+  }
+  .dealLimit{
+    padding: 0.2rem 0.1rem;
+    border-bottom: 0.02rem solid $common-interval;
+    .inputBox{
+      width: 100%;
+      height: 0.4rem;
+      margin-top: 0.2rem;
+      border: 0.01rem solid $input-border;
+      position: relative;
+      input{
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-indent: 0.1rem;
+        background: $input-background;
+      }
+      .right{
+        position: absolute;
+        right: 0.2rem;
+        top: 0.13rem;
+        color: $common-iconColor;
+      }
+    }
+  }
+  .accList{
+    padding: 0.2rem 0.1rem;
+    .sellType{
+      border-bottom: 0.02rem solid $common-interval;
+      .sellTop{
+        display: flex;
+        .payTitle{
+          flex: 1;
+          line-height: 0.4rem;
+          text-align: center;
+        }
+      }
+      .active{
+        border-bottom: 0.02rem solid $common-emphasize;
+        color: $common-emphasize;
+      }
+    }
+    .buyType{
+      display: flex;
+      margin-top: 0.2rem;
+      .buyList{
+         flex:1;
+         input{
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 0.05rem;
+         }
+      }
+    }
+  }
+  .iconImg{
+    height: 0.22rem;
+    width: 0.22rem;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    img{
+      position: absolute;
+      left: 0;
+    }
+  }
+  .type{
+    span{
+      margin-right: 0.1rem
+    }
+    .total {
+      color:$yellow-color;
+      display: block;
+      margin-top: 0.1rem;
+    }
+  }
+  .unit{
+    margin-right: 0.1rem;
+  }
+  .coinList{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    .coinListCon{
+      position: fixed;
+      bottom: 0;
+      background: $common-interval;
+      width: 100%;
+      ul li{
+        line-height: 0.5rem;
+        text-align: center;
+        border-bottom: 0.02rem solid $common-background;
+      }
+    }
+  }
+  .next,.pre{
+    height: 0.4rem;
+    text-align: center;
+    width: 45%;
+    color:$common-fontColor;
+    background: $common-emphasize;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .pre{
+   float: left;
+  }
+  .next{
+    float: right;
+  }
+}

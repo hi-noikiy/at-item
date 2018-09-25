@@ -1,0 +1,32 @@
+.blacklist{
+    .black-contet{
+        .header{
+            padding: 0 .1rem;
+            height: 0.55rem;
+            line-height: 0.55rem;
+            border-bottom: 0.01rem solid $common-interval;
+        }
+        .list{
+            padding: 0 .1rem;
+            li{
+                display: flex;
+                height: 0.65rem;
+                line-height: 0.65rem;
+                border-bottom:  0.01rem solid $common-interval;
+                .name{
+                    flex: 1;
+                }
+                .button{
+                    color: $common-emphasize;
+                }
+            }
+            .pageBox{
+                position: fixed;
+                height: 0.4rem;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.otc_capitals_prompt {
+  padding-bottom: 0.05rem;
+  .text {
+    line-height: 0.3rem;
+    display: flex;
+    font-size: 0.14rem;
+    color: $common-emphasize;
+    span {
+      display: block;
+      color: $common-Vice;
+      margin-right: 0.1rem;
+    }
+    span:nth-child(2) {
+      margin-left: 0.1rem;
+    }
+  }
+  .symbol {
+    padding: 0 0.1rem;
+    height: 100%;
+    line-height: 0.43rem;
+    border-left: 0.01rem solid $input-border;
+  }
+  .options {
+    display: flex;
+    font-size: 0.12rem;
+    margin-top: 0.1rem;
+    justify-content: space-between;
+  }
+  .now_have {
+    span {
+      color: $common-Vice
+    }
+  }
+  .allin {
+    color: $common-emphasize;
+  }
+  .error {
+    color: $input-error;
+    font-size: 0.12rem;
+    margin-top: 0.05rem;
+  }
+}

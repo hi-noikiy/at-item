@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="keyWords" content="比特币交易平台,比特币,BTC,比特币价格,比特币行情,USDT,莱特币,BCH,以太坊,ETH,以太经典">
+  <meta name="description" content="专业虚拟货币交易站,使莱特币LTC,以太坊ETH,BCH,以太经典(ETC),达世币DASH,瑞波XRP,BCH,PAY,BTG,OMG,EOS,RDN,SNT,KNC,MTL,QSP,RCN,AST,TNT,BCD,TNB等数字货币以比特币BTC,USDT进行交易！提供实时比特币价格,比特币行情.">
+  <!-- 强制显示方式 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- 强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- 忽略页面中的数字识别为电话号码 -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- 忽略页面中的邮箱格式为邮箱 -->
+  <meta name="format-detection" content="email=no" />
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="css/flipclock.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="/scripts/rem.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main_view">
+      <div class="bg_index">
+        <img src="img/pic_bg.png" alt="">
+      </div>
+      <div class="down_time_wrap">
+        <div class="wrap">
+          <div class="time_box_wrap">
+            <div class="time_title">
+              <H2>倒计时结束</H2>
+              <img src="img/pic_trade_title.png" alt="">
+            </div>
+            <div class="trade_qd_money">
+              <span><em id="in_all_money"></em><i>QD</i></span>
+            </div>
+            <div class="trade_count_time">
+              <div class="clock_line">
+                <div id="clock"></div>
+                <div class="end_clock">活动已结束, 等待开奖中...</div>
+              </div>
+            </div>
+          </div>
+          <div class="scroll_force_list">
+            <div class="scroll_force">
+              <a href="javascript:;" class="get_force" id="goAPP_page">交易获取算力</a>
+              <div class="nav_top_wrap">
+                <div class="nav_left nav_detail">
+                  <ul class="clearfix">
+                    <li class="items items_force fl">
+                      <span><i></i>总算力：<em id="force">0</em></span>
+                    </li>
+                    <li class="items items_force_trade fr">
+                      <span><i></i>获取算力交易额：<em id="force_trade">0</em></span>
+                    </li>
+                  </ul> 
+                </div>
+                <div class="nav_left nav_detail">
+                  <ul class="clearfix">
+                    <li class="items items_award fl">
+                      <span><i></i>总分红：<em id="award">0</em></span>
+                    </li>
+                    <li class="items items_award fr">
+                      <span class="my_force_btn fr">我的算力：<em id="my_force">0</em></span>
+                      <span class="my_user_btn fr"></span>
+                    </li>
+                  </ul> 
+                </div>
+                <div class="nav_right nav_detail">
+                  <a href="javascript:;" class="rule_btn"><i></i>活动规则</a>
+                </div>
+              </div>
+              <div class="public_style all_force_get">
+                <div class="force_bg">
+                  <div class="scroll_wrap">
+                    <ul class="scroll_move" id="move_force">
+                      <li>1用户145****4556通过交易获得一个算力</li>
+                      <li>2用户145****4556通过交易获得二个算力</li>
+                      <li>3用户145****4556通过交易获得三个算力</li>
+                      <li>4用户145****4556通过交易获得四个算力</li>
+                      <li>5用户145****4556通过交易获得五个算力</li>
+                      <li>6用户145****4556通过交易获得六个算力</li>
+                      <li>7用户145****4556通过交易获得七个算力</li>
+                      <li>8用户145****4556通过交易获得八个算力</li>
+                      <li>9用户145****4556通过交易获得九个算力</li>
+                      <li>10用户145****4556通过交易获得十个算力</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="public_style all_rank_list">
+                <div class="force_bg">
+                  <div class="scroll_wrap">
+                    <div class="ranking_wrap">
+                      <div class="rank_nav clearfix">
+                        <a href="javascript:;" class="active">算力排行</a>
+                        <a href="javascript:;">中奖名单</a>
+                        <!-- <a href="javascript:;">选择战队</a> -->
+                      </div>
+                      <div class="rank_list_wrap">
+                        <div class="rank_list_item rank_list_item_force active">
+                          <div class="has_detail">
+                            <div class="rank_title">
+                              <ul class="clearfix">
+                                <li>用户名</li>
+                                <li>算力</li>
+                                <li>分红次数</li>
+                              </ul>
+                            </div>
+                            <div class="rank_content">
+                              <ul id="ranking_ul">
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rank_list_item rank_list_item_cup">
+                          <div class="none_data">
+                            <img src="img/cup.png" alt="">
+                            <span>暂未开奖</span>
+                          </div>
+                          <div class="has_detail">
+                            <div class="rank_title">
+                              <ul class="clearfix">
+                                <li></li>
+                                <li>用户名</li>
+                                <li>中奖金额</li>
+                              </ul>
+                            </div>
+                            <div class="rank_content scrollBar">
+                              <ul id="bounds_ul">
+                                
+                              </ul>
+                            </div>
+                            <!-- <div class="rank_cup_more">
+                              <a href="javascript:;">查看更多</a>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="winning_window_end">
+        <div class="wrap">
+          <div class="winning_box">
+            <div class="winning_text">
+              <div class="imgs">
+                <img src="img/winning.png" alt="">
+              </div>
+              <div class="bonus_pools">
+                <img src="img/band.png" alt="">
+                <p><em id="bouns_money_all">0.00</em> QD</p>
+              </div>
+              <div class="bonus_person">
+                <p id="bonus_person_one">中奖用户：<em></em></p>
+                <p id="bonus_person_two">中奖用户：<em></em></p>
+              </div>
+              <div class="bouns_next">
+                <p>下一期即将开始～</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shadow_popUp">
+    <div class="shadow_pop"></div> 
+    <div class="at_explain">
+      <div class="explain">
+        <h3>活动规则</h3>
+        <div class="text">
+          <p>从 2015 年 4 月起，Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+          <p>Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+          <p>Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+          <p>Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+          <p>Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+          <p>Ant Design 在蚂蚁金服中后台产品线迅速推广，对接多条业务线，覆盖系统 800 个以上。定位于中台业务的 Ant Design 兼顾专业和非专业的设计人员，具有学习成本低、上手速度快、实现效果好等特点，并且提供从界面设计到前端开发的全链路生态，可以大大提升设计和开发的效率。</p>
+        </div>
+        <a href="javascript:;" class="shadow_close"></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="/scripts/jquery-1.11.3.min.js"></script>
+<script src="/scripts/jquery.cookie.js"></script>
+<script src="/scripts/k_tools.js"></script>
+<script src="/scripts/template.js"></script>
+<script src="js/flipclock.min.js"></script>
+<script src="js/countUp.js"></script>
+<script src="/scripts/sockjs-client-master/dist/sockjs.min.js"></script>
+<script src="/scripts/stomp-websocket-master/lib/stomp.min.js"></script>
+<script src="js/index.js"></script>
+
+<!--模板辅助函数-->
+<script type="text/javascript">
+  template.helper('_toChinese', function (number) {
+    /*
+     * 单位
+     */
+    var units = '个十百千万@#%亿^&~';
+    /*
+     * 字符
+     */
+    var chars = '零一二三四五六七八九';
+    var a = (number + '').split(''), s = [];
+    if (a.length > 12) {
+      throw new Error('too big');
+    } else {
+      for ( var i = 0, j = a.length - 1; i <= j; i++) {
+        if (j == 1 || j == 5 || j == 9) {// 两位数 处理特殊的 1*
+          if (i == 0) {
+            if (a[i] != '1')
+              s.push(chars.charAt(a[i]));
+          } else {
+            s.push(chars.charAt(a[i]));
+          }
+        } else {
+          s.push(chars.charAt(a[i]));
+        }
+        if (i != j) {
+          s.push(units.charAt(j - i));
+        }
+      }
+    }
+    // return s;
+    return s.join('').replace(/零([十百千万亿@#%^&~])/g, function(m, d, b) {// 优先处理 零百 零千 等
+      b = units.indexOf(d);
+      if (b != -1) {
+        if (d == '亿')
+          return d;
+        if (d == '万')
+          return d;
+        if (a[j - b] == '0')
+          return '零'
+      }
+      return '';
+    }).replace(/零+/g, '零').replace(/零([万亿])/g, function(m, b) {// 零百 零千处理后 可能出现 零零相连的 再处理结尾为零的
+      return b;
+    }).replace(/亿[万千百]/g, '亿').replace(/[零]$/, '').replace(/[@#%^&~]/g, function(m) {
+      return {
+        '@' : '十',
+        '#' : '百',
+        '%' : '千',
+        '^' : '十',
+        '&' : '百',
+        '~' : '千'
+      }[m];
+    }).replace(/([亿万])([一-九])/g, function(m, d, b, c) {
+      c = units.indexOf(d);
+      if (c != -1) {
+        if (a[j - c] == '0')
+          return d + '零' + b
+      }
+      return m;
+    });
+  });
+</script>
+<!--模板-->
+<script id="bonusPoolTemp" type="text/html">
+    {{each list as value i}}
+    <li class="clearfix bounds">
+      <div class="line_first fl">
+        <div class="lines">第{{_toChinese(list.length - i)}}期</div>
+      </div>
+      <div class="line_wrap fl">
+        {{each value.userKeys as user j}}
+        <div class="line_detail clearfix">
+          <div class="lines">{{user.phone}}</div>
+          <div class="lines">{{value.amount}}</div>
+        </div>
+        {{/each}}
+      </div>
+    </li>
+    {{/each}}
+</script>
+
+<!--交易获取算力模板-->
+<script id="tradelogTemp" type="text/html">
+    {{each list as value i}}
+    <li>用户{{value.phone}}通过交易获得{{_toChinese(value.keys)}}个算力</li>
+    {{/each}}
+</script>
+
+<!--算力排行模板-->
+<script id="rankingTemp" type="text/html">
+    {{each list as value i}}
+    <li class="clearfix ranking">
+      <div class="lines"><i class="trophy"></i>{{value.phone}}</div>
+      <div class="lines">{{value.keys}}</div>
+      <div class="lines">{{value.bonusCount}}</div>
+    </li>
+    {{/each}}
+</script>

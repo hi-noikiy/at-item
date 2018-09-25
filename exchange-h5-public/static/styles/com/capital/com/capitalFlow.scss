@@ -1,0 +1,141 @@
+#com-flow{
+  width: 100%;
+  padding-top: 0.45rem;
+  /* height: 100%; */
+.no_data{
+  text-align: center;
+  line-height:1rem;
+}
+.flow-tit {
+    padding: 0 .1rem;
+    position: fixed;
+    background: #18243c;background: $common-background;
+    z-index: 8;
+    top: 0.4rem;
+    width: 100%;
+    line-height: 0.45rem;
+    height: 0.45rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 -0.44rem 0.44rem #262f44; */
+    font-size: 0.18rem
+}
+.tabg {
+  height:0.4rem;
+  border-bottom: 0.01rem solid var( --common-interval);
+  padding: 0 0.1rem;
+  line-height: 0.4rem;
+  /* margin-bottom: 0.2rem; */
+  margin-top: 0.05rem;
+}
+.tabg li {
+  float: left;
+  margin-right:0.4rem; 
+}
+.tabg .active{
+  color: #2b89e1;color: $common-iconColor;
+  height: 0.4rem;
+  border-bottom: 0.01rem solid #2b89e1;
+  border-bottom: 0.01rem solid $common-iconColor;
+}
+/* 充值列表 */
+.rechar-list,.forward-list,.other-list{
+    padding: 0 0.1rem;
+    display: none;
+}
+.rechar-list .list-head{
+    color: $common-Vice
+}
+.rechar-list,.forward-list,.other-list li {
+    /* line-height: 0.45rem; */
+}
+.rechar-list li span{
+    font-size: 0.14rem;
+    display:inline-block;
+    width: 25%;
+}
+.rechar-list li span:last-child {
+    width: 21%;
+    text-align: end
+}
+.rechar-list li .symbol,number{
+    text-align: center;
+}
+.rechar-list li  .abnormal {
+  color:#ef5a61; color:$common-error;
+}
+.rechar-list li  .conduct {
+  color:#f39800 
+}
+.rechar-list li  .complete {
+ color: #57bd51; color: $common-success  
+}
+
+/* 提现列表 */
+ .for-head,.other-head{
+    color: $common-Vice
+}
+.forward-list li span{
+    display: inline-block;
+    width: 25%;
+    font-size: 0.14rem;
+}
+.forward-list li .symbol,.number,.addres{
+    text-align: center;
+}
+.forward-list li .abnormal {
+  color:#ef5a61; color:$common-error;
+}
+.forward-list li .conduct {
+  color:#f39800 
+}
+.forward-list li .complete {
+  color: #57bd51; color: $common-success  
+}
+
+.forward-list li span:last-child{
+    width: 21%;
+    text-align: end;
+}
+.other-list li span{
+     display: inline-block;
+    width: 25%;
+    font-size: 0.14rem;
+}
+.other-list li .symbol,.number.addres{
+      text-align: center;
+
+}
+.other-list li span:last-child{
+     width: 21%;
+    text-align: end;
+}
+.exhibition{
+    display: block
+}
+.red {
+   color:#ef5a61; color:$common-error;
+}
+.green{
+   color: #57bd51; color: $common-success  
+}
+.loading{
+  /* width:.1rem;
+  height: .1rem;
+  margin: .8rem auto; */
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%)
+}
+.list-content, .other-content, .for-content {
+  line-height: 0.3rem!important;
+}
+.list-head, .other-head, .for-head {
+  line-height: 0.3rem;
+  margin-top: 0.12rem;
+}
+.for-content {
+  box-sizing: border-box;
+}
+}
+

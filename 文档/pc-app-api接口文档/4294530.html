@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /openapi/create_open_api-添加</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295549.html">用户API相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /openapi/create_open_api-添加
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> fuyu</span>, last modified by <span class='editor'> xingmingfeng</span> on May 22, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/openapi/create_open_api (POST):添加</th></tr><tr><th class="confluenceTh">参数</th><th colspan="1" class="confluenceTh">必须</th><th class="confluenceTh">说明</th></tr><tr><td colspan="1" class="confluenceTd">smsValidCode</td><td colspan="1" class="confluenceTd">true</td><td colspan="1" class="confluenceTd">短信验证码</td></tr><tr><td colspan="1" class="confluenceTd">googleCode</td><td colspan="1" class="confluenceTd">false</td><td colspan="1" class="confluenceTd">谷歌验证</td></tr><tr><td colspan="1" class="confluenceTd">label</td><td colspan="1" class="confluenceTd">true</td><td colspan="1" class="confluenceTd">api备注名</td></tr><tr><td colspan="1" class="confluenceTd">believeIps</td><td colspan="1" class="confluenceTd">false</td><td colspan="1" class="confluenceTd">ip白名单</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回结果</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td colspan="2" class="confluenceTd"><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td colspan="2" class="confluenceTd"><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><pre><span style="color: rgb(0,128,0);">002_001</span></pre></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><pre><span style="color: rgb(0,128,0);">短信验证码错误或过期</span></pre></div></th></tr></thead><tbody><tr><td colspan="1" class="confluenceTd"><pre><span style="color: rgb(0,128,0);">002_004</span></pre></td><td colspan="1" class="confluenceTd"><pre><span style="color: rgb(0,128,0);">非法查看</span><span style="color: rgb(0,128,0);">api</span></pre></td></tr><tr><td class="confluenceTd"><pre><span style="color: rgb(0,128,0);">002_003</span></pre></td><td class="confluenceTd"><pre><span style="color: rgb(0,128,0);">谷歌验证码错误</span></pre></td></tr><tr><td class="confluenceTd"><pre><span style="color: rgb(0,128,0);">002_002</span></pre></td><td class="confluenceTd"><pre><span style="color: rgb(0,128,0);">谷歌验证码不能为空</span></pre></td></tr><tr><td colspan="1" class="confluenceTd">0</td><td colspan="1" class="confluenceTd">成功</td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>[{},{}.{}]</p></td><td class="confluenceTd">列表</td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><p>data结构</p></th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">示例</th><th class="confluenceTh">解释</th></tr><tr><td colspan="1" class="confluenceTd">label</td><td colspan="1" class="confluenceTd"><span style="color: rgb(153,153,153);"> XX的api</span></td><td colspan="1" class="confluenceTd"><span>api备注名</span></td></tr><tr><td class="confluenceTd">token</td><td class="confluenceTd"><span style="color: rgb(33,47,92);">66e729676a29d80asssess6a5ce6315</span></td><td class="confluenceTd"><span style="color: rgb(33,47,92);">API Token</span></td></tr><tr><td class="confluenceTd">believeIps</td><td class="confluenceTd"><p>10.64.200.1,20.12.22.44</p></td><td class="confluenceTd"><span>ip白名单</span></td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+    &quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: &quot;suc&quot;,
+    &quot;data&quot;: {
+        &quot;lable&quot;: &quot;test&quot;,
+        &quot;believeIps&quot;: &quot;test&quot;,
+        &quot;token&quot;: &quot;7844b115e92cab177e3d3500684f9b6a&quot;
+    }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

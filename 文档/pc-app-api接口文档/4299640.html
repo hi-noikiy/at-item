@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /common/user_info - 用户登录信息</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4299626.html">/common/public_info- 获取公共配置</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /common/user_info - 用户登录信息
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> houdongdong</span>, last modified by <span class='editor'> xingmingfeng</span> on Jun 11, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">0</td><td class="confluenceTd">0:发送成功</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">110032:发送失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>{</p><pre>       &quot;id&quot;: &quot;12&quot;，// 用户ID
+       &quot;nickName&quot;:&quot;真帅&quot;, // 用户昵称
+       &quot;countryCode&quot;: &quot;+89&quot;  //手机号码对应的国家编号
+       &quot;mobileNumber&quot;:&quot;135****7789&quot;, //手机号</pre><pre>       &quot;userAccount&quot;:&quot;135****7789&quot;, //账户（手机不存在取邮箱）</pre><pre>       &quot;email&quot;:&quot;1********@163.com&quot;,    // 邮箱
+       &quot;accountStatus&quot;: &quot;0&quot;,    // 账户状态 0.正常 1.冻结交易，冻结提现 2冻结交易 3冻结提现
+       &quot;authLevel&quot;: &quot;&quot;,         //认证状态 0、未审核，1、通过，2、未通过  3未认证</pre><pre>       &quot;inviteCode&quot;:&quot;XNAFF&quot;,
+       &quot;inviteUrl&quot;: &quot;&quot;,         //邀请链接
+       &quot;googleStatus&quot;:&quot;1&quot;,      //是否开启googel验证
+       &quot;isOpenCapitalPword&quot;:&quot;1&quot;,//是否开启资金密码   功能已取消，字段删除
+       &quot;isOpenMobileCheck&quot;:&quot;1&quot;, //是否开启手机验证
+       &quot;exchangeVerify&quot;:&quot;2&quot;,    //资金密码规则     功能已取消，字段删除</pre><pre>       &quot;withdraw_status&quot;:&quot;1&quot;,   //提现状态  accountStatus 中可以读取到提现状态</pre><p><code class="java string">&quot;notPassReason&quot;</code><code class="java plain">: </code><code class="java string">&quot;test&quot;</code><code class="java plain">,</code></p><p>&quot;feeCoin&quot;: &quot;NOB&quot; // 优先支付手续费的<br /> &quot;feeCoinRate&quot;: &quot;0.00&quot; // 手续费折扣半分比</p><p>&quot;<span>useFeeCoinOpen</span>&quot;: 0 // 是否开启优先支付手续费 0： 未开启 1：开启</p><p>&quot;lastLoginTime&quot;: &quot;1526614377000&quot;,//最后登录时间</p><p>&quot;lastLoginIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,//登录ip</p><p>}</p></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><p> </p><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">&quot;data&quot;:{
+       &quot;id&quot;: &quot;12&quot;，// 用户ID
+       &quot;nickName&quot;:&quot;真帅&quot;, // 用户昵称
+       &quot;countryCode&quot;: &quot;+89&quot;  //手机号码对应的国家编号
+       &quot;mobileNumber&quot;:&quot;13520657789&quot;, //手机号
+       &quot;email&quot;:&quot;11@163.com&quot;,    // 邮箱
+       &quot;accountStatus&quot;: &quot;0&quot;,    // 账户状态 0.正常 1.冻结交易，冻结提现 2冻结交易 3冻结提现
+       &quot;authLevel&quot;: &quot;&quot;,         //认证状态 0、未审核，1、通过，2、未通过  3未认证
+       &quot;inviteCode&quot;:&quot;XNAFF&quot;,
+       &quot;inviteUrl&quot;: &quot;&quot;,         //邀请链接
+       &quot;googleStatus&quot;:&quot;1&quot;,      //是否开启googel验证
+       &quot;isOpenCapitalPword&quot;:&quot;1&quot;,//是否开启资金密码
+       &quot;isOpenMobileCheck&quot;:&quot;1&quot;, //是否开启手机验证
+       &quot;exchangeVerify&quot;:&quot;2&quot;,    //资金密码规则
+       &quot;withdraw_status&quot;:&quot;1&quot;,   //提现状态
+       &quot;lastLoginIp&quot;: &quot;0:0:0:0:0:0:0:1&quot;,   //最近一次登录IP
+       &quot;lastLoginTime&quot;: &quot;1526614377000&quot;,   //最近一次登录时间
+	   &quot;feeCoin&quot;: &quot;NOB&quot;         // 优先支付手续费的
+       &quot;feeCoinRate&quot;: &quot;0.00&quot;    // 手续费折扣半分比
+       &quot;useFeeCoinOpen&quot;: 0      // 是否开启优先支付手续费 0： 未开启 1：开启
+		&quot;myMarket&quot;: [&quot;ETC/USDT&quot;,&quot;ETC/USDT&quot;] # 用户自选需要接口存储
+       &quot;notPassReason&quot;: &quot;test&quot;,
+    }</pre>
+</div></div><p> </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/4299640/4522548.png">image2018-3-1 15_42_34.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

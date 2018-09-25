@@ -1,0 +1,65 @@
+.com-addres{
+    width: 100%;
+    height: 100%;
+ .addres-title{
+    height:0.45rem ;
+    line-height: 0.45rem;
+    border-bottom:0.01rem  solid #1c2b49;
+    border-bottom: 0.01rem solid $common-interval;
+    padding: 0 .1rem;
+    display: flex;
+    font-size:0.16rem;
+ }
+ .put{
+  padding: 0 0.2rem;
+  font-size: 0.12rem;
+  margin-top: 0.175rem;
+}
+// .put .input{
+//   display: flex;
+//   height: 0.38rem;
+//   line-height: 0.38rem;
+//   border:0.01rem solid #404e6f;
+//   background: #18243c;
+//   background: $common-background;
+//   margin-bottom: 0.15rem;
+//   border-radius: 0.03rem;
+// }
+// .put .input input {
+//   flex: 1;
+//   width: 100%;
+//   text-indent: 0.1rem;
+
+// }
+.put .title {
+  line-height: 0.315rem;
+}
+// .put .input span{
+//   margin-right: 0.07rem;
+//   color: #2b89e1;
+//   color: $common-iconColor
+// }
+.submit {
+  padding: 0.5rem 0.2rem;
+}
+.submit span{
+  display: block;
+  height: 0.45rem;
+  width: 100%;
+  background: #2b89e1;
+  background: $common-iconColor;
+  border-radius: 0.03rem;
+  text-align: center;
+  line-height: 0.45rem;
+}
+.markText {
+  height: 0.15rem;
+  margin-top: 0.15rem;
+  font-size:0.14rem;
+}
+.markBox {
+  padding-bottom: 0.2rem;
+}
+}
+
+

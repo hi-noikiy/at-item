@@ -1,0 +1,132 @@
+#com-quotation_market {
+  padding: 0.1rem 0.1rem;
+  /* margin-top: 0.05rem; */
+  border-bottom: 0.04rem solid #1c2b49;
+  border-bottom: 0.04rem solid $common-interval;
+.top {
+  display: flex;
+  justify-content: space-between
+}
+.top-left {
+  display: flex;
+  flex-direction: column;
+}
+.top-right {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+}
+.top-right>div {
+  flex: 1;
+  font-size: 0.12rem
+}
+.symbol {
+  font-size: 0.18rem;
+}
+.symbol i {
+  font-size: 0.16rem;
+  color: #2b89e1;color: $common-iconColor;
+  margin-left: 0.05rem;
+}
+.price {
+  font-size: 0.2rem;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+.price i {
+  font-size: 0.16rem;
+}
+.names {
+  color: #7b8191;color: $common-Vice;
+  margin-right: 0.1rem;
+}
+.rmb {
+  margin-top: 0.07rem;
+  font-size: 0.12rem;
+  color: #7b8191;color: $common-Vice;
+}
+.remF {
+  font-size: 0.12rem
+}
+.myMarket {
+  margin-top: 0.07rem;
+  padding: 0 0.1rem;
+  height: 0.33rem;
+  text-align: center;
+  border: 0.01rem solid #2b89e1;
+  border: 0.01rem solid $common-iconColor;
+  border-radius: 0.04rem;
+  line-height: 0.33rem;
+  display: flex;
+}
+.myMarket span {
+  font-size: 0.16rem;
+  font-weight: 700;
+}
+.myMarket i {
+  font-size: 0.24rem;
+  line-height: 0.3rem;
+  color: #2b89e1;color: $common-iconColor;
+}
+.myMarket .true {
+  color: #2b89e1;color: $common-iconColor;
+}
+.actived {
+  color: #2b89e1;color: $common-iconColor;
+}
+.myMarket i {
+  left: 0.1rem
+}
+.myMarket span {
+  margin-left: 0.05rem;
+}
+.icon-shoucang2 {
+  font-size: 0.30rem;
+}
+.icon-pingfen {
+  font-size: 0.16rem;
+  left: 0.17rem!important;
+  top: -0.01rem;
+}
+.bottom section {
+  flex: 1;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bottom div {
+  font-size: 0.12rem;
+  margin-top: 0.1rem;
+  color: #7b8191;color: $common-Vice;
+}
+.bottom div span {
+  margin-left: 0.05rem;
+  color: #c7cce6;color: $common-fontColor;
+}
+.high {
+  color: #0BA83F!important;
+  color: $common-rise!important;
+}
+.low {
+  color: #DF1A28!important;
+  color: $common-fall!important;
+}
+img {
+  width: 0.12rem;
+}
+.icon-down {
+  color: #c7cce6;
+  color: $common-fontColor;
+  font-weight: 700;
+}
+.icon-buy {
+  color: #0BA83F;color: $common-rise;
+  font-size: 0.2rem
+}
+.icon-ask {
+  color: #DF1A28;color: $common-fall;
+  font-size: 0.2rem
+}
+}

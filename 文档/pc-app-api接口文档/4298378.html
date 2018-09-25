@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : 公共配置</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4298374.html">配置抽离</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : 公共配置
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified on Mar 17, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>公共配置：前端的基础配置，例如logo,公司信息，短信配置等，</p><p>参考表信息：<a href="http://wiki.365os.com/pages/viewpage.action?pageId=4294075">&#37197;&#32622;&#25277;&#31163;&#33267;&#25968;&#25454;&#24211;&#26041;&#26696;</a> - 基础配置表</p><p>以下为具体代码需要抽离文件</p><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">配置key</th><th class="confluenceTh">注释</th><th class="confluenceTh">新接口方法</th></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">market_web_url</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">行情前端页面域名</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">market.ws.url</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">ws行情url</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">aliyun_nc_appkey</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">阿里滑动验证key</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">system_default_country_code</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">系统默认国家编码</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">system_date_format</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">系统时间格式</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">ymd_date_format</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">年月日时间格式</span></p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">css_version</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,51,102);">css版本</span></p></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">send_sms_interval</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">短信发送时间间隔</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">system_max_login_fail_count</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">登录最大失败次数</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">ad_base</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">ad_base是存放公共，广告图片路径</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">openOtc</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">是否开启场外</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">openContract</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">是否开启合约</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">google_authenticator_desc</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">谷歌验证描述信息，只能使用英文字母</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">sign_secret</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">sign中的secret</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">trade_fee_coin_rate</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">交易手续费折扣费率</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">trade_fee_coin</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">交易手续费币种</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">accessKeyId</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">阿里OSS服务</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">accessKeySecret</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">阿里OSS服务</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">endpoint</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">阿里OSS服务</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">bucketName</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">阿里OSS服务</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">total_balance_coin_symbol</span></p></td><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">总资产、净资产币种</span></p></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">email_send_url</span></p></td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">email_send_from</span></p></td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd"><p><span style="color: rgb(0,51,102);">sms_proxy</span></p></td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

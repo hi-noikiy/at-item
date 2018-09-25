@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : 账户配置</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4298374.html">配置抽离</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : 账户配置
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> xingmingfeng</span>, last modified on Mar 19, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>账户配置：<strong>AccountType.java</strong></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">原方法</th><th class="confluenceTh">方法说明</th><th class="confluenceTh">新方法</th></tr><tr><td class="confluenceTd">AccountType <strong>fromValue</strong>(int value)</td><td class="confluenceTd">根据 <strong>value</strong> 值获取对应的 <strong>账户</strong></td><td class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getPersionType</strong>(String accountType,String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>type的BC位</strong> 和 <strong>币种</strong> 获取 <strong>个人用户type</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;Integer&gt; <strong>getPersionTypeList</strong>(String accountType,List&lt;String&gt; coinList)</td><td colspan="1" class="confluenceTd">根据 <strong>type的BC位</strong> 和 <strong>币种列表</strong> 获取 <strong>个人用户type集合</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getCompanyType</strong>(String accountType,String coinSymbol,String symbol)</td><td colspan="1" class="confluenceTd">根据 <strong>type的BC位</strong>、<strong>币种</strong> 和 <strong>币对</strong> 获取 <strong>公司type</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getUserType</strong>(AccountType_BC typeBc, String coinSymbol)</td><td colspan="1" class="confluenceTd"><span>根据 </span><strong>type的BC位</strong><span> 和 </span><strong>币种</strong><span> 获取 </span><strong>个人用户type</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getComDepositType</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取对应的 <strong>公司充值账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getComOtcFeeType</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取对应的 <strong>公司收取场外交易手续费</strong> 的账户</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;Integer&gt; <strong>getComFeeTypes</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取对应的币种 <strong>全部 </strong>的 <strong>公司手续费二级账户 </strong>的<strong> value </strong>值，所有的交易对都需要</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getComOperateTypes</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取 <strong>公司运营账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;AccountType&gt; <strong>getComZBTypes</strong>()</td><td colspan="1" class="confluenceTd">获取 <strong>全部</strong> 的 <strong>公司增币账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;AccountType&gt; <strong>getUserYETypes</strong>()</td><td colspan="1" class="confluenceTd">获取 <strong>全部</strong> 的 <strong>用户余额账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getComZBBySymbol</strong>(String symbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取 <strong>公司对应币种</strong> 的 <strong>赠币账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;Integer&gt; <strong>getNormalAndLockTypeList</strong>()</td><td colspan="1" class="confluenceTd">获取 <strong>全部</strong> 的 <strong>余额账户 </strong>和 <strong>冻结账户 </strong>的 <strong>value</strong> 值</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getOtcAccountLock</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取 <strong>场外用户冻结账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getOtcAccountNormal</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取 <strong>场外用户余额账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">List&lt;AccountType&gt; <strong>getAllOtcAccount</strong>()</td><td colspan="1" class="confluenceTd">获取 <strong>全部</strong> 的 <strong>场外交易账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">Boolean <strong>isOtcAccount</strong>(Integer value)</td><td colspan="1" class="confluenceTd">根据 <strong>value</strong> 值判断 <strong>是否为场外账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">AccountType <strong>getAccountNormal</strong>(String coinSymbol)</td><td colspan="1" class="confluenceTd">根据 <strong>币种</strong> 获取 <strong>对应币种</strong> 的 <strong>用户余额账户</strong></td><td colspan="1" class="confluenceTd"> </td></tr></tbody></table></div><p><strong><br /></strong></p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

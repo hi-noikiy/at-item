@@ -1,0 +1,92 @@
+ .com-addres{
+     width: 100%;
+     height: 100%;
+ .addres-title{
+  height:0.45rem ;
+  line-height: 0.45rem;
+    border-bottom:0.01rem  solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  padding: 0 .1rem;
+  display: flex;
+  font-size:0.16rem;
+ }
+ .addres-title .address{
+  display: inline-block;
+  flex: 1;
+ }
+ .addres-list li{
+  line-height: 0.3rem;
+  padding: 0.1rem .2rem;
+  border-bottom:0.01rem  solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size:0.16rem;
+ }
+ .addres-list li p {
+ color:#7b8191; color: $common-Vice;
+  margin-left:.2rem;
+  max-width: 3rem;
+  line-height: 0.15rem;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 0.12rem
+ }
+.addres-list li p {
+ color:#7b8191; color: $common-Vice;
+}
+.addres-list li b{
+     font-size: 0.16rem;
+     vertical-align: middle;
+}
+.submit {
+  padding: 0.5rem 0.2rem;
+
+}
+.submit span{
+  display: block;
+  height: 0.45rem;
+  width: 100%;
+  background: $common-iconColor;
+  background: #2b89e1;
+
+  border-radius: 0.04rem;
+  text-align: center;
+  line-height: 0.45rem;
+}
+.no_data{
+  text-align: center;
+  line-height: 3rem;
+}
+.markText {
+  height: 0.15rem;
+  margin-top: 0.2rem;
+}
+ .loading{
+  margin: .3rem auto;
+  width:.5rem;
+  height: .5rem;;
+ }
+ .cancel {
+ color:#2b89e1;  color: $common-iconColor
+ }
+ .icon-adress {
+ color:#2b89e1;  color: $common-iconColor
+ }
+ .type {
+   width: 0.4rem;
+ }
+ .type i {
+   font-size: 0.25rem;
+ color:#2b89e1;  color: $common-iconColor
+ }
+ .markBox {
+  padding-bottom: 0.2rem;
+}
+.lables {
+  flex: 1;
+}
+ }

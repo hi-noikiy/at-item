@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /finance/otc_account_list-场外账户-资金管理</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4298087.html">垃圾站</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297793.html">资金管理-资金管理</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /finance/otc_account_list-场外账户-资金管理
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified on Mar 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h4 id="id-/finance/otc_account_list-场外账户-资金管理-请求URI：post/finance/otc_account_list"><strong>请求URI：post</strong><strong> /finance</strong><strong> /<a href="http://otc_account_list.do" class="external-link" rel="nofollow">otc_account_list</a></strong></h4><h4 id="id-/finance/otc_account_list-场外账户-资金管理-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数说明</div></div></div></div></div></th></tr></thead><thead><tr><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td><td colspan="1" class="confluenceTd"> </td></tr></thead></table></div><h4 id="id-/finance/otc_account_list-场外账户-资金管理-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><td class="highlight-grey confluenceTd" colspan="1" data-highlight-colour="grey"><strong>参数</strong></td><td class="highlight-grey confluenceTd" colspan="1" data-highlight-colour="grey"><strong>是否必须</strong></td><td class="highlight-grey confluenceTd" colspan="1" data-highlight-colour="grey"><strong>说明</strong></td></tr><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况，</td></tr></thead><tbody><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner">参数</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">是否必须</div></th><th class="confluenceTh"><div class="tablesorter-header-inner">说明</div></th></tr></thead><tbody><tr><td class="confluenceTd">accountList</td><td class="confluenceTd">否</td><td class="confluenceTd"><div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">[</code></div><div class="line number2 index1 alt1"><code class="java spaces">    </code><code class="java plain">{</code></div><div class="line number3 index2 alt2"><code class="java spaces">       </code><code class="java string">&quot;coinSymbol&quot;</code><code class="java plain">: </code><code class="java string">&quot;&quot;</code><code class="java plain">,币种</code></div><div class="line number4 index3 alt1"><code class="java spaces">       </code><code class="java string">&quot;normal&quot;</code><code class="java plain">: </code><code class="java string">&quot;&quot;</code><code class="java plain">,</code><code class="java comments">//正常余额</code></div><div class="line number5 index4 alt2"><code class="java spaces">       </code><code class="java string">&quot;lock&quot;</code><code class="java plain">: </code><code class="java string">&quot;&quot;</code><code class="java plain">,</code><code class="java comments">//冻结金额</code></div><div class="line number6 index5 alt1"><code class="java spaces">       </code><code class="java string">&quot;totalAmount&quot;</code><code class="java plain">: </code><code class="java value">12</code><code class="java plain">,</code><code class="java comments">//总资产</code></div><div class="line number7 index6 alt2"><code class="java spaces">       </code><code class="java string">&quot;btcValuation&quot;</code><code class="java plain">： </code><code class="java string">&quot;122.00000000&quot;</code><code class="java plain">,</code><code class="java comments">//资产折合</code></div><div class="line number8 index7 alt1"><code class="java spaces">       </code><code class="java string">&quot;exchangeNormal&quot;</code><code class="java plain">: </code><code class="java value">12</code><code class="java comments">//现货余额</code></div><div class="line number9 index8 alt2"><code class="java spaces">    </code><code class="java plain">}</code></div><div class="line number10 index9 alt1"><code class="java plain">]</code></div></div></td></tr></tbody></table></div></div></td></tr><tr><td colspan="1" class="confluenceTd">totalBalance</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">场外总资产</td></tr><tr><td colspan="1" class="confluenceTd">totalBalanceSymbol</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">BTC</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">&quot;data&quot;:{
+	&quot;accountList&quot;:[
+    				{	
+       					&quot;coinSymbol&quot;: &quot;&quot;,币种
+       					&quot;normal&quot;: &quot;&quot;,//正常余额
+       					&quot;lock&quot;: &quot;&quot;,//冻结金额
+       					&quot;totalAmount&quot;: 12,//总资产
+       					&quot;btcValuation&quot;： &quot;122.00000000&quot;,//资产折合
+       					&quot;exchangeNormal&quot;: 12//现货余额
+   				 }
+				],
+	&quot;totalBalance&quot;:&quot;0.001&quot;,
+	&quot;totalBalanceSymbol&quot;:&quot;BTC&quot;
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

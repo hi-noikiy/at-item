@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : 其他交易 record/other_transfer_list</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295583.html">资金相关</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4300406.html">资金流水页面</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : 其他交易 record/other_transfer_list
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> guochang</span>, last modified by <span class='editor'> zhongjingyun</span> on Jun 06, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h4 id="id-其他交易record/other_transfer_list-请求URI：POST"><strong>请求URI：POST</strong></h4><h4 id="id-其他交易record/other_transfer_list-record/other_transfer_list"><strong>record</strong><strong>/other_transfer_list</strong></h4><h4 id="id-其他交易record/other_transfer_list-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数说明</div></div></div></th></tr></thead><thead><tr><td class="confluenceTd">coinSymbol</td><td class="confluenceTd">否string</td><td class="confluenceTd">币种</td></tr></thead><tbody><tr><td colspan="1" class="confluenceTd">transactionScene</td><td colspan="1" class="confluenceTd">否string</td><td colspan="1" class="confluenceTd">&quot;present_coin&quot;</td></tr><tr><td colspan="1" class="confluenceTd">page</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd"> </td></tr><tr><td colspan="1" class="confluenceTd">pageSize</td><td colspan="1" class="confluenceTd">否</td><td colspan="1" class="confluenceTd">默认是10</td></tr></tbody></table></div><h4 id="id-其他交易record/other_transfer_list-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></div></th></tr></thead><thead><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况</td></tr></thead><tbody><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></div></th></tr></thead><thead><tr><td class="confluenceTd">financeList</td><td class="confluenceTd">是</td><td class="confluenceTd"><div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="js plain">[</code></div><div class="line number2 index1 alt1"><code class="js spaces">    </code><code class="js plain">{</code></div><div class="line number3 index2 alt2"><code class="js spaces">       </code><code class="js string">&quot;createTime&quot;</code><code class="js plain">: </code><code class="js string">&quot;<span style="color: rgb(210,220,249);text-decoration: none;">2018-04-16 20:35:01</span>&quot;</code><code class="js plain">,时间</code></div><div class="line number4 index3 alt1"><code class="js spaces">       </code><code class="js string">&quot;amount&quot;</code><code class="js plain">: </code><code class="js string">&quot;10&quot;</code><code class="js plain">,</code><code class="js comments">//数量</code></div><div class="line number5 index4 alt2"><code class="js spaces">       </code><code class="js string">&quot;coinSymbol&quot;</code><code class="js plain">: </code><code class="js string">&quot;ETH&quot;</code><code class="js plain">,</code><code class="js comments">//币种</code></div><div class="line number7 index6 alt2"><code class="js spaces">       </code><code class="js string">&quot;transactionScene&quot;</code><code class="js plain">： &quot;<span>present_coin</span>&quot;</code><code class="js plain">,<br /><code class="js spaces">       </code><code class="js string">&quot;status&quot;</code><code class="js plain">： &quot;0,未完成&quot;</code><code class="js plain">,&quot;1，已完成&quot;</code><br /><code class="js spaces">       </code><code class="js string">&quot;status_text&quot;</code><code class="js plain">： &quot;未完成&quot;</code><code class="js plain">,</code></code></div><div class="line number11 index10 alt2"><code class="js spaces">    </code><code class="js plain">}</code></div><div class="line number12 index11 alt1"><code class="js plain">]</code></div></div></td></tr></tbody></table></div><p> </p></div><p> </p><p> </p></td></tr><tr><th class="confluenceTd confluenceTh" colspan="1">count</th><th class="confluenceTd confluenceTh" colspan="1"> </th><th class="confluenceTd confluenceTh" colspan="1">总数</th></tr><tr><th class="confluenceTd confluenceTh" colspan="1">pageSize</th><th class="confluenceTd confluenceTh" colspan="1"> </th><th class="confluenceTd confluenceTh" colspan="1">每页个数</th></tr></thead></table></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

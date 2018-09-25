@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /addr/address_list-钱包地址列表</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4298087.html">垃圾站</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4297789.html">资金管理-地址管理</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /addr/address_list-钱包地址列表
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> zhangkezhu</span>, last modified on Mar 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="wiki-content"><h4 id="id-/addr/address_list-钱包地址列表-请求URI：POST/addr/address_list"><strong>请求URI：POST</strong><strong> </strong><strong> /addr/<a href="http://address_list.do" class="external-link" rel="nofollow">address_list</a></strong></h4><h4 id="id-/addr/address_list-钱包地址列表-请求参数"><strong>请求参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"> </td><td class="confluenceTd"> </td><td class="confluenceTd"> </td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数说明</div></div></th></tr></thead></table></div><h4 id="id-/addr/address_list-钱包地址列表-响应参数"><strong>响应参数</strong></h4><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd">code</td><td class="confluenceTd">是</td><td class="confluenceTd">非0为异常情况</td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">是</td><td class="confluenceTd">code说明</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd">是</td><td class="confluenceTd">json格式</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></th></tr></thead></table></div><p><strong><br /></strong></p><p><strong>data数据格式</strong></p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td class="confluenceTd"><pre>addressList</pre></td><td class="confluenceTd">是</td><td class="confluenceTd"><div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">[
+    {
+       &quot;id&quot;: 123,//地址id
+       &quot;symbol&quot;: &quot;BTC&quot;,//币种
+       &quot;address&quot;： //提币地址
+       &quot;label&quot;： //钱包标签
+    }
+]</pre>
+</div></div><p> </p><p> </p></div><p> </p><p> </p></td></tr><tr><td colspan="1" class="confluenceTd">cryptoSymbolList</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">[
+    {
+        &quot;coinShow&quot;: &quot;BTC&quot;,
+        &quot;coinSymbol&quot;: &quot;btc&quot;
+    },
+    {
+        &quot;coinShow&quot;: &quot;ETH&quot;,
+        &quot;coinSymbol&quot;: &quot;eth&quot;
+    }
+]</pre>
+</div></div></td></tr><tr><td colspan="1" class="confluenceTd">isAuthRealName</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd">是否实名认证，0表示未认证。如果未认证，点击【添加地址】时跳转至对应认证页面</td></tr><tr><td colspan="1" class="confluenceTd">isBindMobile</td><td colspan="1" class="confluenceTd">是</td><td colspan="1" class="confluenceTd">是否绑定手机，0表示未绑定。如果未绑定，点击【添加地址】时跳转至对应手机号绑定页面</td></tr></tbody><thead><tr><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">参数名</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">是否必须</div></div></th><th class="confluenceTh"><div class="tablesorter-header-inner"><div class="tablesorter-header-inner">说明</div></div></th></tr></thead></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">data:{
+	addressList:[
+   	 				{
+       					&quot;id&quot;: 123,//地址id
+       					&quot;symbol&quot;: &quot;BTC&quot;,//币种
+       					&quot;address&quot;： //提币地址
+       					&quot;label&quot;： //钱包标签
+    				}
+				],
+   cryptoSymbolList:[
+    					{
+        					&quot;coinShow&quot;: &quot;BTC&quot;,
+        					&quot;coinSymbol&quot;: &quot;btc&quot;
+   					 	},
+    					{
+        					&quot;coinShow&quot;: &quot;ETH&quot;,
+        					&quot;coinSymbol&quot;: &quot;eth&quot;
+    					}
+				]
+}</pre>
+</div></div><p> </p><p> </p></div>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

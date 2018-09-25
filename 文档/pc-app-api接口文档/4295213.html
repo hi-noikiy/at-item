@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>交易所 : /openapi/open_api_one-展示单个API</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">交易所</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295242.html">PC端前台API（前端基于vue框架）</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295442.html">个人中心</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4295549.html">用户API相关</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            交易所 : /openapi/open_api_one-展示单个API
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> xingmingfeng</span>, last modified on May 24, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">/openapi/open_api_one (POST)：展示单个api的隐藏数据</th></tr><tr><th class="confluenceTh">参数</th><th class="confluenceTh">是否必填</th><th class="confluenceTh">说明</th></tr><tr><td class="confluenceTd">smsValidCode</td><td class="confluenceTd"><pre>非必填</pre></td><td class="confluenceTd"><p>短信验证码</p></td></tr><tr><td class="confluenceTd">googleCode</td><td class="confluenceTd">非必填</td><td class="confluenceTd"><p>Google验证码</p></td></tr><tr><td colspan="1" class="confluenceTd">token</td><td colspan="1" class="confluenceTd"><pre>必填</pre></td><td colspan="1" class="confluenceTd"><p>token值</p></td></tr><tr><td colspan="1" class="confluenceTd">time</td><td colspan="1" class="confluenceTd"><pre>必填</pre></td><td colspan="1" class="confluenceTd">时间戳</td></tr></tbody></table></div><p> </p><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh">返回结果</th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">code</td><td colspan="2" class="confluenceTd"><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"><span style="color: rgb(0,128,0);">002_001</span></th><th class="confluenceTh"><div><span style="color: rgb(0,128,0);">短信验证码错误或过期</span></div></th></tr><tr><td class="confluenceTd"><span style="color: rgb(0,128,0);">002_002</span></td><td class="confluenceTd"><div><span style="color: rgb(0,128,0);">谷歌验证码不能为空</span></div></td></tr><tr><td class="confluenceTd"><span style="color: rgb(0,128,0);">002_003</span></td><td class="confluenceTd"><div><span style="color: rgb(0,128,0);">谷歌验证码错误</span></div></td></tr><tr><td class="confluenceTd"><span style="color: rgb(0,128,0);">002_004</span></td><td class="confluenceTd"><div><span style="color: rgb(0,128,0);">非法查看api</span></div></td></tr><tr><td class="confluenceTd">0</td><td class="confluenceTd"><div><span style="color: rgb(0,0,0);">成功</span></div></td></tr></tbody></table></div></td></tr><tr><td class="confluenceTd">msg</td><td class="confluenceTd">&quot;suc&quot;</td><td class="confluenceTd">code&gt;0失败</td></tr><tr><td class="confluenceTd">data</td><td class="confluenceTd"><p>如下：</p></td><td class="confluenceTd"> </td></tr></tbody></table></div><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th colspan="3" class="confluenceTh"><p>data结构</p></th></tr><tr><th class="confluenceTh">字段</th><th class="confluenceTh">实例</th><th class="confluenceTh">解释</th></tr><tr><td class="confluenceTd">secretKey</td><td class="confluenceTd"><p>&quot;secretKey&quot;: &quot;string&quot;</p></td><td class="confluenceTd">密钥</td></tr><tr><td class="confluenceTd">qrCode</td><td class="confluenceTd"><p>&quot;qrCode&quot;: &quot;string&quot;</p></td><td class="confluenceTd">base64编码的二维码</td></tr></tbody></table></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="theme: DJango; brush: java; gutter: false" style="font-size:12px;">{
+    &quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: &quot;suc&quot;,
+    &quot;data&quot;: {
+        &quot;secretKey&quot;: &quot;7fce18c3a681342e6ac8e3911f1f10b9&quot;,
+        &quot;qrCode&quot;: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAEWUlEQVR42u3cUW7jMAxF0e5/0501\r\ndMRLqel5n4Gb2NIRQFFGv75FgnwZAgFLwBKwRMASsAQsEbAELAFLBCwBS8ASAUvAErBEwJKPg/UV\r\nZOq3Tp5l6vOpcbh1DyfjCRZYYIEFFlhgzcA6KvGGYJ3c28k9FIuhALc/v2CBBRZYYIEF1uQP18Vp\r\nPXlTf3vyLMU19eIECyywwAILLLA+H1ZRzG5OcN3sBQsssMACCyywwJos3ovm5AsFO1hggQUWWGCB\r\n9fmwNoG+8FLbraaltxvAAgsssMAC6/Nh1UW0z//v81uLDSywwPI5WGCB9f3sPwUpDqHrAvmFjcJD\r\nMwgWWGCBBRZYYD3S2DzZKBT3P3UPRTNzc/zBAgsssMACC6x3i/epYryemBeK9AL65gE2WGCBBRZY\r\nYIE1D2vqgTcL/6IALw7gpxYYWGCBBRZYYIH1OcX7yWScFPsnBfXUy3e3FurdZwELLLDAAgsssKoH\r\n3pz44vB4qkDePwCenSOwwAILLLDAAutdWDWUnyIo/nZqE1M3aZe2aGCBBRZYYIEF1sKgnHxPvVGY\r\nwlQ3M+uiHiywwAILLLDAug9rM/VLf5uA6hcV6/EBCyywwAILLLDegnUy6EWhXRS8rx1U322cggUW\r\nWGCBBRZYNzGdPHDxIuFUM3OqkK8Rh7MPFlhggQUWWGAtNzCLwS0OkovFUzdOp+4BLLDAAgsssMC6\r\nA6to3NVoXriHuuiuFzNYYIEFFlhggbUHa/MFtFuNzaLgvdUg/TXFO1hggQUWWGD9cVhF4+7kO2/d\r\nQz2RNQ6wwAILLLDAAuutQ+iiOL1VCBfF7C0Q+wU7WGCBBRZYYIE1Cau4uanierNYrhundUN1FhxY\r\nYIEFFlhggVUVy1MDVzdF65f+bgHdnFOwwAILLLDAAqttkE415aaQbV4ztTk4uX7qmuc672CBBRZY\r\nYIEFVlrkThXddYG8uZDqRQ4WWGCBBRZYYN2B9ULRWk9qsSnZXCTFogULLLDAAgsssOZhndzoywfY\r\nBfRNKFO/e614BwsssMACCyyw1orBqSZnDXpzgU01mbvFAxZYYIEFFlhgVU3RzaZi0WAsivTNezvB\r\nDRZYYIEFFlhgvQvrFtapYvm1Q9+TBVY3jcECCyywwAILrDsN0rp4fA1QAeKFjQhYYIEFFlhggdXC\r\nym9r6MW94mXA4vvrzdPJAgALLLDAAgsssO4U78WgbzZpTwr8W+NTfP5cgxQssMACCyyw/jisYlIL\r\nfJtFfV2kF8X77PyCBRZYYIEFFlgbIOqicrM4LQ6eN1MsYLDAAgsssMAC63fDmipsp373ZGKKRuv3\r\nMwELLLDAAgsssP4KrKKB+VMQU9fXmwawwAILLLDAAustWLeajbcm+OT6Amg95mCBBRZYYIEF1h6s\r\n+nB0amKKyS7GqtgobG5cwAILLLDAAgus72f/KYj89oAlYAlYApYIWAKWgCUCloAlYImAJWAJWCJg\r\nCVgClghY8nD+AYBZSrsYi9VwAAAAAElFTkSuQmCC&quot;
+    }
+}</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                 
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 02, 2018 16:11</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,56 @@
+//  区域选择框
+#areaSelect {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+.areaSelect_header {
+  width: 100%;
+  height: 0.43rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.18rem
+}
+.areaSelect_input {
+  text-align: center;
+  width: 100%;
+  font-size: 0.16rem;
+  height: 0.35rem;
+  background: #404e6f;
+}
+.areaSelect_input::-webkit-input-placeholder { /* WebKit browsers */ 
+  line-height: 0.2rem;
+  color: #7b8191; 
+  color: $common-Vice; 
+  font-size: 0.16rem;
+  font-family: "iconfont";
+  text-align: center;
+}
+.areaSelect_box {
+  padding: 0 0.1rem;
+  flex: 1;
+  overflow-y: scroll;
+}
+.areaSelect_title {
+  height: 0.45rem;
+  line-height: 0.6rem;
+  border-bottom: 0.02rem solid #1c2b49;
+  border-bottom: 0.02rem solid $common-interval;
+  font-size: 0.16rem
+}
+.areaSelect_li {
+  height: 0.45rem;
+  line-height: 0.45rem;
+  border-bottom: 0.01rem solid #1c2b49;
+  border-bottom: 0.01rem solid $common-interval;
+  display: flex;
+  justify-content: space-between;
+}
+.areaSelect_li span:nth-child(2) {
+  color: #7b8191;
+  color: $common-Vice
+}
+.areaSelect_li span {
+  width: auto;
+}
+}

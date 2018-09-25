@@ -1,0 +1,82 @@
+#com-quotation {
+  width: 100%;
+  padding-bottom: 0.4rem;
+.quotationb_bounce-enter-active {
+  animation: quotationb_bounce-in .3s;
+}
+.quotationb_bounce-leave-active {
+  animation: quotationb_bounce-in .3s reverse;
+}
+@keyframes quotationb_bounce-in {
+  0% {
+    width: 0;
+    opacity: 0
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.footer {
+  height: 0.4rem;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer button{
+  flex: 1;
+  font-size: 0.16rem;
+  color: #c7cce6;color: $common-fontColor;
+}
+.footer .go {
+  background: #2b89e1;background: $common-iconColor;
+  width: 60%;
+  text-align: center;
+  line-height: 0.4rem
+}
+._mymarket {
+  background: #1c2b49;background: $common-interval;
+  width: 40%;
+  text-align: center;
+  line-height: 0.4rem
+}
+._mymarket i {
+  color: #ff9624
+}
+.buy {
+  // background: #0BA83F;background: $common-rise;
+}
+.close {
+  // background: #DF1A28;background: $common-fall;
+}
+.map-title {
+  padding-left: 0.1rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  display: flex;
+  border-top: 0.04rem solid #1c2b49;
+  border-top: 0.04rem solid $common-interval;
+  border-bottom: 0.02rem solid #1c2b49;
+  border-bottom: 0.02rem solid $common-interval;
+}
+.map-title div {
+  position: relative;
+  margin-right: 0.25rem;
+  height: 100%;
+}
+.map-title div span {
+  position: absolute;
+  height: 0.02rem;
+  width: 80%;
+  background: #2b89e1;background: $common-iconColor;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.02rem;
+}
+.map-box {
+  min-height: 2rem;
+  /* padding: 0.1rem; */
+}
+}
